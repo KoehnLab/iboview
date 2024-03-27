@@ -24,13 +24,13 @@ sudo apt-get install \
 #### OpenSuse
 
 ```bash
-# Remove potentially existing Boost version (we want latest one)
-#sudo zypper remove libboost*
-
+# This is only to figure out which version of Boost to install as OpenSuse doesn't
+# seem to have an unversioned default Boost package but has different versions in the repos
 BOOST_PKGS="$( zypper search libboost_atomic*-devel | grep "libboost" | cut -d "|" -f 2 )"
 BOOST_VERSION=$( echo "$BOOST_PKGS" | sort | tail -n 1 | tr -cd '[0-9_\n]' | sed 's/^_\+//' )
 echo "Using Boost version $BOOST_VERSION"
 BOOST_PKGS="$( zypper search libboost_*-devel | grep "$BOOST_VERSION" | cut -d "|" -f 2 | tr '\n' ' ' )"
+
 sudo zypper install \
     gcc \
     make \
@@ -59,3 +59,5 @@ fi
 $QMAKE ../main.pro
 make -j $(nproc)
 ```
+
+Afterwards, you'll have the `iboview` executable inside your `build` directory.
