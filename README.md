@@ -12,7 +12,12 @@ improvements).
 #### Ubuntu
 
 ```bash
-sudo apt install
+sudo apt install \
+    libboost-all-dev \
+    qtbase5-dev \
+    qtscript5-dev \
+    libqt5svg5-dev \
+    libgl1-mesa-dev
 ```
 
 ### Compiling
