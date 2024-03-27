@@ -49,6 +49,7 @@
 
 #include <algorithm> // for std::swap.
 #include <functional> // for std::less
+#include <cstddef> // for ptrdiff_t
 
 namespace ct {
    struct FIntrusivePtrDest1;
