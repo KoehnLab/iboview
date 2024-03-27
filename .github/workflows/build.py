@@ -23,6 +23,15 @@ def main():
 
     args = parser.parse_args()
 
+    # We use docker image names as OS spec -> strip it down to the pure OS name
+    os_name = args.os
+    if "/" in os_name:
+        os_name = os_name[ : os_name.index("/") ]
+    if ":" in os_name:
+        os_name = os_name[ : os_name.index(":")]
+    os_name = os_name.strip()
+    assert len(os_name) > 0
+
     script_dir = os.path.dirname(os.path.realpath(__file__))
     repo_root = os.path.join(script_dir, "..", "..")
     readme_path = os.path.join(repo_root, "README.md")
@@ -36,13 +45,17 @@ def main():
         assert match is not None
 
         dependency_instruction_start = match.start()
-        os_idx = contents.lower().index(args.os, dependency_instruction_start)
+        os_idx = contents.lower().index(os_name, dependency_instruction_start)
 
         install_command_start = contents.find("```", os_idx)
         install_command_start = contents.find("\n", install_command_start)
         install_command_end = contents.find("```", install_command_start)
 
         install_command = contents[install_command_start : install_command_end].strip()
+
+        # Prevent any interactive yes/no prompts
+        install_command = re.sub(r"\binstall\b", "install -y", install_command)
+        install_command = re.sub(r"\bremove\b", "remove -y", install_command)
 
         execute_bash(install_command)
 

@@ -12,12 +12,35 @@ improvements).
 #### Ubuntu
 
 ```bash
-sudo apt install \
+sudo apt-get install \
+    build-essential \
     libboost-all-dev \
     qtbase5-dev \
     qtscript5-dev \
     libqt5svg5-dev \
     libgl1-mesa-dev
+```
+
+#### OpenSuse
+
+```bash
+# Remove potentially existing Boost version (we want latest one)
+#sudo zypper remove libboost*
+
+BOOST_PKGS="$( zypper search libboost_atomic*-devel | grep "libboost" | cut -d "|" -f 2 )"
+BOOST_VERSION=$( echo "$BOOST_PKGS" | sort | tail -n 1 | tr -cd '[0-9_\n]' | sed 's/^_\+//' )
+echo "Using Boost version $BOOST_VERSION"
+BOOST_PKGS="$( zypper search libboost_*-devel | grep "$BOOST_VERSION" | cut -d "|" -f 2 | tr '\n' ' ' )"
+sudo zypper install \
+    gcc \
+    make \
+    glu-devel \
+    $BOOST_PKGS \
+    libqt5-qtbase-common-devel \
+    libqt5-qtbase-devel \
+    libqt5-qtsvg-devel \
+    libqt5-qtscript-devel \
+    Mesa-libGL-devel
 ```
 
 ### Compiling
@@ -26,6 +49,13 @@ Before starting, verify that `qmake --version` informs you that you are using Qt
 
 ```bash
 mkdir build && cd build
-qmake ../main.pro
+
+# Select qmake or qmake-qt5 if qmake is not available on your system
+QMAKE="qmake"
+if [[ ! -x "$( command -v "$QMAKE" )" ]]; then
+    QMAKE="qmake-qt5"
+fi
+
+$QMAKE ../main.pro
 make -j $(nproc)
 ```
