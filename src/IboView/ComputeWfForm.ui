@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ComputeWfForm</class>
+ <widget class="QDialog" name="ComputeWfForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>913</width>
+    <height>1064</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Compute New Wave Function...</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="3" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_WfSetup">
+      <attribute name="title">
+       <string>Wave Function</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="0">
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>857</width>
+            <height>108</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QTextBrowser" name="textBrowser_WfNotes">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(*): Additional Spin over the minimum spin required to realize this charge. For a system with an even number of electrons, ExtraSpin=0 means closed-shell and ExtraSpin=1 means triplet; for a system with an odd number of electrons, ExtraSpin=0 means doublet and Extra Spin=1 means quartet.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(**) DO NOT RUN THIS CALCULATION if you have less RAM than 2 GB + this! It could crash the operating system!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QGroupBox" name="groupBox_4">
+           <property name="title">
+            <string>Quantum Numbers</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Charge:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="spinBox_WfCharge">
+              <property name="minimum">
+               <number>-4096</number>
+              </property>
+              <property name="maximum">
+               <number>4096</number>
+              </property>
+              <property name="wf_option" stdset="0">
+               <string>charge</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Extra Spin (*):</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spinBox_WfSpin">
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>4096</number>
+              </property>
+              <property name="singleStep">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="wf_option" stdset="0">
+               <string>extra_spin</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLabel" name="label_WfInfo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="text">
+               <string>[Wave function info goes here (nelec, ms2, etc)]</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>SCF Setup</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="2" column="1">
+             <widget class="QComboBox" name="comboBox_ScfFunctional">
+              <property name="wf_option" stdset="0">
+               <string>functional</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>PBE</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>LDA (CK16/DIRACX)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>PBE0</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>TPSS</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MN15-L</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboBox_ScfMethod">
+              <property name="wf_option" stdset="0">
+               <string>scf_method</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>Kohn-Sham (DFJX-RKS)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Kohn-Sham (DFJ-RKS)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Kohn-Sham, hybrid (DFJK-RKS)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Kohn-Sham, 3ix-direct (DFDJ-RKS)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hartree-Fock (DF-RHF)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hartree-Fock, 4ix-direct (RHF)</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Functional:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QComboBox" name="comboBox_ScfOrbitalBasis">
+              <property name="currentIndex">
+               <number>3</number>
+              </property>
+              <property name="wf_option" stdset="0">
+               <string>orb_basis</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>def2-SV(P)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-SVP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-SVPD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-TZVP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-TZVPP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-TZVPPD</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-QZVP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-QZVPP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>def2-QZVPPD</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Fit Basis:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QComboBox" name="comboBox_ScfFitBasis">
+              <property name="wf_option" stdset="0">
+               <string>fit_basis</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>auto</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>univ-JFIT</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>univ-JKFIT</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Orb. Basis:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>SCF Method:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="label_scfopt">
+              <property name="text">
+               <string>Free options:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="lineEdit_ScfOptions">
+              <property name="wf_option" stdset="0">
+               <string>scf_options</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Run Settings</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Number of Threads</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="spinBox_NumThreads">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>256</number>
+              </property>
+              <property name="wf_option" stdset="0">
+               <string>num_threads</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_WorkSpace">
+              <property name="text">
+               <string>Work Space/Thread (MB)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spinBox_WorkSpacePerThread">
+              <property name="maximum">
+               <number>32000</number>
+              </property>
+              <property name="wf_option" stdset="0">
+               <string>work_space_mb</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Required Memory(**):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_MemoryGuess">
+            <property name="text">
+             <string>100023434 MB</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>83</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_IbbaSetup">
+      <attribute name="title">
+       <string>Chemical Analysis</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>41</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Molecular Orbital Analysis</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="3" column="1">
+           <widget class="QComboBox" name="comboBox_MoDiplay">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="wf_option" stdset="0">
+             <string>orb_display</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>Occupied only</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Occupied + valence virtuals</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Orbitals to Display(**):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBox_OrbitalLocalization">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <property name="wf_option" stdset="0">
+             <string>loc_method</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (exponent 2)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (exponent 4)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (exponent 3/2)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (min entropy)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (log Gamma[n+2])</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IBO (log Gamma[n+1])</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Orbital Division(*):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="comboBox_OpenShellSplit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="wf_option" stdset="0">
+             <string>orb_division</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>As input wf</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Force alpha/beta</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Orbital Localization:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+         <zorder>label_10</zorder>
+         <zorder>comboBox_OrbitalLocalization</zorder>
+         <zorder>label_11</zorder>
+         <zorder>comboBox_OpenShellSplit</zorder>
+         <zorder>label_12</zorder>
+         <zorder>comboBox_MoDiplay</zorder>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>Atomic Orbital Analysis</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Atomic Orbital Type:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="comboBox_AoType">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="wf_option" stdset="0">
+             <string>ao_type</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>IAO (Sym Orth.)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IAO (ZBD Orth.)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Hybrid Orbitals:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboBox_HybridOrbitals">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>No (keep raw IAO basis)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Bond Order Analysis:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="comboBox_BondOrderAnalysis">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <property name="maxVisibleItems">
+             <number>17</number>
+            </property>
+            <property name="wf_option" stdset="0">
+             <string>bond_order_type</string>
+            </property>
+            <item>
+             <property name="text">
+              <string>IAO/Wiberg</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>IAO/ReNorm</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Partial Charge Analysis:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="comboBox_ChargeAnalysisType">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <property name="maxVisibleItems">
+             <number>17</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>No</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Simple (Atoms only)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Detailed (incl. AO contributions)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+         <zorder>comboBox_AoType</zorder>
+         <zorder>label_13</zorder>
+         <zorder>label_15</zorder>
+         <zorder>comboBox_HybridOrbitals</zorder>
+         <zorder>label_14</zorder>
+         <zorder>comboBox_BondOrderAnalysis</zorder>
+         <zorder>comboBox_ChargeAnalysisType</zorder>
+         <zorder>label_16</zorder>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>873</width>
+            <height>210</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QTextBrowser" name="textBrowser_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(*): For ROHF/ROKS wave functions, allows localizing alpha (spin up) and beta (spin down) orbitals separately (as in an UHF/UKS wave function) instead of closed-shell and open-shell orbitals. This can simplify the interpretation of bonding motives if (some) open-shell orbitals have anti-bonding character.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(**): Decides whether the main interface offers to display occupied molecular orbitals only (i.e., core, lone pair, and bond orbitals), all valence space MOs (i.e., also anti-bonds or low-lying unoccupied virtuals)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frame_ComputeSteps">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_11">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Computation Steps</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="checkBox_RunScf">
+           <property name="text">
+            <string>Run Hartree-Fock/Kohn-Sham (DFT)</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="wf_option" stdset="0">
+            <string>run_scf</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="checkBox_RunIbba">
+           <property name="text">
+            <string>Run Chemical Analysis (IAO/IBO)</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <property name="wf_option" stdset="0">
+            <string>run_ibba</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>checkBox_RunScf</tabstop>
+  <tabstop>checkBox_RunIbba</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>spinBox_WfCharge</tabstop>
+  <tabstop>spinBox_WfSpin</tabstop>
+  <tabstop>comboBox_ScfMethod</tabstop>
+  <tabstop>comboBox_ScfFunctional</tabstop>
+  <tabstop>comboBox_ScfOrbitalBasis</tabstop>
+  <tabstop>comboBox_ScfFitBasis</tabstop>
+  <tabstop>spinBox_NumThreads</tabstop>
+  <tabstop>spinBox_WorkSpacePerThread</tabstop>
+  <tabstop>comboBox_OrbitalLocalization</tabstop>
+  <tabstop>comboBox_OpenShellSplit</tabstop>
+  <tabstop>comboBox_MoDiplay</tabstop>
+  <tabstop>comboBox_AoType</tabstop>
+  <tabstop>comboBox_HybridOrbitals</tabstop>
+  <tabstop>comboBox_BondOrderAnalysis</tabstop>
+  <tabstop>comboBox_ChargeAnalysisType</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>textBrowser_3</tabstop>
+  <tabstop>textBrowser_WfNotes</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ComputeWfForm</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ComputeWfForm</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

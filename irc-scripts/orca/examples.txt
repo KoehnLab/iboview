@@ -1,0 +1,142 @@
+* Outputs of the script
+  + The script will generate:
+    - A target directory, possibly with sub-directories
+    - A series of ORCA .inp files as described below
+    - A shell script 'run_all.sh', which either executes the given
+      inputs (for one-node execution) or contains a series of queue
+      submission commands (for batch mode)
+
+* Common options
+  + '-p <target-path>' or '--output-path <target-path>' denotes the
+    path in which the inputs will be generated. All files will be
+    generated under this path and be correspondingly cross-referenced
+
+  + '--sub-dirs <yes/no>' denotes if individual sub-directories should
+    be created for each frame calculation under the path specified
+    by '-p'. Defaults to 'yes'.
+
+  + '--orca-cmd': full path to the 'orca' executable. If not given,
+    'which orca' will be run to attempt to locate it
+
+  + '--input-template <template.inp>' denotes the template from which
+    ORCA inputs will be generated.
+    Values in curly braces will be replaced by template content (see
+    example orca_batch_local.inp). E.g., '{Charge}' will be replaced
+    by either 0 or the argument to '--wf-charge' to the script,
+    {Multiplicity} by either 1 or 1 + the argument to '--wf-spin' to
+    the script (so --wf-spin 0 denotes multiplicity 1), and
+    {Geometry} by the frame geometry.
+    The special fields {MoSource} and {MoInp} should be kept in the
+    input and are used to cross-link starting guesses between frames
+    as described below.
+
+  + '--mo-start <last/ref/none>' Specified propagation of starting
+    guesses. If 'last' (default), the input from the last frame will
+    be used for all frames except the center frame (see below).
+    If 'ref', a specific reference gbw file will be used for *ALL*
+    frames. If 'none', no specific initial orbitals will be used.
+    'last' is not compatible with queue execution, since the execution
+    order cannot be guaranteed in this case.
+
+  + '--ref-gbw <path-to-gbw>' if specified, use the given .gbw file
+    either as starting guess for the center frame (see below, happens
+    if '--mo-start last' is used) or for all frames (if
+    '--mo-start none' is used)
+    
+    
+    
+* Examples for serial execution on one node
+  + The 'one-node' requirement allows the calculation results (orbitals)
+    of the last frame to be used as initial guess for the next frame.
+
+  + This is the default setup of inputs, but can be changed via --mo-start
+    (see above)
+
+  + In this case the *ORDER* of calculations could have impact on the
+    obtained results. For this reason, the order can be specified as
+    follows:
+
+  * Make inputs for executing all calculations in original .xyz order:
+    
+      python ./run_orca_xyz_batch.py ctrace.xyz --input-template orca_batch_local.inp -p /tmp/orca_ctrace --wf-charge '-1'
+
+      With this usage, the first frame calculation will be initialized
+      from scratch (both the {MoSource} and {MoInp} fields in the
+      template will be empty), in all other frames the inputs will
+      use the final .gbw file of the previous frame as input
+      (so {MoSource} will be replaced by 'moread' and {MoInp} by
+      %moinp "<relative-link-to-gbw-from-last-frame>")
+ 
+  * Make inputs for executing calculations in forward- and backward
+    manner from a given frame id ("center-frame")
+
+      python ./run_orca_xyz_batch.py ctrace.xyz --input-template orca_batch_local.inp -p /tmp/orca_ctrace --wf-charge '-1'  --center-frame 6
+      
+      OR
+      
+      python ./run_orca_xyz_batch.py ctrace.xyz --input-template orca_batch_local.inp -p /tmp/orca_ctrace --wf-charge '-1'  --center-frame ts
+      
+      This will execute the FIRST calculation at frame 6 of the .xyz
+      (NOTE: Counting starts at 0! So 0 is the first frame),
+      and then link inputs as follows:
+      - frame 7 will read input MOs from frame 6
+      - frame 8 will read input MOs from frame 7
+      - ...
+      - frame 13 will read input MOs from frame 12
+      
+      - frame 5 will read input MOs from frame 6
+      - frame 4 will read input MOs from frame 5
+      - ...
+      - frame 0 will read input MOs from frame 1
+
+      So the propagation of guess wave functions is from the center frame *outwards*
+      
+      There are two special options to --center-frame to make it
+      easier to use:
+      + "--center-frame ts" will attempt to find the highest energy frame
+         in the input .xyz (provided energies are stored in it).
+         In the current case, this is frame 6, so it will do the
+         same as "--center-frame 6"
+      + "--center-frame -1" will set the 'center' frame to the LAST
+         frame in the .xyz (i.e., it will start at the product, and
+         trace to the reactant). Other negative numbers can similarly
+         be used to reference frame numbers from the back instead of
+         the end (e.g., -3 is the 3rd-to-last frame)
+
+  * Disable cross-linking of starting guesses, force a specific
+    .gbw file to be used as starting guess for *ALL* frames, or
+    specify a specific .gbw file to use 
+    
+    - Use the --mo-start options together with --ref-gbw, as described
+      above.
+
+* Examples for queue batch shell script generation
+  + Additionally to making input templates, the script can also make job
+    submission shell-scripts, with a similar template technique. The
+    details of both the shell script template and the queue submission
+    command will have to be adjusted to the concrete grid engine used.
+    
+  + For example, the following will make a series of job scripts based
+    on the template 'orca_batch_submit.sh', and then for each such shell
+    script, append the corresponding 'qsub {1}' command to 'run_all.sh',
+    where '{1}' is replaced by the concrete job name:
+    
+    python ./run_orca_xyz_batch.py ctrace.xyz --input-template orca_batch_local.inp -p /tmp/orca_ctrace --wf-charge '-1' --mo-start none --qsub-sh-template orca_batch_submit.sh --qsub-cmd 'qsub {1}'
+
+    These concrete scripts are meant for the Sun Grid Engine. Other grid
+    engines (such as slurm) will need other formats.
+  
+  + Note that cross-linking of frame wave functions for the initial
+    guesses is not allowed in batch mode, as the execution order cannot
+    be guaranteed.
+   
+    
+    
+
+
+* Seeing what you got
+  + find <target-directory> -name '*.molden.input' -print0 | xargs -0 ~/dev/IboView/iboview
+
+  + (or simply if no space-containing directory names are present)
+    find <target-directory> -name '*.molden.input' | xargs ~/dev/IboView/iboview
+

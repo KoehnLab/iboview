@@ -1,0 +1,8 @@
+orient,mass;
+geometry=Re2Me8_dianion.xyz
+basis=def2-tzvp
+wf,charge=-2
+{df-rks,pbe,basis=qzvpp/jfit; shift,-1.,-.5}
+{ibba,iboexp=2,bonds=1}
+{put,xml,Re2Me8-dianion.xml; keepspherical; nosort; skipvirt}
+

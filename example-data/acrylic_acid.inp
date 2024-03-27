@@ -1,0 +1,9 @@
+memory,200,m;
+
+geometry=acrylic_acid.xyz
+
+basis=tzvpp
+df-rhf
+{ibba, bonds=1}
+{put,xml,acrylic_acid.xml; keepspherical; nosort; skipvirt}
+

@@ -1,0 +1,18 @@
+! RKS PBE def2-SVP def2/J Grid5 NoFinalGrid tightscf {MoSource}
+
+%maxcore 2500
+
+%pal nprocs 4
+end
+
+{MoInp}
+
+! CPCM
+%cpcm
+smd true
+solvent "ACETONITRILE"
+end
+
+*xyz {Charge} {Multiplicity}
+{Geometry}
+*

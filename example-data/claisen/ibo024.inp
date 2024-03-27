@@ -1,0 +1,43 @@
+
+memory,500,m;
+
+! assign a permanent file for transfering SCF starting guesses between geometries.
+! note: File should be deleted prior to run of first frame.
+file,2,nebwf.wfu
+
+! if not already done, orient molecule along axes of inertia to get directly comparable geometries.
+orient,mass;
+geometry={
+     H     -1.82169140     -0.24051080     -1.36189360
+     C     -1.44937100     -0.09210280     -0.35101600
+     C     -1.61745750      1.08339360      0.23499530
+     C     -0.66323450     -1.21679300      0.23963020
+     H     -1.23042460      1.28559570      1.22897850
+     H     -2.13262950      1.89642850     -0.25999780
+     H     -0.70589260     -1.17681750      1.33281230
+     H     -1.07451300     -2.18348950     -0.06030600
+     O      1.32485220      1.17125260     -0.24417730
+     C      1.39247990      0.11643520      0.32423390
+     C      0.81619450     -1.15551500     -0.21454570
+     H      1.36041510     -2.02136440      0.17336220
+     H      0.87168800     -1.14463160     -1.30509440
+     H      1.82160040      0.05332600      1.34957360
+}
+wf,charge=0
+
+! select basis and functional
+basis=tzvp
+dfunc,pbe0
+
+if (orbital.eq.0) then
+   ! if no previous wf is given (via nebwf.wfu), start SCF from scratch
+   {df-rks; save,2100.2}
+else
+   ! start SCF from last geometry.
+   {df-rks; start,2100.2; save,2100.2}
+end if
+
+! run the IAO basis bonding analysis program and store IBOs to record 2101.2
+{ibba,iboexp=2,bonds=1,deloc=1; orbital,2100.2; save,2101.2}
+! export the orbitals to .xml. Skip virtual orbitals to save space.
+{put,xml,'ibo024.xml'; keepspherical; nosort; skipvirt; orbital,2101.2}

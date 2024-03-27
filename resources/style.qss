@@ -1,0 +1,258 @@
+.QWidget {
+   background: #444;
+}
+
+
+QWidget#centralwidget {
+   background: #222;
+}
+
+QDialog {
+   background: #333;
+}
+
+QFrame {
+   background: #333;
+   border-radius: 3px;
+}
+
+QFrame#MainWindow {
+   border: 1px solid white;
+}
+
+QSplitter::handle {
+   background: #222;
+}
+
+QSplitter::handle:pressed {
+   background: #696;
+}
+
+QPushButton {
+/*   border: 1px solid white;
+   border-radius: 1px;
+   padding: 1px;*/
+   background: #141;
+   color: #888;
+}
+
+
+QPushButton:pressed {
+   border-style: inset;
+   background: #7a0;
+   color: #fff;
+}
+
+QPushButton::checked {
+/*    border-style: inset; */
+   background: #7a0;
+   color: #fff;
+}
+
+
+QToolButton {
+   color: white; 
+   background: #333;
+/*    background: #103050; */
+/*   border: 1px solid white;
+   border-radius: 3px;
+   padding: 1px;
+   background: #103050;*/
+}
+
+QToolButton::hover {
+   color: white; 
+/*   background: #446;
+   border-style: inset;*/
+}
+
+QToolButton::pressed {
+   color: white;
+/*   background: #76a;
+   border-style: inset;*/
+}
+
+QToolButton[inStatusBar="true"] {
+   color: white; 
+   background: #f33;
+   padding: 0px;
+   margin: 0px;
+/*    background: #103050; */
+/*   border: 1px solid white;
+   border-radius: 3px;
+   padding: 1px;
+   background: #103050;*/
+}
+
+
+
+/*QToolBox > QScrollArea > QWidget > QWidget {
+   background-color: #454;
+}*/
+
+QToolBox::tab {
+   background: #444;
+/*    color: darkgray; */
+   color: #ddd;
+}
+
+QToolBox::tab:selected {
+   background: #844;
+   font: bold;
+   color: white;
+}
+
+
+
+QSpinBox, QDoubleSpinBox, QComboBox, QLineEdit, QLabel {
+/*    border: 1px solid #aaa; */
+   color: white;
+/*    color: #eee; */
+/*    color: #D4D2CF; */
+   background: #222;
+}
+QCheckBox {
+   color: white;
+}
+
+QSpinBox::disabled, QDoubleSpinBox::disabled, QComboBox::disabled, QLineEdit::disabled, QPushButton::disabled, QToolButton::disabled, QLabel::disabled, QGroupBox::disabled, QCheckBox::disabled {
+/*    border: 1px solid #aaa; */
+   color: #666;
+}
+
+QLabel {
+   border: none;
+   background: transparent;
+}
+
+
+/* #D4D2CF */
+
+
+QMenu {
+   background-color: #555;
+   color: #fff;
+   border: 1px solid black;
+}
+
+QMenu::item {
+   background-color: transparent;
+}
+
+QMenu::item:disabled {
+   color: #999;
+}
+
+QMenu::item:hover {
+   background-color: #333;
+}
+
+QMenu::item:selected {
+   background-color: #333;
+}
+
+QMenu::separator {
+   height: 1px;
+   background: #888;
+   margin-left: 2ex;
+   margin-right: 2ex;
+   margin-top: 0.5ex;
+   margin-bottom: 0.5ex;
+}
+
+QMenuBar {
+   background-color: #222;
+   color: white;
+}
+
+QMenuBar::item {
+   background: transparent;
+}
+
+QMenuBar::item:selected {
+   background: #a8a8a8;
+}
+
+QMenuBar::item:pressed {
+   background: #888888;
+}
+
+
+QGroupBox {
+   border: 1px solid #222;
+   border-radius: 5px;
+   margin-top: 1ex;
+   color: #bbb;
+   padding: 0.5ex;
+   padding-top: 1ex;
+   padding-bottom: 0.5ex;
+}
+
+QGroupBox::title {
+   subcontrol-origin: margin;
+   left: 6px;
+   padding: 1px 1px;
+}
+
+QAbstractScrollArea {
+/*    background: #012; */
+   background: #222;
+   color: #ccc;
+/*    border: 1px solid black; */
+}
+
+QCheckBox {
+   color:white;
+}
+
+
+QTabWidget::pane {
+/*    border-top: 2px solid #bbb; */
+/*    border-top: 2px solid #222; */
+/*    border: 2px solid #184880; */
+   border-top: 0.4ex solid #184880;
+   padding-top: .5ex;
+}
+
+/*QTabWidget::tab-bar {
+   left: 0px;
+}*/
+
+QTabBar::tab {
+   background: #111;
+/*   border: 1px solid #555;
+   border-top-left-radius: 0px;
+   border-top-right-radius: 4px;
+   min-width: 8ex;
+   padding: 3px;*/
+   color: #aaa;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+   background: #184880;
+/*    border: 1px solid #7aa; */
+   color: #fff;
+}
+
+
+QDial {
+   color: #fff;
+   background: #633;
+}
+
+QHeaderView::section {
+   background: #111;
+   padding: 4px;
+   padding-left: 1ex;
+   padding-right: 1ex;
+   color: #aaa;
+}
+
+QHeaderView::section:selected, QHeaderView::section:hover {
+   background: #184880;
+   color: #fff;
+}
+
+
+
+/* kate: syntax CSS; */

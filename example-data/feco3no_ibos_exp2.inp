@@ -1,0 +1,24 @@
+memory,200,m;
+
+bohr
+nosym
+geometry={
+   Fe                0.0000000        0.0000000        0.0000000
+   O                 5.4067175        0.0000000        0.0000000
+   N                 3.1395375        0.0000000        0.0000000
+   O                -2.4305605        5.0183417        0.0000000
+   C                -1.4903237        3.0067833       -0.0000000
+   O                -2.4305605       -2.5091709       -4.3460115
+   C                -1.4903237       -1.5033917       -2.6039507
+   O                -2.4305605       -2.5091709        4.3460115
+   C                -1.4903237       -1.5033917        2.6039507
+}
+
+gprint,civector,orbitals
+set,charge=-1
+basis=tzvpp
+
+cfit,checkref=0
+{df-rks,b-p; shift,-1.,-.5; orbital,2100.2}
+{ibba,iboexp=2; start,2100.2}
+{put,xml,feco3no_ibos_exp2.xml; nosort; keepspherical}

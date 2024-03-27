@@ -1,0 +1,11 @@
+memory,200,m;
+
+geometry=trans_b_SN2_intermediate.xyz
+
+gdirect
+set,charge=-1
+basis=tzvp
+
+{df-ks,b-p; shift,-1.,-.5}
+{ibba,iboexp=2}
+{put,xml,trans_b_SN2_intermediate.xml; nosort; keepspherical}

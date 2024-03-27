@@ -1,0 +1,9 @@
+memory,200,m;
+
+geometry=b2h6.xyz
+
+basis=tzvpp
+df-rks,pbe
+{ibba, bonds=1}
+{put,xml,b2h6.xml; keepspherical; nosort; skipvirt}
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ComputeEosForm</class>
+ <widget class="QDialog" name="ComputeEosForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>632</width>
+    <height>573</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Compute Formal Charges</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox_PartitioningType">
+     <property name="title">
+      <string>Fragment Space Partitioning</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QRadioButton" name="radioButton_IaoPartition">
+        <property name="text">
+         <string>Hilbert Space via IAOs</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioButton_TfvcPartition">
+        <property name="text">
+         <string>Real Space via TFVC (=approx QT-AIM)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupBox_AtomGrouping">
+     <property name="title">
+      <string>Atom Grouping</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkBox_GroupRemainingAtoms">
+        <property name="text">
+         <string>Group together non-assigned atoms </string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_RealSpaceSettings">
+     <property name="title">
+      <string>Real Space Paritioning Settings</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Integration Grid:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_IntegrationGrid">
+        <property name="text">
+         <string>grid{accu: 1e-4}</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;How to use:&lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-size:9pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1) Define atom groups of fragments (select atoms, then hit Ctrl+1 (define first group), Ctrl+2 (define 2nd group, Ctrl+3 (...). All atoms not assigned to a group will be combined into a &amp;quot;other atoms&amp;quot; group)&lt;/li&gt;
+&lt;li style=&quot; font-size:9pt;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2) Run this to determine the closest oxidation-state style charges and spin states corresponding to the fragments.&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;What are redox charges?&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; Redox charges differ from partial charges by following a &amp;quot;winner takes all&amp;quot;-principle: After some specific orbital transformations, each spin-orbital (and therefore the charge/spin it carries) gets assigned &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;in its entirety&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; to the fragment it has the highest overlap with. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;When is this assignment meaningful?&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; Following [EOS], the assignment is considered beyond question if for all orbitals, the 'fragment-natural occupation' gap between the assigned fragment and the next-highest overlap fragment is 0.5e (of maximum 1e) or larger---this indicates that all transformed orbitals fit &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;much&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; better to one fragment than another. If the smallest occupation gap is 0.5e or larger, this is indicated by &amp;quot;redox assignment reliability&amp;quot; R=100%. A value of R=0% means that the assignment has no meaning whatsoever (no occupation gap), and shows that the bonding is too covalent to meaninfully split into redox-style charges (IboView does not split evenly distributed electrons across fragments as [EOS] defines). Note that different R are reported for alpha and beta-spin, and &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;both&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; need to be large to indicate reliability.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;Where can I find technical details?&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; Concretely, this computes a variant of the Effective Oxidation States [EOS] as defined in Ramos-Cordoba, Postils, Salvador - Oxidation States from Wave Function Analysis (JCTC 2015, 11, 1501, http://dx.doi.org/10.1021/ct501088v). In IboView this redox charge analysis can be done either by defining the fragmentation of the system via Intrinsic Atomic Orbitals (IAOs, http://dx.doi.org/10.1021/ct400687b), or via Topological Fuzzy Voronoi Cells (http://dx.doi.org/10.1063/1.4818751). TFVC provides an approximation to atomic basins as defined in Baders &amp;quot;Atoms in Molecules&amp;quot; (AIM) method, and is the original method this analysis is defined with in [EOS] .&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

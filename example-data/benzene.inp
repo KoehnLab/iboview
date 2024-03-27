@@ -1,0 +1,9 @@
+memory,200,m;
+
+geometry=benzene.xyz
+
+basis=tzvpp
+df-rks,pbe
+{ibba, bonds=1}
+{put,xml,benzene.xml; keepspherical; nosort; skipvirt}
+

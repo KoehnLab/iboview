@@ -1,0 +1,9 @@
+memory,200,m;
+
+geometry=c2.xyz
+
+basis=tzvpp
+{df-rks,pbe; save,2102.2; start,atden; shift,-1.,-.5}
+{ibba, bonds=1; orbital,2102.2}
+{put,xml,c2.xml; keepspherical; nosort; skipvirt}
+

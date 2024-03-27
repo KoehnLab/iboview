@@ -1,0 +1,95 @@
+// Coulomb interaction energy between two s-type Gaussian charges
+void ef_coul_gauss_hess(void *, double *dVdXX, index_t nb, double const &Factor, double const *pXyz, index_t const *iAtom, double q1, double q2, double sigma1, double sigma2)
+{
+   index_t iAx = 3.0*iAtom[0] + 0;
+   index_t iAy = 3.0*iAtom[0] + 1;
+   index_t iAz = 3.0*iAtom[0] + 2;
+   index_t iBx = 3.0*iAtom[1] + 0;
+   index_t iBy = 3.0*iAtom[1] + 1;
+   index_t iBz = 3.0*iAtom[1] + 2;
+   double Ax = pXyz[iAx];
+   double Ay = pXyz[iAy];
+   double Az = pXyz[iAz];
+   double Bx = pXyz[iBx];
+   double By = pXyz[iBy];
+   double Bz = pXyz[iBz];
+   double r1 = 1.414213562373095;
+   double r2 = 0.5641895835477563;
+   double r3 = Ax - 1.0*Bx;
+   double r4 = sqr(r3);
+   double r5 = Ay - 1.0*By;
+   double r6 = sqr(r5);
+   double r7 = Az - 1.0*Bz;
+   double r8 = sqr(r7);
+   double r9 = r8 + r6 + r4;
+   double r10 = 1.0/r9;
+   double r11 = sqr(sigma2) + sqr(sigma1);
+   double r12 = sqrt(r11);
+   double r13 = 1.0/pow(r12,3);
+   double r14 = 1.0/pow(2.718281828459045,(r9/(2.0*r11)));
+   double r15 = 1.0/sqr(r9);
+   double r16 = 1.0/r12;
+   double r17 = pow(r1,3);
+   double r18 = r1*r2*r10*q1*q2*r16*r14;
+   double r19 = sqrt(r9);
+   double r20 = 1.0/pow(r19,5);
+   double r21 = erf((1.0*r16*r19)/r1);
+   double r22 = 1.0/pow(r19,3);
+   double r23 = -1.0*r21*r22*q1*q2;
+   double r24 = 3.0*r20*r21*r4*q1*q2 - 1.0*r14*r15*r16*r17*r2*r4*q1*q2 - 1.0*r1*r14*r15*r16*r2*r4*q1*q2 - 1.0*r1*r10*r13*r14*r2*r4*q1*q2 + r23 + r18;
+   double r25 = 3.0*r20*r21*r3*r5*q1*q2 - 1.0*r14*r15*r16*r17*r2*r3*r5*q1*q2 - 1.0*r1*r14*r15*r16*r2*r3*r5*q1*q2 - 1.0*r1*r10*r13*r14*r2*r3*r5*q1*q2;
+   double r26 = 3.0*r20*r21*r3*r7*q1*q2 - 1.0*r14*r15*r16*r17*r2*r3*r7*q1*q2 - 1.0*r1*r14*r15*r16*r2*r3*r7*q1*q2 - 1.0*r1*r10*r13*r14*r2*r3*r7*q1*q2;
+   double r27 = -1.0*r1*r10*r14*r16*r2*q1*q2;
+   double r28 = r22*q1*q2*r21;
+   double r29 = (-3.0*r20*r21*r4*q1*q2) + r28 + r27 + r17*r2*r4*r15*q1*q2*r16*r14 + r1*r2*r4*r15*q1*q2*r16*r14 + r1*r2*r4*r10*q1*q2*r13*r14;
+   double r30 = (-3.0*r20*r21*r3*r5*q1*q2) + r17*r2*r3*r5*r15*q1*q2*r16*r14 + r1*r2*r3*r5*r15*q1*q2*r16*r14 + r1*r2*r3*r5*r10*q1*q2*r13*r14;
+   double r31 = (-3.0*r20*r21*r3*r7*q1*q2) + r17*r2*r3*r15*r7*q1*q2*r16*r14 + r1*r2*r3*r15*r7*q1*q2*r16*r14 + r1*r2*r3*r10*r7*q1*q2*r13*r14;
+   double r32 = 3.0*r20*r21*r6*q1*q2 - 1.0*r14*r15*r16*r17*r2*r6*q1*q2 - 1.0*r1*r14*r15*r16*r2*r6*q1*q2 - 1.0*r1*r10*r13*r14*r2*r6*q1*q2 + r23 + r18;
+   double r33 = 3.0*r20*r21*r5*r7*q1*q2 - 1.0*r14*r15*r16*r17*r2*r5*r7*q1*q2 - 1.0*r1*r14*r15*r16*r2*r5*r7*q1*q2 - 1.0*r1*r10*r13*r14*r2*r5*r7*q1*q2;
+   double r34 = (-3.0*r20*r21*r6*q1*q2) + r28 + r27 + r17*r2*r6*r15*q1*q2*r16*r14 + r1*r2*r6*r15*q1*q2*r16*r14 + r1*r2*r6*r10*q1*q2*r13*r14;
+   double r35 = (-3.0*r20*r21*r5*r7*q1*q2) + r17*r2*r5*r15*r7*q1*q2*r16*r14 + r1*r2*r5*r15*r7*q1*q2*r16*r14 + r1*r2*r5*r10*r7*q1*q2*r13*r14;
+   double r36 = 3.0*r20*r21*r8*q1*q2 - 1.0*r14*r15*r16*r17*r2*r8*q1*q2 - 1.0*r1*r14*r15*r16*r2*r8*q1*q2 - 1.0*r1*r10*r13*r14*r2*r8*q1*q2 + r23 + r18;
+   double r37 = (-3.0*r20*r21*r8*q1*q2) + r28 + r27 + r17*r2*r15*r8*q1*q2*r16*r14 + r1*r2*r15*r8*q1*q2*r16*r14 + r1*r2*r10*r8*q1*q2*r13*r14;
+   dVdXX[iAx + nb*(iAx)] += Factor*(r24);
+   dVdXX[iAx + nb*(iAy)] += Factor*(r25);
+   dVdXX[iAx + nb*(iAz)] += Factor*(r26);
+   dVdXX[iAx + nb*(iBx)] += Factor*(r29);
+   dVdXX[iAx + nb*(iBy)] += Factor*(r30);
+   dVdXX[iAx + nb*(iBz)] += Factor*(r31);
+   dVdXX[iAy + nb*(iAx)] += Factor*(r25);
+   dVdXX[iAy + nb*(iAy)] += Factor*(r32);
+   dVdXX[iAy + nb*(iAz)] += Factor*(r33);
+   dVdXX[iAy + nb*(iBx)] += Factor*(r30);
+   dVdXX[iAy + nb*(iBy)] += Factor*(r34);
+   dVdXX[iAy + nb*(iBz)] += Factor*(r35);
+   dVdXX[iAz + nb*(iAx)] += Factor*(r26);
+   dVdXX[iAz + nb*(iAy)] += Factor*(r33);
+   dVdXX[iAz + nb*(iAz)] += Factor*(r36);
+   dVdXX[iAz + nb*(iBx)] += Factor*(r31);
+   dVdXX[iAz + nb*(iBy)] += Factor*(r35);
+   dVdXX[iAz + nb*(iBz)] += Factor*(r37);
+   dVdXX[iBx + nb*(iAx)] += Factor*(r29);
+   dVdXX[iBx + nb*(iAy)] += Factor*(r30);
+   dVdXX[iBx + nb*(iAz)] += Factor*(r31);
+   dVdXX[iBx + nb*(iBx)] += Factor*(r24);
+   dVdXX[iBx + nb*(iBy)] += Factor*(r25);
+   dVdXX[iBx + nb*(iBz)] += Factor*(r26);
+   dVdXX[iBy + nb*(iAx)] += Factor*(r30);
+   dVdXX[iBy + nb*(iAy)] += Factor*(r34);
+   dVdXX[iBy + nb*(iAz)] += Factor*(r35);
+   dVdXX[iBy + nb*(iBx)] += Factor*(r25);
+   dVdXX[iBy + nb*(iBy)] += Factor*(r32);
+   dVdXX[iBy + nb*(iBz)] += Factor*(r33);
+   dVdXX[iBz + nb*(iAx)] += Factor*(r31);
+   dVdXX[iBz + nb*(iAy)] += Factor*(r35);
+   dVdXX[iBz + nb*(iAz)] += Factor*(r37);
+   dVdXX[iBz + nb*(iBx)] += Factor*(r26);
+   dVdXX[iBz + nb*(iBy)] += Factor*(r33);
+   dVdXX[iBz + nb*(iBz)] += Factor*(r36);
+   // suppress potential unused variable warnings.
+   (void)Ax; (void)Ay; (void)Az; (void)Bx; (void)By; (void)Bz; (void)q1; (void)q2;
+   (void)sigma1; (void)sigma2;
+}
+
+/* kate: syntax c++; */
+

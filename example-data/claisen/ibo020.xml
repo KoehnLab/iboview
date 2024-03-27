@@ -1,0 +1,2029 @@
+<?xml version="1.0"?>
+<molpro xmlns="http://www.molpro.net/schema/molpro-output"
+  xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+  xmlns:cml="http://www.xml-cml.org/schema"
+  xmlns:stm="http://www.xml-cml.org/schema"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+ <molecule id="M44">
+  <cml:molecule>
+   <cml:symmetry pointGroup="C1"/>
+   <cml:atomArray>
+    <cml:atom id="a1" elementType="H" x3="-0.378904617839881" y3="-1.32722317415394"
+      z3="-1.7435696411414"/>
+    <cml:atom id="a2" elementType="C" x3="-0.258559519553976" y3="-0.306209621080044"
+      z3="-1.39258055591461"/>
+    <cml:atom id="a3" elementType="C" x3="0.972888765852137" y3="0.21986631856243"
+      z3="-1.32926184820377"/>
+    <cml:atom id="a4" elementType="C" x3="-1.34146185472143" y3="0.26868445681309"
+      z3="-0.61353623014684"/>
+    <cml:atom id="a5" elementType="H" x3="1.14144275220562" y3="1.2440623708418"
+      z3="-1.02023314568371"/>
+    <cml:atom id="a6" elementType="H" x3="1.84054209818692" y3="-0.305612470913414"
+      z3="-1.70812728240543"/>
+    <cml:atom id="a7" elementType="H" x3="-1.34928221968026" y3="1.357733293671"
+      z3="-0.579337253161756"/>
+    <cml:atom id="a8" elementType="H" x3="-2.33885039072286" y3="-0.116673223689705"
+      z3="-0.817743926309376"/>
+    <cml:atom id="a9" elementType="O" x3="1.26148262662775" y3="-0.230483374776423"
+      z3="0.768019361712259"/>
+    <cml:atom id="a10" elementType="C" x3="0.291877545783845" y3="0.284890144659259"
+      z3="1.29948442517968"/>
+    <cml:atom id="a11" elementType="C" x3="-1.04156995517492" y3="-0.245424054680258"
+      z3="1.12208515734971"/>
+    <cml:atom id="a12" elementType="H" x3="-1.81313558293933" y3="0.193203025840192"
+      z3="1.75287220483026"/>
+    <cml:atom id="a13" elementType="H" x3="-1.08880194503068" y3="-1.33062324150703"
+      z3="1.07521145517051"/>
+    <cml:atom id="a14" elementType="H" x3="0.369790620644854" y3="1.3005399871841"
+      z3="1.73917504849017"/>
+   </cml:atomArray>
+   <cml:bondArray>
+    <cml:bond atomRefs2="a1 a2"/>
+    <cml:bond atomRefs2="a2 a3"/>
+    <cml:bond atomRefs2="a2 a4"/>
+    <cml:bond atomRefs2="a3 a5"/>
+    <cml:bond atomRefs2="a3 a6"/>
+    <cml:bond atomRefs2="a4 a7"/>
+    <cml:bond atomRefs2="a4 a8"/>
+    <cml:bond atomRefs2="a9 a10"/>
+    <cml:bond atomRefs2="a4 a11"/>
+    <cml:bond atomRefs2="a10 a11"/>
+    <cml:bond atomRefs2="a11 a12"/>
+    <cml:bond atomRefs2="a11 a13"/>
+    <cml:bond atomRefs2="a10 a14"/>
+   </cml:bondArray>
+  </cml:molecule>
+  <basisSet id="ORBITAL" length="234" angular="spherical" type="gaussian" groups="98"
+    cartesianLength="264" primitives="370">
+   <basisGroup id="1" minL="0" maxL="0" primitives="3" angular="spherical" contractions="1">
+    <basisExponents>
+      34.061341 5.1235746 1.1646626
+    </basisExponents>
+    <basisContraction id="1">
+      0.254393072088786E-01 0.190085948903752 0.852441130110423
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="2" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.32723041
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="3" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.10307241
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="4" minL="1" maxL="1" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.8
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="5" minL="0" maxL="0" primitives="6" angular="spherical" contractions="1">
+    <basisExponents>
+      13575.349682 2035.233368 463.22562359 131.20019598 42.853015891 15.584185766
+    </basisExponents>
+    <basisContraction id="1">
+      0.606455036035912E-03 0.469790888849817E-02 0.243324776475519E-01 0.97399968307759E-01 0.301955842537804 0.662336091378747
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="6" minL="0" maxL="0" primitives="2" angular="spherical" contractions="1">
+    <basisExponents>
+      6.2067138508 2.5764896527
+    </basisExponents>
+    <basisContraction id="1">
+      0.655953085399516 0.375856332851421
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="7" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.57696339419
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="8" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.22972831358
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="9" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.95164440028E-01
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="10" minL="1" maxL="1" primitives="4" angular="spherical" contractions="1">
+    <basisExponents>
+      34.697232244 7.9582622826 2.3780826883 0.81433208183
+    </basisExponents>
+    <basisContraction id="1">
+      0.113272200031137E-01 0.761696592020865E-01 0.301922522026763 0.727850273495468
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="11" minL="1" maxL="1" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.28887547253
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="12" minL="1" maxL="1" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.10056823671
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="13" minL="2" maxL="2" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      1.097
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="14" minL="2" maxL="2" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.318
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="15" minL="3" maxL="3" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.761
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="16" minL="0" maxL="0" primitives="6" angular="spherical" contractions="1">
+    <basisExponents>
+      27032.382631 4052.3871392 922.3272271 261.24070989 85.354641351 31.035035245
+    </basisExponents>
+    <basisContraction id="1">
+      0.572273352111545E-03 0.443532334929946E-02 0.23020107706038E-01 0.928224906679281E-01 0.293785000096713 0.674016045016405
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="17" minL="0" maxL="0" primitives="2" angular="spherical" contractions="1">
+    <basisExponents>
+      12.260860728 4.9987076005
+    </basisExponents>
+    <basisContraction id="1">
+      0.638399370255057 0.395345871257185
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="18" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      1.1703108158
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="19" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.46474740994
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="20" minL="0" maxL="0" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.18504536357
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="21" minL="1" maxL="1" primitives="4" angular="spherical" contractions="1">
+    <basisExponents>
+      63.274954801 14.627049379 4.4501223456 1.5275799647
+    </basisExponents>
+    <basisContraction id="1">
+      0.120183322226162E-01 0.830054217900559E-01 0.319917439259644 0.707155429161042
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="22" minL="1" maxL="1" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.52935117943
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="23" minL="1" maxL="1" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.1747842127
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="24" minL="2" maxL="2" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      2.314
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="25" minL="2" maxL="2" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      0.645
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <basisGroup id="26" minL="3" maxL="3" primitives="1" angular="spherical" contractions="1">
+    <basisExponents>
+      1.428
+    </basisExponents>
+    <basisContraction id="1">
+      1.0
+    </basisContraction>
+   </basisGroup>
+   <association xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="extended">
+    <bases xlink:type="locator" xlink:label="bases"
+      xlink:href="#xpointer(//molecule[@id='44D']//basisGroup[@id='1' or @id='2' or @id='3' or @id='4'])"/>
+    <atoms xlink:label="atoms"
+      xlink:href="#xpointer(//molecule[@id='44D']//atom[@id='a1' or @id='a5' or @id='a6' or @id='a7' or @id='a8' or @id='a12' or @id='a13' or @id='a14'])"/>
+    <associate xlink:type="arc" xlink:from="atoms" xlink:to="bases"/>
+   </association>
+   <association xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="extended">
+    <bases xlink:type="locator" xlink:label="bases"
+      xlink:href="#xpointer(//molecule[@id='44D']//basisGroup[@id='5' or @id='6' or @id='7' or @id='8' or @id='9' or @id='10' or @id='11' or @id='12' or @id='13' or @id='14' or @id='15'])"/>
+    <atoms xlink:label="atoms"
+      xlink:href="#xpointer(//molecule[@id='44D']//atom[@id='a2' or @id='a3' or @id='a4' or @id='a10' or @id='a11'])"/>
+    <associate xlink:type="arc" xlink:from="atoms" xlink:to="bases"/>
+   </association>
+   <association xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="extended">
+    <bases xlink:type="locator" xlink:label="bases"
+      xlink:href="#xpointer(//molecule[@id='44D']//basisGroup[@id='16' or @id='17' or @id='18' or @id='19' or @id='20' or @id='21' or @id='22' or @id='23' or @id='24' or @id='25' or @id='26'])"/>
+    <atoms xlink:label="atoms"
+      xlink:href="#xpointer(//molecule[@id='44D']//atom[@id='a9'])"/>
+    <associate xlink:type="arc" xlink:from="atoms" xlink:to="bases"/>
+   </association>
+  </basisSet>
+  <variables>
+   <variable name="_NUMVAR" type="xsd:double" length="1">
+    <value>881.0</value>
+   </variable>
+   <variable name="_AVOGAD" type="xsd:double" units="1/MOL" length="1">
+    <value>0.6022136736E+24</value>
+   </variable>
+   <variable name="_BOLTZ" type="xsd:double" units="J/K" length="1">
+    <value>0.1380658E-22</value>
+   </variable>
+   <variable name="_CLIGHT" type="xsd:double" units="cm/s" length="1">
+    <value>29979245800.0</value>
+   </variable>
+   <variable name="_EV2006" type="xsd:double" units="HARTREE" length="1">
+    <value>0.367493088676916E-01</value>
+   </variable>
+   <variable name="_EV" type="xsd:double" units="HARTREE" length="1">
+    <value>0.367493253439418E-01</value>
+   </variable>
+   <variable name="_ENULL" type="xsd:double" units="C/Vm" length="1">
+    <value>0.8854187817E-11</value>
+   </variable>
+   <variable name="_KJOULE" type="xsd:double" units="HARTREE" length="1">
+    <value>0.380879832412874E-03</value>
+   </variable>
+   <variable name="_KJOULE/MOL" type="xsd:double" units="HARTREE" length="1">
+    <value>0.380879832412874E-03</value>
+   </variable>
+   <variable name="_CM" type="xsd:double" units="HARTREE" length="1">
+    <value>0.45563352673029E-05</value>
+   </variable>
+   <variable name="_CM-1" type="xsd:double" units="HARTREE" length="1">
+    <value>0.45563352673029E-05</value>
+   </variable>
+   <variable name="_DEB2SI" type="xsd:double" units="Cm" length="1">
+    <value>0.3335641E-29</value>
+   </variable>
+   <variable name="_AMU2AU" type="xsd:double" units="HARTREE" length="1">
+    <value>1822.88839</value>
+   </variable>
+   <variable name="_KCAL" type="xsd:double" units="HARTREE" length="1">
+    <value>0.159360111781557E-02</value>
+   </variable>
+   <variable name="_KCAL/MOL" type="xsd:double" units="HARTREE" length="1">
+    <value>0.159360111781557E-02</value>
+   </variable>
+   <variable name="_KELVIN2006" type="xsd:double" units="HARTREE" length="1">
+    <value>0.316682886108484E-05</value>
+   </variable>
+   <variable name="_KELVIN" type="xsd:double" units="HARTREE" length="1">
+    <value>0.316681482082003E-05</value>
+   </variable>
+   <variable name="_JOULE" type="xsd:double" units="JOULE" length="1">
+    <value>0.43597482E-17</value>
+   </variable>
+   <variable name="_HERTZ2006" type="xsd:double" units="HARTREE" length="1">
+    <value>0.151982985081578E-15</value>
+   </variable>
+   <variable name="_HERTZ" type="xsd:double" units="HARTREE" length="1">
+    <value>0.151982984601122E-15</value>
+   </variable>
+   <variable name="_HZ2006" type="xsd:double" units="HARTREE" length="1">
+    <value>0.151982985081578E-15</value>
+   </variable>
+   <variable name="_HZ" type="xsd:double" units="HARTREE" length="1">
+    <value>0.151982984601122E-15</value>
+   </variable>
+   <variable name="_JPCAL" type="xsd:double" units="J/cal" length="1">
+    <value>4.184</value>
+   </variable>
+   <variable name="_PLANCK" type="xsd:double" units="Js" length="1">
+    <value>0.662607554E-33</value>
+   </variable>
+   <variable name="_TOA2006" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.529177249</value>
+   </variable>
+   <variable name="_TOA" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.529177209</value>
+   </variable>
+   <variable name="_TOANG2006" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.529177249</value>
+   </variable>
+   <variable name="_TOANG" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.529177209</value>
+   </variable>
+   <variable name="_TORAD" type="xsd:double" units="RAD" length="1">
+    <value>0.174532925199433E-01</value>
+   </variable>
+   <variable name="_TOCM" type="xsd:double" units="CM-1" length="1">
+    <value>219474.63067</value>
+   </variable>
+   <variable name="_TODEBYE" type="xsd:double" units="DEBYE" length="1">
+    <value>2.54158</value>
+   </variable>
+   <variable name="_TOEV2006" type="xsd:double" units="EV" length="1">
+    <value>27.2113961</value>
+   </variable>
+   <variable name="_TOE" type="xsd:double" units="ESU" length="1">
+    <value>0.4803242E-09</value>
+   </variable>
+   <variable name="_TOEV" type="xsd:double" units="EV" length="1">
+    <value>27.2113839</value>
+   </variable>
+   <variable name="_TOHERTZ2006" type="xsd:double" units="HZ" length="1">
+    <value>0.65796838999E+16</value>
+   </variable>
+   <variable name="_TOHERTZ" type="xsd:double" units="HZ" length="1">
+    <value>0.65796839207E+16</value>
+   </variable>
+   <variable name="_TOHZ2006" type="xsd:double" units="HZ" length="1">
+    <value>0.65796838999E+16</value>
+   </variable>
+   <variable name="_TOHZ" type="xsd:double" units="HZ" length="1">
+    <value>0.65796839207E+16</value>
+   </variable>
+   <variable name="_TOK2006" type="xsd:double" units="K" length="1">
+    <value>315773.3</value>
+   </variable>
+   <variable name="_TOK" type="xsd:double" units="K" length="1">
+    <value>315774.7</value>
+   </variable>
+   <variable name="_TOKCAL" type="xsd:double" units="KCAL/MOL" length="1">
+    <value>627.5096</value>
+   </variable>
+   <variable name="_TOKELVIN2006" type="xsd:double" units="K" length="1">
+    <value>315773.3</value>
+   </variable>
+   <variable name="_TOKELVIN" type="xsd:double" units="K" length="1">
+    <value>315774.7</value>
+   </variable>
+   <variable name="_TOKJ" type="xsd:double" units="KJ/MOL" length="1">
+    <value>2625.5</value>
+   </variable>
+   <variable name="_TOKJOULE" type="xsd:double" units="KJ/MOL" length="1">
+    <value>2625.5</value>
+   </variable>
+   <variable name="_TOKG" type="xsd:double" units="KG" length="1">
+    <value>0.1660565586E-26</value>
+   </variable>
+   <variable name="_ANG2006" type="xsd:double" units="BOHR" length="1">
+    <value>1.88972598857892</value>
+   </variable>
+   <variable name="_ANG" type="xsd:double" units="BOHR" length="1">
+    <value>1.88972613142151</value>
+   </variable>
+   <variable name="_ANGSTROM2006" type="xsd:double" units="BOHR" length="1">
+    <value>1.88972598857892</value>
+   </variable>
+   <variable name="_ANGSTROM" type="xsd:double" units="BOHR" length="1">
+    <value>1.88972613142151</value>
+   </variable>
+   <variable name="_RPAREF" type="xsd:double" length="1">
+    <value>23.0</value>
+   </variable>
+   <variable name="_RPADISS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_IGNORE_UNDEF" type="xsd:double" length="1">
+    <value>2.0</value>
+   </variable>
+   <variable name="_STRICTCHECK" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SEW_ONEEL" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_CPPDONE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DKROLL_DONE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_FOCKDONE" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_GRADONE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_HESSDONE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_INTDONE" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_SCFDONE" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_MODUL_BLOCK" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MODUL_CUDA" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MODUL_SLATER" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MODUL_MRCC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MODUL_NBO6" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MODUL_NECI" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_MODUL_AIMS" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_MRCC_EXEC" type="xsd:string" length="1">
+    <value></value>
+   </variable>
+   <variable name="_FITC_AO_SAVED" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_FITC_MO_SAVED" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SHARED_FS" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_LSTYP" type="xsd:string" length="1">
+    <value>SEWARD</value>
+   </variable>
+   <variable name="_INTYP" type="xsd:string" length="1">
+    <value>INTS</value>
+   </variable>
+   <variable name="_GEOMTYP" type="xsd:string" length="1">
+    <value>ZMAT</value>
+   </variable>
+   <variable name="_GRADTYP" type="xsd:string" length="1">
+    <value>ALASKA</value>
+   </variable>
+   <variable name="_DIRECT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DKHO" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SYNCM" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DFTNAME" type="xsd:string" length="1">
+    <value>PBE0</value>
+   </variable>
+   <variable name="_DFTFUNC" type="xsd:string" length="2">
+    <value>PBEX</value>
+    <value>PBEC</value>
+   </variable>
+   <variable name="_BASIS" type="xsd:string" length="1">
+    <value>TZVP</value>
+   </variable>
+   <variable name="_ZCENTRE" type="xsd:string" length="1">
+    <value>MASS</value>
+   </variable>
+   <variable name="_ZORIENT" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_CHARGE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_NELEC" type="xsd:double" length="1">
+    <value>46.0</value>
+   </variable>
+   <variable name="!SPIN" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_QSDSTEP" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_QSDIRC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_PROGRAM" type="xsd:string" length="1">
+    <value>IBBA</value>
+   </variable>
+   <variable name="_CPUSTEP" type="xsd:double" units="SEC" length="1">
+    <value>0.22</value>
+   </variable>
+   <variable name="_SYSSTEP" type="xsd:double" units="SEC" length="1">
+    <value>0.1E-01</value>
+   </variable>
+   <variable name="_WALLSTEP" type="xsd:double" units="SEC" length="1">
+    <value>0.22</value>
+   </variable>
+   <variable name="!DFSCF" type="xsd:double" length="1">
+    <value>4.0</value>
+   </variable>
+   <variable name="!SCSGRD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_BASINP" type="xsd:double" length="1">
+    <value>610.0</value>
+   </variable>
+   <variable name="_CPUTOT" type="xsd:double" units="SEC" length="1">
+    <value>7.87</value>
+   </variable>
+   <variable name="_DFTEXFAC" type="xsd:double" units="AU" length="1">
+    <value>0.25</value>
+   </variable>
+   <variable name="_DFTFAC" type="xsd:double" units="AU" length="2">
+    <value>0.75</value>
+    <value>1.0</value>
+   </variable>
+   <variable name="_DFTFUN" type="xsd:double" units="AU" length="1">
+    <value>-29.1170627937696</value>
+   </variable>
+   <variable name="_DFTFUNS" type="xsd:double" units="AU" length="2">
+    <value>-36.8177618075519</value>
+    <value>-1.50374143810569</value>
+   </variable>
+   <variable name="_DMX" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DMY" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DMZ" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_DMX_SCF" type="xsd:double" units="AU" length="1">
+    <value>-0.837963600951357</value>
+   </variable>
+   <variable name="_DMY_SCF" type="xsd:double" units="AU" length="1">
+    <value>0.256223974393699</value>
+   </variable>
+   <variable name="_DMZ_SCF" type="xsd:double" units="AU" length="1">
+    <value>0.136893585636921</value>
+   </variable>
+   <variable name="_EHOMO" type="xsd:double" length="1">
+    <value>-0.24190922683133</value>
+   </variable>
+   <variable name="_ELUMO" type="xsd:double" length="1">
+    <value>-0.249962705099343E-01</value>
+   </variable>
+   <variable name="_ENERGY" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_ENUC" type="xsd:double" units="AU" length="1">
+    <value>232.672951772239</value>
+   </variable>
+   <variable name="_GRADEXFAC" type="xsd:double" length="1">
+    <value>0.25</value>
+   </variable>
+   <variable name="_GRADMETHOD" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_NMRMETHOD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_NMRMAGNET" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_GRID" type="xsd:double" length="1">
+    <value>1800.2</value>
+   </variable>
+   <variable name="!GRID_FREEZE" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_GRID_BLOCKSIZE" type="xsd:double" length="1">
+    <value>127.0</value>
+   </variable>
+   <variable name="_ITERATIONS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_LASTNELEC" type="xsd:double" length="1">
+    <value>46.0</value>
+   </variable>
+   <variable name="_LASTSPIN" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_LASTSYM" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_MPP_PROG" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_RS2PHASE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_NGRID" type="xsd:double" units="AU" length="1">
+    <value>54264.0</value>
+   </variable>
+   <variable name="_NPROC_MPP" type="xsd:double" length="1">
+    <value>4.0</value>
+   </variable>
+   <variable name="_NPROC_MPPX" type="xsd:double" length="1">
+    <value>4.0</value>
+   </variable>
+   <variable name="_NPROC_SMP" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_NUMSTEP" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_ORBITAL" type="xsd:double" length="1">
+    <value>2101.2</value>
+   </variable>
+   <variable name="_PI" type="xsd:double" length="1">
+    <value>3.14159265358979</value>
+   </variable>
+   <variable name="_SEIG_MIN" type="xsd:double" length="1">
+    <value>0.147286319018181E-03</value>
+   </variable>
+   <variable name="_SEWPROP" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_STATUS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SYSTOT" type="xsd:double" units="SEC" length="1">
+    <value>0.11</value>
+   </variable>
+   <variable name="_VERSION" type="xsd:double" length="1">
+    <value>2099009.0</value>
+   </variable>
+   <variable name="_WALLTOT" type="xsd:double" units="SEC" length="1">
+    <value>8.01</value>
+   </variable>
+   <variable name="!DFBASIS_COUL" type="xsd:string" length="1">
+    <value>DEF2-TZVPP-JKFIT</value>
+   </variable>
+   <variable name="!DFBASIS_EXCH" type="xsd:string" length="1">
+    <value>DEF2-TZVPP-JKFIT</value>
+   </variable>
+   <variable name="_DATE" type="xsd:string" length="1">
+    <value>20-May-14</value>
+   </variable>
+   <variable name="_LASTORB" type="xsd:string" length="1">
+    <value>RKS</value>
+   </variable>
+   <variable name="_MACHINE" type="xsd:string" length="1">
+    <value> 64 bit mpp version</value>
+   </variable>
+   <variable name="_OUTPUT" type="xsd:string" length="1">
+    <value>/home/cgk/calc/reaction_IRCs/claisen/final/ibo000.out</value>
+   </variable>
+   <variable name="_PGROUP" type="xsd:string" length="1">
+    <value>C1</value>
+   </variable>
+   <variable name="_TIME" type="xsd:string" length="1">
+    <value>17:29:54</value>
+   </variable>
+   <variable name="_LIBMOL" type="xsd:string" length="1">
+    <value>/home/cgk/dev/molpro2/lib/</value>
+   </variable>
+   <variable name="_VIGRDC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VIBCNT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!RGHFCNT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!SURFREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!ROTREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!POLYREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!DIPREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!DIP4DREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!DIPROT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!DIP4DROT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VSCFREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VCIREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!PVCIREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VMP2REC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VMCSCFREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VMRCIREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VIBSTATEREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VIBSTATECNT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!VIBINFO" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!GAREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!SCFORB" type="xsd:double" length="1">
+    <value>21002.0</value>
+   </variable>
+   <variable name="!NEWMOL" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!NEWSYM" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SLFILES" type="xsd:string" length="1">
+    <value>slscratch</value>
+   </variable>
+   <variable name="_NGSSTO" type="xsd:double" length="1">
+    <value>9.0</value>
+   </variable>
+   <variable name="_SIN" type="xsd:string" length="1">
+    <value>SIN</value>
+   </variable>
+   <variable name="_COS" type="xsd:string" length="1">
+    <value>COS</value>
+   </variable>
+   <variable name="_TAN" type="xsd:string" length="1">
+    <value>TAN</value>
+   </variable>
+   <variable name="_ACOS" type="xsd:string" length="1">
+    <value>ACOS</value>
+   </variable>
+   <variable name="_ASIN" type="xsd:string" length="1">
+    <value>ASIN</value>
+   </variable>
+   <variable name="_ATAN" type="xsd:string" length="1">
+    <value>ATAN</value>
+   </variable>
+   <variable name="_COSH" type="xsd:string" length="1">
+    <value>COSH</value>
+   </variable>
+   <variable name="_SINH" type="xsd:string" length="1">
+    <value>SINH</value>
+   </variable>
+   <variable name="_TANH" type="xsd:string" length="1">
+    <value>TANH</value>
+   </variable>
+   <variable name="_ABS" type="xsd:string" length="1">
+    <value>ABS</value>
+   </variable>
+   <variable name="_MOD" type="xsd:string" length="1">
+    <value>MOD</value>
+   </variable>
+   <variable name="_ERF" type="xsd:string" length="1">
+    <value>ERF</value>
+   </variable>
+   <variable name="_REFC" type="xsd:string" length="1">
+    <value>REFC</value>
+   </variable>
+   <variable name="_ERFC" type="xsd:string" length="1">
+    <value>ERFC</value>
+   </variable>
+   <variable name="_HYPOT" type="xsd:string" length="1">
+    <value>HYPOT</value>
+   </variable>
+   <variable name="_J0" type="xsd:string" length="1">
+    <value>J0</value>
+   </variable>
+   <variable name="_J1" type="xsd:string" length="1">
+    <value>J1</value>
+   </variable>
+   <variable name="_JN" type="xsd:string" length="1">
+    <value>JN</value>
+   </variable>
+   <variable name="_GAMMA" type="xsd:string" length="1">
+    <value>GAMMA</value>
+   </variable>
+   <variable name="_LGAMMA" type="xsd:string" length="1">
+    <value>LGAMMA</value>
+   </variable>
+   <variable name="_Y0" type="xsd:string" length="1">
+    <value>Y0</value>
+   </variable>
+   <variable name="_Y1" type="xsd:string" length="1">
+    <value>Y1</value>
+   </variable>
+   <variable name="_YN" type="xsd:string" length="1">
+    <value>YN</value>
+   </variable>
+   <variable name="_EXP" type="xsd:string" length="1">
+    <value>EXP</value>
+   </variable>
+   <variable name="_LOG" type="xsd:string" length="1">
+    <value>LOG</value>
+   </variable>
+   <variable name="_LOG10" type="xsd:string" length="1">
+    <value>LOG10</value>
+   </variable>
+   <variable name="_SQRT" type="xsd:string" length="1">
+    <value>SQRT</value>
+   </variable>
+   <variable name="_INT" type="xsd:string" length="1">
+    <value>INT</value>
+   </variable>
+   <variable name="_NINT" type="xsd:string" length="1">
+    <value>NINT</value>
+   </variable>
+   <variable name="_MAX" type="xsd:string" length="1">
+    <value>MAX</value>
+   </variable>
+   <variable name="_MIN" type="xsd:string" length="1">
+    <value>MIN</value>
+   </variable>
+   <variable name="_COSMO" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_COSMOIT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_COSMOES" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_COSMOEDS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_COSMOEC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_COSMOEDCORR" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_FEPSI" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_SL_IsMM" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_NSYM" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="_SL_System_BitSw" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Unique_atoms" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_GRAD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_MAXUPD_Hess" type="xsd:double" length="1">
+    <value>5.0</value>
+   </variable>
+   <variable name="_SL_N_PRINT_COD" type="xsd:double" length="1">
+    <value>5.0</value>
+   </variable>
+   <variable name="_SL_PRINT_CODES" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_BasType" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Energy_Pred" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_New_Coords" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Total_Nuclea" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Highest_Mltp" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Ref_Geom" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Symmetry_ope" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_agrad" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_GrdMax" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_GrdNorm" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_GrdRMS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Hss_Q" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Hss_X" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_BMxOld" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_KtB" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_TROld" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_No_of_Intern" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_Hess" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SL_K" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!LATTICE" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!NEWLATTICE" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!LATGRAD_VAR" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!SEW_LATTICE" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="!LOCAL" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!SAVEDOM" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!RESTDOM" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!SAVEDOM_HF" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!RESTDOM_HF" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!HESSREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!FREQREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!NMODREC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!GTASKS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!HTASKS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!SAVEDOM_EOM" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!RESTDOM_EOM" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!GRADSTATE" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!THRCHG" type="xsd:double" length="1">
+    <value>0.1</value>
+   </variable>
+   <variable name="!DEBUG" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="!CFIT_CPHF" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!RDOMAUX_CPHF" type="xsd:double" length="1">
+    <value>3.0</value>
+   </variable>
+   <variable name="!THRAO_CPHF" type="xsd:double" length="1">
+    <value>0.1E-09</value>
+   </variable>
+   <variable name="!THRMO_CPHF" type="xsd:double" length="1">
+    <value>0.1E-08</value>
+   </variable>
+   <variable name="!THROV_CPHF" type="xsd:double" length="1">
+    <value>0.1E-11</value>
+   </variable>
+   <variable name="!THRSW_CPHF" type="xsd:double" length="1">
+    <value>0.1E-09</value>
+   </variable>
+   <variable name="!THRPROD_CPHF" type="xsd:double" length="1">
+    <value>0.1E-08</value>
+   </variable>
+   <variable name="!THRAOPR_CPHF" type="xsd:double" length="1">
+    <value>0.1E-11</value>
+   </variable>
+   <variable name="!CFIT_SCFGRD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!RDOMAUX_SCFGRD" type="xsd:double" length="1">
+    <value>5.0</value>
+   </variable>
+   <variable name="!THRAO_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-09</value>
+   </variable>
+   <variable name="!THRMO_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-08</value>
+   </variable>
+   <variable name="!THROV_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-11</value>
+   </variable>
+   <variable name="!THRSW_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-09</value>
+   </variable>
+   <variable name="!THRPROD_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-08</value>
+   </variable>
+   <variable name="!THRAOPR_SCFGRD" type="xsd:double" length="1">
+    <value>0.1E-11</value>
+   </variable>
+   <variable name="!LOCFIT_SCF" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!LOCFIT_MP2" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_RIDOM" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!CC2_METHOD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_BASIS2006" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SVDDEL" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELA" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELP" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELF" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDEL_ABS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELA_ABS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELP_ABS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELF_ABS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_SVDDELS_ABS" type="xsd:double" length="1">
+    <value>-1.0</value>
+   </variable>
+   <variable name="_MAXBASIS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!OPT_CONICAL" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!CLEARSP_JGRID" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_GRDHYBR" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_4EXT_NDISKS" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="!ZMP" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_MAXIT_ZMP" type="xsd:double" length="1">
+    <value>500.0</value>
+   </variable>
+   <variable name="_MAXDIS_ZMP" type="xsd:double" length="1">
+    <value>100.0</value>
+   </variable>
+   <variable name="_ACCU_ZMP" type="xsd:double" length="1">
+    <value>14.0</value>
+   </variable>
+   <variable name="_SHIFTA_ZMP" type="xsd:double" length="1">
+    <value>-100.0</value>
+   </variable>
+   <variable name="!EMBEDFLAG" type="xsd:double" length="1">
+    <value>1.0</value>
+   </variable>
+   <variable name="!EMBED" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBED_F12" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBEDNUC" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_EMBEDENERGY" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_KSPACETIME" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_RSPACETIME" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBED_DFC" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!NUM_VOIDS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_IBODY" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_EMBE_TOTAL" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_EMBE_HF" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_EMBE_CORR" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBED_PROJ" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMB_PROJ_ZMU" type="xsd:double" length="1">
+    <value>100000000.0</value>
+   </variable>
+   <variable name="!CORRECTION" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!CORRECTION_HF" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBED_ENERGY" type="xsd:double" units="AU" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EMBED_MP2" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_CHANGE_BASIS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_FIX_EMBED_GUESS" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="!EDFT" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_IFASTLATGRAD" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_SINDEX" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_AVDOM_OSV" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_AVDOM_PNO" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_AVDOM_PAO" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_AVDOM_LMO" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="_CC2OSV_FLAG" type="xsd:double" length="1">
+    <value>0.0</value>
+   </variable>
+   <variable name="GX1" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.378904617839881</value>
+   </variable>
+   <variable name="GY1" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.32722317415394</value>
+   </variable>
+   <variable name="GZ1" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.7435696411414</value>
+   </variable>
+   <variable name="GX2" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.258559519553976</value>
+   </variable>
+   <variable name="GY2" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.306209621080044</value>
+   </variable>
+   <variable name="GZ2" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.39258055591461</value>
+   </variable>
+   <variable name="GX3" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.972888765852137</value>
+   </variable>
+   <variable name="GY3" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.21986631856243</value>
+   </variable>
+   <variable name="GZ3" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.32926184820377</value>
+   </variable>
+   <variable name="GX4" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.34146185472143</value>
+   </variable>
+   <variable name="GY4" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.26868445681309</value>
+   </variable>
+   <variable name="GZ4" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.61353623014684</value>
+   </variable>
+   <variable name="GX5" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.14144275220562</value>
+   </variable>
+   <variable name="GY5" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.2440623708418</value>
+   </variable>
+   <variable name="GZ5" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.02023314568371</value>
+   </variable>
+   <variable name="GX6" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.84054209818692</value>
+   </variable>
+   <variable name="GY6" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.305612470913414</value>
+   </variable>
+   <variable name="GZ6" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.70812728240543</value>
+   </variable>
+   <variable name="GX7" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.34928221968026</value>
+   </variable>
+   <variable name="GY7" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.357733293671</value>
+   </variable>
+   <variable name="GZ7" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.579337253161756</value>
+   </variable>
+   <variable name="GX8" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-2.33885039072286</value>
+   </variable>
+   <variable name="GY8" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.116673223689705</value>
+   </variable>
+   <variable name="GZ8" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.817743926309376</value>
+   </variable>
+   <variable name="GX9" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.26148262662775</value>
+   </variable>
+   <variable name="GY9" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.230483374776423</value>
+   </variable>
+   <variable name="GZ9" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.768019361712259</value>
+   </variable>
+   <variable name="GX10" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.291877545783845</value>
+   </variable>
+   <variable name="GY10" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.284890144659259</value>
+   </variable>
+   <variable name="GZ10" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.29948442517968</value>
+   </variable>
+   <variable name="GX11" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.04156995517492</value>
+   </variable>
+   <variable name="GY11" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-0.245424054680258</value>
+   </variable>
+   <variable name="GZ11" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.12208515734971</value>
+   </variable>
+   <variable name="GX12" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.81313558293933</value>
+   </variable>
+   <variable name="GY12" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.193203025840192</value>
+   </variable>
+   <variable name="GZ12" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.75287220483026</value>
+   </variable>
+   <variable name="GX13" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.08880194503068</value>
+   </variable>
+   <variable name="GY13" type="xsd:double" units="ANGSTROM" length="1">
+    <value>-1.33062324150703</value>
+   </variable>
+   <variable name="GZ13" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.07521145517051</value>
+   </variable>
+   <variable name="GX14" type="xsd:double" units="ANGSTROM" length="1">
+    <value>0.369790620644854</value>
+   </variable>
+   <variable name="GY14" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.3005399871841</value>
+   </variable>
+   <variable name="GZ14" type="xsd:double" units="ANGSTROM" length="1">
+    <value>1.73917504849017</value>
+   </variable>
+  </variables>
+  <orbitals basis="ORBITAL" angular="spherical" spin="closed" method="RKS"
+    type="LOCAL(IBO)" stateID="1" state_symmetry="1" state_nelec="46"
+    state_ms2="0">
+   <orbital occupation="2.0" energy="-19.017695" symmetryID="1">
+     0.467896768935497E-04 -0.318565017781484E-03 -0.771281391629493E-03 -0.310643582132374E-04 -0.531675971696547E-04 -0.69893849170325E-05 -0.497836228463449E-04 -0.144923877936336E-03 0.731992417186288E-03 -0.443131539033425E-02
+     0.10446475269007E-02 0.463391982226041E-03 -0.181905021423708E-03 0.756826636207525E-03 -0.387464330788002E-02 -0.16409752922099E-02 0.556609904150999E-03 -0.484066648210526E-03 -0.149498780378546E-02 0.282029470616262E-03
+     0.690668525588564E-04 0.493940709840343E-07 0.266941536318704E-04 -0.276884301897658E-04 0.377026981530059E-04 0.299711326686317E-03 -0.131324456056211E-02 -0.613467055081164E-03 -0.74941019809309E-03 0.111329141421129E-03
+     0.144189121001515E-04 0.599855249803487E-04 -0.25590503022922E-04 -0.37481792271944E-04 -0.54293514249595E-04 -0.387923299184607E-04 -0.467844331575454E-04 -0.104846686968194E-03 -0.198334884743764E-03 0.484475340199464E-04
+     0.702010582028286E-02 -0.655205586002441E-02 0.438330709992702E-04 0.177556728084416E-03 -0.310272620344753E-03 -0.397994143737414E-02 -0.122594248995298E-02 -0.806821382829447E-03 0.118448589247057E-02 -0.10948254926868E-02
+     -0.213141794433152E-02 -0.198454180597463E-03 0.650667125647406E-04 -0.15221311798995E-03 0.247349317404405E-04 0.137338071063582E-03 -0.113247715727004E-02 0.102766575425277E-02 0.93846546475707E-04 0.956178915979344E-03
+     -0.220015648471886E-03 0.668966963159019E-04 0.42017869100207E-04 -0.100317740753677E-03 -0.294764424153126E-04 -0.394277934188988E-05 -0.213223557272022E-04 0.45935573624012E-04 -0.313813374558261E-04 -0.109134500377946E-03
+     0.619022965310788E-03 -0.319219855937626E-02 0.828959780998953E-02 0.147008427156233E-03 -0.903046717542604E-04 0.155814169713414E-03 -0.541530473610811E-03 0.686400096106726E-03 -0.159766375128994E-04 0.382862365713953E-02
+     0.291902134665044E-02 0.248971487132186E-02 -0.239316590073977E-04 -0.334810556309122E-04 0.267135015853049E-05 -0.173250400461324E-04 -0.361175558980233E-04 -0.691559136448373E-03 0.17944292649486E-03 0.356548239965802E-03
+     -0.330889860049692E-03 0.137720492672568E-03 -0.119206746071533E-03 -0.157321266315527E-04 -0.107053827927377E-03 -0.174962766178326E-04 -0.282509332783708E-04 -0.451668726380035E-04 0.203500243394409E-04 0.319217936435409E-03
+     0.121275743888891E-02 0.252393370976311E-02 -0.947326848513232E-04 -0.429894890620982E-04 0.23546462781277E-04 0.296284931787039E-03 0.105829318649649E-02 -0.21889679020153E-03 -0.147976475316287E-03 0.141339930078003E-04
+     0.454958749504971E-04 0.104381365909419E-03 -0.152875657692858E-02 -0.244004210913391E-02 -0.720239994488249E-04 0.152862855911787E-03 -0.544551691846681E-04 0.537790276582959E-05 0.221653513162153E-03 0.179647833617899E-02
+     0.385201857371365E-04 0.725982451988283E-05 0.208688154815549E-04 0.443440420704938 0.660579451198356 -0.220923344283385E-03 -0.761594549852563E-01 -0.690882639075569E-02 0.419460028825035E-03 -0.227439158160335E-03
+     -0.582753629844765E-03 0.6869068634553E-02 -0.35744286482244E-02 -0.312996700563552E-02 -0.276144282288476E-02 0.137404383137379E-02 -0.639355985186563E-03 -0.115319576429871E-04 0.973169105002136E-04 0.474587544262112E-04
+     -0.532123063641054E-04 -0.829457699207844E-05 0.329603421107951E-03 0.161313815534535E-02 0.155644707603024E-02 -0.101826229675645E-02 -0.574236656745511E-03 -0.604785034408072E-05 0.413043473305025E-05 0.180512366315169E-03
+     0.925166039044097E-05 0.237673576819118E-03 -0.236490430106769E-03 -0.148979407114433E-03 0.164301978674094E-02 0.394270663909829E-02 -0.747461655239641E-02 -0.192925484552484E-02 -0.20728596669176E-02 -0.960136419804932E-02
+     0.50527425209426E-02 0.5138705357763E-02 0.605766763226946E-02 -0.112242009288553E-03 -0.623164575967186E-03 -0.221232384386039E-02 0.288537419537363E-02 0.308348006814732E-02 0.188011923000376E-03 0.801864946222751E-03
+     0.766802358028606E-03 -0.442268546000761E-03 -0.336253892234554E-03 0.619361990417482E-03 -0.33200490374755E-02 -0.235067573930169E-02 0.256715855595589E-05 0.599049761404282E-03 -0.158003150362437E-03 -0.81641190540474E-04
+     -0.227913691540299E-04 0.22069627268035E-03 -0.154686357671422E-03 0.613882847730765E-03 0.348623697000102E-03 -0.141267885058232E-03 -0.42265881294482E-03 0.359482647471483E-03 0.755691656707735E-02 -0.620147686440683E-02
+     0.121254354322928E-02 0.982475817816286E-04 0.40133905187953E-03 0.546283789673419E-02 0.165688149612692E-02 -0.115781995981198E-03 0.484633734648575E-03 -0.295304724582391E-02 0.577762375537993E-03 -0.136141209402709E-03
+     0.213944728200528E-03 0.454817507241087E-04 0.672555466481152E-04 0.119329540920052E-03 -0.21132536395058E-03 0.140258178698518E-02 0.130461570967619E-02 0.880974888354298E-03 -0.787238018147248E-03 0.29287886123555E-04
+     -0.820381021502029E-04 -0.126831062263859E-03 -0.514915100885267E-04 0.630964909337561E-04 0.184156776874299E-03 0.198392692049377E-03 -0.151086411622441E-03 0.139434551135471E-02 0.677065030897061E-03 0.243998083982247E-03
+     0.276965260770784E-04 -0.88191843631114E-04 0.241748090473878E-03 0.632306107305501E-03 -0.389673864558751E-03 0.138015420378005E-03 0.741105073046133E-04 -0.962908974839928E-04 0.10859136017686E-02 0.253581890460152E-02
+     -0.113250729209866E-02 0.424866895282568E-04 -0.323414091323533E-03 -0.207393795271138E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-10.180425" symmetryID="1">
+     -0.718258071110972E-04 0.435237801777706E-03 0.191513583659925E-02 0.316428780877466E-04 0.279984808756414E-04 0.317527074161101E-04 -0.633925125035769E-04 -0.108420146506966E-03 -0.931717683849263E-04 0.273066918654231E-02
+     0.154355381386236E-02 -0.350182722062056E-03 0.367635231067701E-03 -0.365347766681088E-03 0.163067607270803E-02 0.605338656036629E-03 -0.559951476670289E-03 -0.130870495586182E-02 0.316658844445588E-02 0.103608118537101E-02
+     -0.382393634239198E-04 0.29373455832474E-05 -0.327769856617729E-04 -0.115264540666272E-04 -0.433677570232806E-04 -0.365562293877769E-03 0.588398600572142E-03 0.156000928533708E-03 0.598723115400587E-03 -0.130930729982589E-03
+     -0.171334251861493E-04 -0.657679805856627E-04 -0.379646862604034E-04 0.342617253665348E-04 0.44316592691246E-04 0.405234849296241E-04 0.479027998407508E-04 0.315086158224576E-04 0.757992905709624E-04 -0.484934899517496E-06
+     -0.24650322996188E-02 0.358441972490171E-03 -0.13667480323456E-03 0.122656938206477E-03 -0.140476940307499E-03 0.182621285539395E-02 0.916431493433714E-03 -0.241170871827002E-03 0.101149175609809E-02 -0.136119557228657E-02
+     -0.124537535660151E-02 0.773948582390111E-04 -0.367466479662638E-04 0.569319280516308E-04 0.145964494118649E-05 0.163782426419131E-05 -0.838072398726862E-04 -0.592559435955334E-03 0.182057998129659E-03 -0.365959554765591E-03
+     -0.437093374206233E-04 0.523186072155541E-05 -0.269723791917167E-04 -0.240858944975206E-04 0.711113026453141E-06 0.159522525018209E-04 -0.233379085851661E-05 -0.45881704665051E-04 -0.101079399276757E-03 -0.120202173473022E-03
+     -0.198637924259668E-03 0.20589014503014E-02 -0.811237075078797E-02 -0.445022134787472E-04 0.78520257167185E-05 0.199162281699877E-03 0.398082162694517E-03 0.100962498580025E-04 -0.174414866976683E-03 -0.245449443191805E-02
+     0.705405455482508E-03 -0.654350813045847E-03 -0.486639508117898E-04 -0.5096069893897E-04 -0.240040990031266E-03 -0.147150061163302E-03 -0.355724597295892E-04 -0.302079823726347E-03 0.282574817738596E-03 -0.261959326681766E-03
+     0.459940397674182E-03 0.587067445734687E-04 0.54685467832781E-05 -0.932075140733507E-06 -0.443464142842299E-04 0.744366287669445E-05 0.253625549573315E-04 -0.40608482252266E-04 0.311666173956487E-06 -0.130152454585698E-03
+     -0.430576548430624E-03 -0.113844743945485E-04 0.792971863229557E-04 0.110445838337071E-03 -0.10637758599498E-03 -0.154582377747239E-03 -0.946046028170796E-03 -0.102308942843708E-02 0.873879169332425E-04 -0.365917533164043E-04
+     -0.782010873840112E-04 0.149301306002815E-03 0.399432621899469E-03 0.356355995898111E-03 -0.180496072508794E-03 0.523048058991868E-04 -0.962936228185528E-04 -0.308595222965978E-03 -0.904115310523427E-03 -0.118669283701016E-02
+     -0.423680357002031E-04 -0.865086215981325E-04 0.183614397122892E-04 0.172303902826702E-02 0.447515786962214E-02 -0.483701500661653E-02 -0.191538923886772E-01 0.340842429888052E-03 0.13080644857093E-01 -0.689998491139071E-02
+     -0.722276057561722E-02 0.165105172425317E-01 -0.854856617094153E-02 -0.906391764736232E-02 0.357900024142243E-02 -0.170068227276007E-02 -0.19224085107E-02 0.145341987600815E-03 0.386775235497313E-03 0.36144649637248E-03
+     -0.259703205122591E-03 -0.219222523712274E-03 0.939879153672424E-03 0.275964583550462E-02 0.27891207384567E-02 -0.176581325732002E-02 -0.136982690440005E-02 0.598127676719671E-04 0.14851516511945E-04 0.34526370233718E-03
+     -0.112157943343438E-04 0.526523000557057E-03 -0.575267265123313E-03 -0.351901483605815E-03 0.474851656164737 0.627266877042911 -0.487697965198361E-03 -0.471573399311599E-01 0.122635372084879E-01 0.167813071624311E-02
+     -0.169607346013593E-02 -0.826180728382632E-03 0.104978534565356E-01 -0.407533126913287E-02 -0.405441918764893E-02 -0.144077370748784E-02 0.228722251061601E-02 -0.730188916707441E-03 -0.235397791369748E-03 -0.466876831855825E-03
+     -0.47813206489059E-03 0.44019748977118E-03 0.21023221576682E-03 -0.1065043791235E-03 -0.30624245672786E-02 -0.236704225885374E-02 -0.954653881244415E-04 0.166189874842145E-02 -0.198234181923314E-03 -0.86189899500856E-04
+     0.368824967587242E-03 0.157283102474975E-03 0.677328915434178E-03 -0.784183363902356E-03 -0.70748123118705E-03 0.174205407377281E-02 0.450363728898187E-02 -0.760217583133698E-02 -0.627784010435026E-02 0.120395492177603E-02
+     -0.123834170014597E-01 -0.473318853989348E-02 -0.18756100186045E-02 -0.879931819655641E-02 -0.36701040082971E-02 -0.14187049890445E-02 -0.309068391004598E-02 -0.373430208325693E-02 -0.425004035747755E-02 0.530716367501583E-03
+     -0.756284855928219E-03 -0.40320113402026E-03 -0.711993241836593E-03 -0.536493949998949E-04 0.125716201138279E-02 -0.149314959081358E-02 0.551311531314174E-04 -0.189573574060226E-02 -0.482062784893575E-03 0.665450673105475E-03
+     0.305477811590159E-03 0.197300163366931E-03 -0.475037387920449E-03 -0.123445128943207E-03 -0.899784182308995E-03 -0.223266550260724E-03 0.112391895533185E-02 0.217391526962283E-02 0.202139947854546E-02 -0.463921327008873E-03
+     -0.456795932095504E-03 -0.330352149069128E-03 0.564177038371354E-03 -0.552203180199811E-03 -0.172852024095638E-02 -0.615015299827005E-03 -0.133987187319483E-03 -0.937322614146731E-04 -0.100955842886101E-01 -0.135439076809612E-01
+     -0.733194850160367E-02 0.578501642906434E-03 0.311820107069217E-02 0.129746049827026E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-10.143267" symmetryID="1">
+     0.951263081842816E-03 0.184864352430364E-02 0.217884625458354E-02 0.596710014180632E-03 0.374910785447224E-04 -0.199504323046959E-03 0.166355361528386E-02 0.433411141907813E-02 -0.771604060643057E-02 -0.215308973998036E-02
+     -0.158846323020469E-01 0.947479513673083E-02 -0.526725922829171E-02 -0.633332309223687E-02 0.126769456622043E-01 -0.220465581116272E-02 -0.465880838716952E-02 0.733163099604454E-02 -0.173242447810724E-02 -0.478771400845725E-02
+     0.336153984598474E-04 0.679320270998529E-03 0.7323490816924E-03 -0.390001710203134E-03 -0.451446639847908E-03 0.196108366870491E-04 0.320763505821511E-02 0.282414072865372E-02 -0.631703255908258E-03 -0.828956809442392E-03
+     0.955840952596906E-04 -0.129720080034136E-03 0.563600945703548E-03 0.997471880697027E-04 0.884085533805156E-03 -0.479221982806303E-03 -0.53752125760923E-03 -0.257947690750239E-03 -0.608305429911232E-03 0.177520892233429E-02
+     -0.463189671470554E-02 -0.269294863481084E-02 -0.138873582353304E-02 -0.119483719069619E-03 -0.999097577551877E-03 0.423556559916647E-02 0.180308813216519E-02 -0.141288725995588E-02 0.213076117434476E-02 -0.368489227323811E-03
+     -0.898396968136582E-03 0.825926792945722E-05 0.186664612031778E-03 0.215569004201593E-03 -0.198782561946167E-03 0.614265709431303E-04 0.723951910299872E-03 -0.493542825988058E-03 0.595530789100925E-03 -0.215256264704058E-02
+     0.600831002649875E-03 -0.100051369546031E-03 0.522766780672767E-05 0.745729418601422E-04 0.110547564695121E-03 0.850475908460968E-05 -0.681207922135304E-04 -0.185791224821217E-03 0.474677589947882 0.6269159945695
+     0.252583055475727E-02 -0.619123309393654E-01 0.392899721803187E-01 0.217488469957072E-02 -0.229181790269049E-02 0.496043411549617E-02 -0.842242500407963E-03 0.238798989982225E-03 -0.245079321009379E-02 0.786298976200917E-02
+     -0.196525424144228E-02 0.186683386593293E-02 0.139501970048754E-03 -0.368072672497683E-04 0.515183625885275E-04 0.720275918802506E-05 -0.861202786109038E-04 -0.196579181854318E-02 0.79032820359788E-03 -0.32722555321264E-03
+     -0.697414806260017E-03 0.103643532237157E-02 0.664627742728843E-04 0.766518981345595E-04 -0.244976175242319E-03 -0.218970199269188E-03 -0.153890674432984E-05 -0.735892067653578E-03 -0.111721345967323E-03 0.388471625387632E-03
+     -0.307752104870009E-03 0.151463547857953E-02 0.101607134499121E-03 0.244856813482678E-03 -0.433953523824784E-04 -0.587266412052281E-03 -0.154816881989901E-02 -0.265218078878222E-02 0.168672305243495E-03 -0.409787749914231E-05
+     -0.537044034701947E-04 -0.103198902361815E-01 -0.155775347127049E-01 -0.874020389450399E-02 -0.149727034608853E-03 0.351246693613607E-02 0.220214648908626E-03 -0.104608523126527E-01 -0.14479514426306E-01 -0.553212986448814E-02
+     -0.324227205587636E-02 -0.122756071500038E-02 -0.465319336498908E-03 -0.43995753849499E-04 -0.119032727677181E-03 0.301806892723854E-03 -0.285944475450405E-03 0.767703796788237E-03 -0.342741518910492E-03 0.253049833693567E-03
+     -0.413931405186673E-03 -0.918485282172195E-04 0.932631286156883E-05 -0.336438166771092E-03 -0.349421982363945E-03 0.203812996167686E-03 -0.251700342858671E-03 -0.190514607385853E-04 -0.125619841798121E-04 0.27608315855221E-04
+     0.206955870656799E-04 -0.347740855891473E-05 0.311131189282043E-04 0.513422119538217E-04 -0.12166494267333E-03 -0.781224750352479E-04 0.358657242554748E-05 -0.112792819380464E-04 0.418368261213061E-05 -0.224332852316127E-04
+     0.14618405430546E-04 -0.420962758873038E-05 -0.937969492991485E-05 0.15504727762674E-04 -0.106689591267307E-03 -0.148293088892728E-03 0.109024684762125E-03 0.119322954812553E-02 -0.519149396789264E-02 -0.741724810418674E-04
+     0.161610901256599E-04 0.113360889745142E-03 -0.345029680850665E-03 -0.501760070808353E-03 0.27050535292998E-03 0.119689169817731E-02 -0.145606940880612E-02 -0.324153539794233E-03 -0.110973545753738E-03 -0.684310088223674E-05
+     -0.212318888599263E-03 -0.931936142671315E-04 -0.195413374031267E-04 0.602890546622911E-04 0.268815649002907E-03 -0.616478967024803E-03 0.539718074067205E-03 -0.204914330813154E-04 0.112737667570549E-03 0.432057903363747E-04
+     -0.383369980882229E-04 -0.27959950285527E-04 0.388883130139408E-04 0.161812412489026E-04 0.143149971891017E-04 0.330115161232058E-03 0.92610532322728E-03 -0.29644865853596E-02 0.288570738151797E-02 -0.737755246691584E-02
+     0.611224911499725E-03 -0.115830141066547E-02 0.407985484254042E-02 -0.405050376894525E-03 -0.494137735966901E-03 0.732828625447901E-03 0.114918388197123E-02 0.894234229467698E-04 0.383090916660513E-02 -0.221566996012769E-03
+     -0.219600295437682E-04 -0.760293290728221E-04 -0.365137032733448E-04 0.125357428760006E-03 0.339335867186944E-03 -0.190852316366763E-03 -0.434285266669374E-03 0.438990652341076E-04 0.478325949270099E-04 0.184485931170725E-04
+     -0.105918634916865E-04 -0.158424633498283E-04 0.204978885321621E-04 -0.686634297460359E-04 0.106809791236355E-03 0.310534221811914E-04 0.35330938032747E-03 -0.143633667163631E-03 0.854497915209936E-03 0.319707435285579E-05
+     -0.385950046323246E-04 0.440959904080413E-03 0.169462196483605E-03 0.970870996682264E-04 0.113618492192984E-02 0.683688396348599E-04 -0.223601759513141E-03 0.433806747454923E-03 0.979304327141168E-04 0.124091465060545E-02
+     0.182589572414177E-02 -0.917490011029974E-04 -0.11007015225854E-03 -0.163759967083805E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-10.131971" symmetryID="1">
+     0.101708271827288E-03 0.100070719849097E-02 0.101119333752282E-02 0.359261162428811E-04 0.106834416491273E-03 0.16308261427469E-03 -0.116970965064769E-03 -0.194619331438016E-03 -0.212901795574385E-04 0.444226788452916E-02
+     -0.127843619430471E-01 -0.261732568552978E-03 -0.635041631866645E-04 0.351844176225728E-03 0.268373418502783E-02 0.116768056854227E-02 -0.140200195456309E-03 -0.189272729990078E-02 -0.12598026814509E-02 -0.107739037891425E-02
+     -0.18378736840595E-03 -0.63546900298116E-05 0.736261559000813E-04 0.243001089491727E-04 -0.774716726887471E-05 -0.698206544237643E-03 0.610996389403249E-03 0.709103438891858E-03 0.817989473486872E-03 -0.68497136753428E-04
+     0.889044526156043E-04 -0.924585808677816E-04 -0.117432795421567E-03 0.512528770247137E-05 0.3661609728788E-04 0.229272444043677E-04 0.192038247643077E-04 -0.499189270916004E-04 -0.124686195485341E-03 0.611219611022737E-03
+     -0.381899128432754E-02 0.909220832857623E-02 -0.104138329430971E-03 -0.173268360056991E-03 0.52978705862194E-03 0.259910151139356E-02 0.63354355645425E-03 0.274522188096573E-03 -0.272203842936398E-02 -0.138829957010953E-02
+     0.840943815006257E-03 0.562856604383479E-04 -0.406714600850749E-04 -0.621842480951262E-04 0.216390236401435E-05 0.582878006054062E-05 0.194328643422916E-03 -0.636094905485633E-03 0.977062845403274E-04 -0.584940957633963E-03
+     -0.521969457664548E-05 -0.290786559504382E-04 -0.30507468356052E-04 0.357202336736207E-04 0.21915937311727E-04 -0.227183072599786E-04 0.609151708890751E-04 -0.338513400695146E-04 0.354486830862075E-03 0.986147662737617E-03
+     -0.332595053291536E-02 0.470020351511351E-02 -0.872710112719693E-02 -0.961294549632489E-03 0.120161352112779E-02 -0.421990325651643E-02 0.30590266238514E-03 -0.432990760220444E-04 -0.100202936414457E-02 0.685122764781904E-03
+     0.187742381943975E-02 -0.455579306395995E-02 -0.244728474215932E-03 0.330042700179216E-04 -0.936976080426116E-04 -0.229114946936553E-04 0.137347755518824E-03 -0.209209789937118E-05 -0.134000598954747E-03 0.222287206413284E-03
+     0.500396354763917E-03 0.112178877550342E-04 0.560774994333525E-04 0.652512442622471E-04 -0.178247310709668E-04 -0.219615316209849E-04 0.465761148445571E-04 -0.176657694606862E-03 0.129092645864731E-04 0.259397671115039E-04
+     0.170066389361716E-03 -0.313823576570049E-04 -0.693357527550157E-04 -0.840783986888238E-04 0.95435285536835E-04 0.289691708221389E-04 -0.433131616166107E-03 -0.105925333298465E-03 0.867777377672309E-04 0.151352146157839E-04
+     -0.712161442280651E-04 0.2022857651988E-03 0.247976057033256E-03 0.310424795804497E-03 -0.778906983486376E-04 0.179523620387071E-03 -0.390412439140146E-03 0.22556914656637E-03 0.21748937069601E-03 0.176805343678853E-02
+     -0.166955261105514E-03 0.460741261224005E-04 -0.435057831564662E-03 -0.215039062923579E-03 -0.5557374751853E-03 0.129467351833585E-02 -0.347105305454501E-03 -0.489920632871213E-04 -0.157665453752096E-02 -0.135691429834215E-03
+     0.125599097789606E-02 -0.224431599324236E-03 -0.396542365684776E-03 0.671794000735401E-03 -0.108719712675279E-02 -0.118541390958418E-02 0.737014277433599E-03 0.180817844350067E-04 -0.689628993198338E-04 -0.401245301433573E-04
+     -0.576366711414557E-04 0.507760268295575E-04 0.323155489782266E-03 -0.960075177295582E-04 -0.59907859405176E-06 -0.443044286047801E-03 0.167746936041793E-03 -0.826907088492586E-04 -0.14896190073651E-04 0.276335458184883E-04
+     0.660132256817459E-04 -0.28071919517308E-04 0.220519360727325E-04 0.243701593935219E-04 0.175918080237832E-02 0.456429973447237E-02 -0.822491886615717E-02 -0.625411834296858E-02 -0.207797238889638E-01 0.11858178043575E-01
+     0.516908743897062E-02 0.916411344056719E-03 0.102897476708231E-01 0.389753530556769E-02 -0.370988369248384E-03 0.655987093404847E-02 0.433675972683594E-02 0.255727973895362E-02 0.468056606892305E-03 -0.916303225130934E-03
+     -0.265919902958865E-03 -0.758669420356454E-03 0.623759332258716E-04 0.174174630119579E-02 -0.223104203989127E-02 -0.653189246374706E-03 -0.169977389701241E-02 0.329926835669129E-03 -0.691108301422475E-03 -0.367603979596888E-03
+     -0.667405705796992E-04 0.389345002865746E-03 0.317334726398769E-03 0.788090518168071E-03 0.814536389500833E-04 0.474638200442836 0.62692067823885 0.295454520610841E-02 -0.630213009443276E-01 0.408639961686787E-01
+     -0.131266034225836E-03 0.240111606774014E-02 -0.506317933194516E-02 -0.600705925164136E-03 -0.877704234242541E-03 0.226649521805822E-02 0.755525881733804E-02 0.964631863079393E-04 -0.685192367216842E-02 0.127263148639333E-03
+     0.153391007509044E-04 0.916559131982599E-05 -0.101467445365093E-04 -0.10172221424337E-03 -0.185986711561844E-02 -0.861079873390594E-03 -0.805839333979205E-03 -0.110832617586252E-02 0.149365757769192E-02 0.527370487457438E-04
+     0.974699306468812E-04 0.186468429457176E-03 0.167451789947928E-05 -0.370293457482369E-03 0.611693599106758E-03 0.203368357032301E-03 -0.104895771560252E-01 -0.145207658733319E-01 -0.454699880385082E-02 -0.260497396660702E-02
+     0.136434903856367E-02 0.19798141167353E-02 -0.104523204584277E-01 -0.162811676216611E-01 -0.950252907425413E-02 -0.317038538434046E-03 -0.362602284972328E-02 -0.199251539282334E-03 0.112059899052171E-02 0.210094119261222E-02
+     0.171916295748652E-02 0.53823305390201E-03 0.207208331631165E-04 -0.924940211983089E-04
+   </orbital>
+   <orbital occupation="2.0" energy="-10.096127" symmetryID="1">
+     0.104374141631912E-02 0.182240415553408E-02 0.199943444878862E-02 -0.744770847292538E-03 -0.211507689508824E-04 0.970776075088698E-04 0.235751953026123E-02 0.633883413565546E-02 -0.110710136959141E-01 -0.172122951276879E-01
+     -0.184222986317212E-01 -0.158121526396201E-01 -0.705654982379898E-02 -0.978788637454241E-03 -0.228508273410126E-01 -0.694162304674211E-02 0.986572099140984E-03 -0.849956361039749E-02 -0.324801796375412E-02 -0.115756145281252E-02
+     0.84057763843793E-03 -0.119504460775904E-02 -0.166394681986976E-03 -0.106831947801552E-02 -0.42185937356937E-04 0.333491858706985E-02 -0.485337817263575E-02 -0.157896601874877E-02 -0.399419324475475E-02 0.783834775462532E-03
+     0.852359831561818E-03 0.409908378976836E-03 0.153745898615567E-04 -0.479769361823562E-03 -0.228347696658481E-03 -0.106667461445589E-02 0.454787610800388E-04 0.475145093715759 0.628553651145031 -0.281063123194656E-02
+     -0.451289276753523E-01 0.26853885717052E-01 0.232551947845166E-02 0.679950545133364E-03 0.1010181083289E-02 -0.652626440249861E-02 -0.328191564218058E-02 -0.169011464872802E-02 -0.453095442187834E-02 -0.187980782495256E-02
+     0.251544341409506E-02 0.380441534689841E-04 0.924482925160815E-05 0.199710456802308E-04 0.420369337344014E-04 -0.107711663781693E-04 -0.176379957580759E-02 0.13093775326765E-02 0.301139761850104E-03 0.746099365503476E-03
+     0.549301136089959E-03 0.877149699964476E-04 0.179337388363657E-04 0.293324627722194E-05 -0.218359203143759E-03 0.297517594648061E-03 -0.951355637539034E-03 -0.459029649999235E-03 -0.29269341547892E-03 -0.675633427723293E-03
+     0.174665497203768E-02 -0.305988438054203E-02 0.352372904526377E-02 0.124725224844194E-02 -0.372168070904244E-03 -0.13240854836982E-02 -0.30809794459665E-02 0.745054533929425E-03 0.216887391709617E-03 0.616054546551127E-03
+     -0.128026243461773E-03 0.204894232416022E-03 0.164071071662978E-03 -0.14129363779771E-03 -0.271209980778936E-05 -0.315366126175837E-03 0.884629243431354E-04 0.816248601683448E-05 0.975385471762054E-03 0.140526143727425E-02
+     -0.13016635765654E-02 0.388061517803761E-03 0.780782391536863E-04 -0.530015341980002E-04 -0.542637693119246E-04 -0.162794420162896E-03 -0.538945232807166E-04 -0.560321318348691E-04 0.113537564212613E-03 -0.103048105850508E-01
+     -0.141561530473807E-01 -0.658662697888802E-02 0.712620310068431E-03 0.337212193060766E-02 0.105675718877114E-02 -0.103809062338722E-01 -0.13773121842649E-01 -0.557272024978734E-02 0.303409017038998E-02 -0.165885345358302E-02
+     -0.129827818230272E-02 0.484469327024725E-03 0.953511534104895E-04 0.313567456896119E-03 -0.126328685462428E-03 0.909957197988445E-04 -0.137097173529205E-03 -0.729598885726052E-03 -0.261515629265937E-02 -0.19104813000323E-02
+     -0.271709471457845E-03 -0.396460673887329E-04 -0.677595095488051E-04 -0.125420243738236E-03 -0.220871345542589E-03 0.309692356799826E-03 0.183038687776347E-03 0.287365491844595E-02 -0.65925197049789E-04 -0.124220518626385E-04
+     0.612772850665677E-03 -0.317297706714586E-04 0.752903532483062E-04 0.420844359989781E-03 -0.176565652383627E-02 0.801034067445562E-03 0.106744211946945E-02 -0.150836923913967E-03 0.278931802640846E-04 -0.277029513420084E-04
+     -0.176537428894745E-04 0.38832814451259E-04 -0.488553094157797E-04 -0.208065613473163E-03 -0.876374682829953E-04 0.114100967342238E-03 0.131811230333671E-03 -0.146625422522892E-04 0.152644524879215E-04 -0.491177831385085E-04
+     0.462985218575726E-05 -0.89769267166184E-05 0.511863863507202E-05 0.204607773914712E-05 -0.815137733464835E-04 -0.154473179701649E-03 0.648440126389074E-03 -0.231429561642506E-02 -0.292662492556396E-02 0.109427336257373E-04
+     0.504112087963088E-03 -0.102186044282318E-02 -0.126849477371913E-02 0.622161598487188E-03 -0.467493825750706E-03 -0.749170488386447E-03 -0.232077741900887E-03 -0.329120286260913E-03 -0.120955541105282E-03 -0.703706462319135E-05
+     0.893548924952735E-05 0.327786279519227E-04 -0.244731997342768E-04 0.395768759231155E-04 0.71793609996432E-04 0.192882272350427E-03 -0.495527093570473E-04 0.288668395943998E-03 -0.921607056032741E-05 -0.465834218085427E-04
+     0.103963560302543E-03 0.243078836456522E-04 0.239551359042634E-04 0.777802298169412E-04 -0.433178784056712E-04 -0.551603094990371E-04 -0.129810396243562E-03 0.214971256306024E-03 0.795912666488993E-03 -0.247268979592756E-02
+     0.153879369477799E-03 0.152745629682244E-03 -0.269670830336034E-03 0.134110644660825E-04 0.384581643958842E-03 -0.342204350544073E-03 -0.375375169420828E-03 0.618556853885887E-03 0.110551539060002E-02 0.274786608141346E-04
+     0.222209185866585E-04 -0.74518951309644E-04 0.139454777199221E-04 0.153012376047008E-04 0.14212495912671E-03 0.308402104329259E-04 0.147967038220137E-03 -0.790943301567491E-04 -0.788530780550422E-04 -0.413427727764236E-05
+     -0.135661278615207E-04 -0.837700411258914E-04 -0.827458981503929E-05 0.20736582666983E-04 -0.272902562356728E-04 0.168123781335712E-04 0.210441000485219E-04 0.141403173370115E-03 -0.315129320811113E-03 -0.300579231533831E-05
+     -0.179371543490181E-04 0.174614905196777E-04 0.694084078335849E-05 0.786685704662514E-03 0.840073733147461E-03 0.642215871029935E-04 0.996628083473093E-04 -0.94665746879934E-04 0.974809291914258E-04 0.675565314243563E-03
+     0.111278450261738E-02 -0.860707750278585E-05 -0.439380445115341E-04 -0.192101712870584E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-10.090299" symmetryID="1">
+     0.104920544465739E-01 0.143632720750666E-01 0.552660782629293E-02 0.420697021234743E-03 0.337812440921392E-02 0.12329567631501E-02 -0.474935385415559 -0.627930919362954 -0.467565537165298E-04 0.484380879618242E-01
+     -0.233899111640129E-01 0.388629388934528E-02 -0.156847077506926E-03 0.141339222053137E-03 -0.505497869719465E-02 -0.15597043417115E-02 0.52852678023353E-03 -0.403476910354291E-02 -0.17575529955303E-02 -0.280088998928292E-02
+     0.779150192949427E-04 0.729854204873139E-04 0.838047317861822E-04 -0.124605177348268E-03 0.238373768048801E-04 0.40840776492721E-03 -0.167477666987436E-02 -0.148741581580311E-02 0.923493542769426E-03 -0.264773958822866E-03
+     0.117320903952371E-03 -0.567066407798981E-04 -0.210497622200637E-03 -0.226090723077114E-03 0.120272457508435E-04 -0.563282590806874E-03 -0.331253835763599E-03 -0.23578334863882E-02 -0.63524486582017E-02 0.112905088513192E-01
+     0.167885395760041E-01 0.166679630142878E-01 -0.162571366769662E-01 -0.679110570366663E-02 -0.111961005144458E-02 -0.185618608618182E-01 -0.72883614805544E-02 -0.341448428743369E-03 -0.793156665581413E-02 -0.291546100261074E-02
+     -0.246492047693399E-03 -0.858565502753955E-03 0.120583868727424E-02 0.212703780778935E-03 0.110896938436172E-02 0.587794659809244E-04 -0.220105873153284E-02 0.317323969144099E-02 0.131675032442165E-03 0.363474680723441E-02
+     -0.617662321849692E-03 0.832285880622153E-03 0.405103527903057E-03 0.98054781317163E-04 -0.371752067577838E-03 -0.122607486778048E-03 -0.101488935786811E-02 -0.210373423465348E-04 -0.165136061419915E-02 -0.422070869293824E-02
+     0.698122867894472E-02 0.732457329646299E-02 -0.579688829264127E-02 0.937478312530809E-02 -0.494785788834372E-02 -0.640840917688052E-02 0.810700792078769E-02 -0.349513880291308E-02 -0.464221622737256E-02 0.110726371980219E-02
+     -0.31001238052033E-03 -0.543531609127702E-02 -0.312044672939859E-04 -0.608165490813941E-03 -0.787181679137723E-03 0.414197637741568E-03 0.407859118752079E-03 -0.327619434661987E-03 -0.150577969076891E-02 -0.211563440386357E-02
+     0.139116087988463E-02 0.803437446308394E-03 0.249987669707792E-03 -0.529493308360933E-04 0.50387074025623E-03 0.12855552182343E-03 0.855002834807657E-03 -0.597248167058145E-03 -0.553008751804302E-03 -0.105839621247061E-02
+     -0.738811537714367E-03 -0.179486072164032E-02 -0.63090610147348E-03 -0.192581141729773E-03 0.43729492959247E-04 -0.126828882529374E-02 -0.139211892118134E-02 -0.171597794938589E-02 -0.627794179609623E-03 -0.482285841619476E-03
+     -0.140219995189739E-03 -0.782116569360078E-03 -0.383756344743116E-04 0.164034030061084E-03 0.557567264908881E-03 -0.101745661031542E-03 -0.307650726481332E-03 -0.911499744109325E-03 -0.161995293567238E-03 -0.645654453198749E-03
+     0.449821942532679E-03 -0.433182648168182E-03 -0.460872452698579E-03 0.465481424038644E-04 0.113140207851978E-03 -0.398823169326056E-03 0.958443581808629E-03 0.332455659967234E-03 0.421700350753519E-03 -0.165143201434409E-04
+     0.185387100668985E-03 -0.289850584041882E-03 0.256760587721204E-03 0.22951094672398E-03 0.552075955313676E-03 -0.439252492440474E-03 -0.125400853972144E-03 0.779123908565009E-05 -0.185604841297517E-04 0.352708004098645E-04
+     0.677993503344803E-05 0.357521850261532E-04 0.108140875684314E-03 0.436758747719523E-04 0.970338132229211E-04 0.705359616360523E-04 -0.65038235746417E-04 0.37254582997897E-05 0.977372177853245E-05 -0.776343816397254E-05
+     -0.3860893468417E-05 0.141474023791943E-05 0.240692928423931E-05 0.976893357358693E-05 0.100109034491709E-03 0.188583976633822E-03 -0.29047449405584E-03 0.173237894563193E-03 -0.30026812043517E-02 0.194455955460589E-03
+     0.159459031781687E-03 0.44114157850979E-03 -0.123367169598169E-02 -0.112773601982198E-03 0.212917871134442E-03 0.109592005671551E-02 0.273862143598129E-02 0.143135094696096E-02 0.696726256330435E-04 0.680709100373216E-04
+     0.339807397075824E-04 -0.535294775263763E-04 0.65225094909943E-04 -0.211038904213015E-04 0.591627477750806E-03 0.468802061350398E-03 0.417755314451074E-03 -0.417706349964217E-03 -0.437118913658007E-04 0.38562970301344E-04
+     -0.670506223478188E-04 0.234519491721457E-04 -0.11419817737378E-03 0.162969209438975E-04 0.655921872173963E-04 0.137869354783838E-03 0.22839978542931E-03 0.45208295151813E-04 -0.398243616146118E-02 0.138334629694692E-01
+     0.131769670875027E-04 -0.227733761379297E-04 0.661291280930455E-03 -0.893656531654935E-03 -0.939788130438931E-03 0.110886533314952E-03 0.342221732133886E-02 -0.118853608182977E-02 -0.487781733088722E-02 0.123663817655391E-03
+     -0.436777153223443E-04 -0.104896785934358E-03 0.208889416782701E-04 0.160173243139916E-04 0.480600630663957E-03 0.524396353706428E-04 -0.18182740142438E-03 -0.698919487028776E-03 0.105854358972307E-03 0.807612587066719E-04
+     0.191664226284521E-04 -0.146097911169435E-04 -0.97905110292624E-05 -0.248667735283407E-04 -0.167594083904536E-04 -0.223263619678619E-04 0.304912487185843E-03 0.961509590496088E-03 0.21587433440407E-02 0.720777955374821E-04
+     -0.955912104821951E-04 -0.474223703430624E-04 -0.10041474006906E-03 -0.181640580992871E-02 -0.17890354467225E-02 0.461526025213435E-04 -0.123375157224802E-03 -0.23265293181069E-04 0.157346488398972E-03 -0.728618051029039E-04
+     -0.178379277673639E-02 -0.265228194128873E-04 -0.580680785552058E-04 0.813540582048619E-04
+   </orbital>
+   <orbital occupation="2.0" energy="-1.038615" symmetryID="1">
+     -0.863735945904725E-03 -0.151969037811533E-02 0.232793693746565E-02 -0.451738920148067E-04 -0.515397707505151E-04 -0.195259027031942E-03 0.246879221206379E-04 0.106651937431613E-04 -0.90961976711749E-03 0.100048912122031E-01
+     0.148252298298286E-01 -0.836446618069169E-03 0.238610587359255E-02 -0.181057471418731E-02 0.840375888904778E-02 0.491343528038109E-02 -0.221546004573286E-02 -0.129227093855164E-02 0.973005613729764E-02 -0.115588191201351E-02
+     -0.502443336061587E-04 -0.125284998527944E-03 0.536949741977646E-03 0.211347430532749E-03 0.508060084937275E-04 -0.171709504619221E-02 0.238279967377308E-02 0.193918574586566E-02 0.238121173510377E-02 0.159537238775338E-03
+     -0.105036913207201E-03 -0.947372923406114E-04 -0.197758709030178E-03 0.150292964985966E-03 0.174018704684098E-03 0.193786824452219E-03 0.892618254132378E-04 -0.505303637577014E-03 -0.122815399981254E-02 0.313190604409529E-02
+     -0.149296624107845E-01 0.610958255459428E-02 -0.194673831549929E-03 -0.308749458042212E-02 0.133430520021621E-01 0.101133346993699E-01 -0.589366877640368E-03 0.121223075281242E-01 0.456905368456235E-02 -0.359371425595703E-02
+     0.798066938535272E-02 0.532689391390131E-03 -0.11421858332066E-03 0.528497203001696E-03 -0.518801622150456E-04 -0.384929713687626E-03 0.290302069467696E-02 -0.366415936839978E-02 0.278570402823979E-02 -0.137325002594022E-02
+     -0.160840327835903E-02 0.18509319568222E-03 -0.195015032225618E-03 -0.126622677340114E-03 0.912873517847654E-05 -0.199948625833916E-03 0.186414512460929E-03 -0.592727646164538E-05 0.497933717181542E-03 0.914824147833467E-03
+     -0.123809385032165E-02 0.127916525147345E-02 -0.418667635272704E-01 0.332226926791497E-03 0.10071453975043E-02 -0.310472957744653E-02 0.443831532757391E-03 0.11928343401058E-02 -0.530230188665679E-02 -0.103777140410633E-01
+     -0.219778439157939E-02 -0.108725259104688E-01 0.338681149685822E-03 0.684315083276311E-04 0.438527065651458E-03 0.120002016785335E-03 0.226387598617276E-04 0.217268517448111E-03 -0.139671595573963E-04 -0.587749953068158E-03
+     -0.28429741190863E-03 -0.961226467501191E-04 0.261987718716002E-04 -0.345736870134836E-04 -0.757483822583029E-05 -0.374042549253844E-04 0.757260012475063E-04 0.664940626547456E-04 -0.169292173332233E-03 0.102381207560888E-03
+     -0.462851002608177E-03 -0.438568810463548E-02 0.36488426262098E-04 -0.501586260873158E-03 0.565866207565687E-03 -0.201138387972509E-02 -0.716913903987418E-02 -0.405724245679294E-02 0.411899654599818E-03 -0.362137098658945E-03
+     0.436684653814005E-03 -0.22904794977326E-03 0.884251723525176E-03 0.680241600584423E-02 0.211721634539064E-03 0.801204581376044E-04 0.113273494086979E-03 0.140238740659825E-03 0.16903917562544E-02 0.199410021636182E-02
+     0.13020821956594E-04 0.658337245751915E-04 -0.454879411079092E-03 0.291269611654295E-01 0.969610712341768E-01 -0.210834632667907 -0.244501699732152 -0.26003483160307E-01 0.205661983440392 -0.100635331867987
+     -0.175454146975137 0.155176385746019 -0.748494731260402E-01 -0.138519266133255 0.578451406695034E-01 -0.271406178712438E-01 -0.554508787206959E-01 0.11155485768695E-02 0.581220764274718E-02 0.699504698112541E-02
+     -0.399285791225448E-02 -0.341189646389834E-02 0.179427687781021E-02 0.122729911233767E-01 0.145349423151254E-01 -0.858263456260212E-02 -0.641301364637946E-02 0.940253446315661E-03 -0.287406929154237E-04 0.113040447148136E-02
+     0.166011874805017E-03 0.231595164661573E-02 -0.250962061277304E-02 -0.196936771315656E-02 0.241810782234282E-01 0.743993714761258E-01 -0.179316782216495 -0.14544500513077 0.158276361177642E-01 -0.206673241915609
+     0.12103490506356 0.686156211562543E-01 -0.100257701476547 0.7161130734714E-01 0.258817739312696E-01 -0.139826683071918E-01 0.136529401280752E-01 -0.11133592373031E-01 0.617346454115504E-02 0.163798960280265E-01
+     0.137144624633696E-01 -0.998979812066372E-02 -0.675646898047629E-02 0.645039330691863E-02 0.427052937902175E-02 0.14864926593245E-02 -0.733601303405602E-02 -0.235327920197334E-02 0.735364253439314E-03 -0.90304393511343E-03
+     -0.352852668974236E-02 0.308583044966773E-03 -0.483795376570078E-02 0.749437483912395E-02 0.412283698965751E-02 -0.365383928806684E-02 -0.923512269911407E-02 0.171261705243363E-01 0.338674058799384E-01 0.218832269185344E-01
+     0.203544694103826E-01 0.830001320368183E-02 0.143920967974669E-02 0.261223971459098E-01 0.105981026134519E-01 0.113762383106436E-02 0.136821417463633E-01 0.496435200673072E-02 -0.827289288894111E-02 -0.864926658751924E-03
+     0.311341294510256E-02 0.137427359791019E-02 -0.179529634255306E-02 0.76529063365609E-03 -0.166730232416194E-02 0.727019115667873E-02 0.169587506312198E-02 -0.282939191918155E-02 0.108116652705015E-03 0.274300260908549E-03
+     -0.334550799675089E-03 -0.409762430855292E-03 -0.144646369836158E-02 0.129362750516531E-03 0.179368077692839E-02 0.919613973919356E-03 -0.547560826565411E-02 -0.113952962194193E-01 -0.104987576567183E-01 0.110165589272039E-02
+     0.840470916454857E-03 0.609892986897987E-03 0.575273453933535E-02 0.737536043971304E-02 0.102487348606148E-01 0.363429486343668E-03 0.130527845839591E-04 -0.303008735727293E-04 0.149301897451142E-01 0.307400081040929E-01
+     0.171994042793598E-01 -0.46288079378472E-02 -0.920983072282458E-03 -0.650683191196526E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.747557" symmetryID="1">
+     0.98321209757297E-02 0.269012916187214E-01 0.234184491766417E-01 -0.648367134410772E-02 -0.893028741556881E-03 0.580278458937022E-04 0.23020118851976E-01 0.789267825946104E-01 -0.198401017490016 -0.191207380416389
+     -0.355258846545634E-01 -0.245003202442322 -0.997293816234013E-01 -0.118284853721322E-01 -0.151873088829342 -0.659011550994587E-01 -0.154743271488799E-01 -0.523150762731272E-01 -0.293370687870575E-01 -0.88082329223081E-02
+     0.737378745710033E-02 -0.101790379663749E-01 -0.269473054524549E-02 -0.931877049026902E-02 -0.303257691003475E-03 0.329146712418985E-02 -0.249386922159608E-02 0.22919829178966E-03 -0.760546676669699E-02 -0.300732922042448E-02
+     0.261983538698888E-02 0.16814985671565E-03 0.165912214704181E-03 -0.737402983268044E-03 -0.216217295025066E-03 -0.305656310353318E-02 -0.120974464066418E-04 0.251539726733007E-01 0.843994177888098E-01 -0.213550042046645
+     -0.194278918371029 -0.8348364256558E-02 0.238884241472614 0.108131100331443 0.112942724488836E-02 0.154629504652983 0.694370444324543E-01 -0.334605219516412E-02 0.434460651972108E-01 0.246773875938344E-01
+     -0.446560131018164E-02 0.742933124776176E-02 -0.996304348967537E-02 -0.131998059661842E-02 -0.952972122158551E-02 -0.98030133074277E-04 0.342153718506641E-02 -0.312071645076205E-02 0.508077113645405E-03 -0.516020008683352E-02
+     -0.349560348085057E-03 -0.213112594384834E-02 -0.868479643101127E-03 -0.238554032740212E-03 0.99575195832784E-03 -0.121693415222328E-03 0.322546899432229E-02 0.338954977969949E-04 -0.429418787433719E-02 -0.949770818067631E-02
+     0.14584155538141E-01 0.401172657105152E-01 0.138472319835515E-01 0.151346417437931E-01 -0.112010703353653E-01 -0.182024553048351E-01 0.207192553914975E-01 -0.123278541201863E-01 -0.20058930189255E-01 0.226774544899243E-01
+     -0.128402264364769E-02 -0.88843228619571E-02 0.194409392365192E-02 -0.179153626683656E-02 0.594006460923876E-04 -0.444214911778877E-02 0.221263888793282E-02 0.312859624796368E-02 -0.294143442838975E-02 -0.111831407491051E-03
+     -0.838610839508793E-02 0.447905816457018E-02 0.719919330234821E-03 -0.777182736844223E-03 -0.550980101685276E-04 -0.150230010621862E-02 0.101997218776548E-02 -0.291558861707168E-03 0.99460074180605E-03 0.118911265901414E-01
+     0.294684684792231E-01 0.229891766954381E-01 0.573753229573076E-02 0.623218877103543E-03 -0.777054748415854E-03 0.109889267892965E-01 0.289893252567529E-01 0.242579147730893E-01 0.451030496725535E-02 0.438447336643787E-02
+     0.597500807446166E-03 0.558826853824352E-02 0.750142239464988E-02 0.123047688412981E-01 0.221537525774285E-03 0.264763828846961E-03 -0.258249721493286E-03 -0.88562232675345E-02 -0.185024781052497E-01 -0.213528530692678E-01
+     0.988072507639384E-03 -0.806208440001908E-03 -0.138090288438162E-02 -0.766801894436197E-03 -0.143073058119412E-02 0.17171838187591E-02 0.464811794195614E-02 0.78607072749918E-02 -0.467847614244883E-02 0.460927985083581E-03
+     -0.216251434365503E-02 -0.516126815312064E-02 0.14474530835327E-02 -0.942388763718413E-04 -0.565048944149919E-02 -0.162833924712281E-02 -0.387431351353308E-02 -0.448215452708921E-03 -0.108857340279141E-03 -0.251339294086249E-03
+     0.265775852570663E-04 -0.388016524671708E-04 -0.268346513869525E-02 -0.494600002309233E-03 -0.217867899516685E-02 0.205293124677541E-03 -0.243467141583118E-03 0.471294861135593E-03 -0.111615274251266E-03 0.153470472390221E-03
+     -0.188500367474377E-04 -0.916911813209081E-04 0.856287717158799E-04 0.162747706510746E-03 -0.534717650765179E-03 -0.740486593050651E-03 0.172961786838751E-02 -0.590520428528513E-02 0.472082794476976E-02 -0.101989567753483E-02
+     0.778614146336248E-03 -0.118096602590844E-01 -0.620750865135241E-02 0.362790966379804E-02 -0.643573697893508E-02 -0.632309946318266E-02 -0.186875714412205E-02 -0.827066213334381E-02 -0.153054574614678E-03 -0.945980477743227E-04
+     -0.13857247249733E-03 -0.261615864810123E-04 0.166084941201042E-03 -0.258986658068538E-02 0.190267491819248E-02 0.101180551738242E-02 -0.462565834190786E-03 -0.108682135450918E-02 0.174629856444236E-03 0.376977871630924E-04
+     0.46436191237121E-03 -0.104113477937874E-03 -0.181277816616067E-03 0.769002234241648E-04 0.529112878690426E-05 -0.733689969966417E-03 -0.166517186102751E-02 0.342011378635667E-02 0.100798542003249E-02 -0.13432963331569E-01
+     0.162356872970157E-02 0.160775110214337E-02 -0.498008983639804E-02 -0.678152876107844E-03 0.13228343131238E-02 -0.465861132210301E-02 -0.428585307799522E-02 0.13177521919175E-02 -0.662068187860954E-03 0.813639634136228E-04
+     0.133213160099495E-03 -0.359002930626498E-03 -0.190872090141738E-03 -0.172006309091989E-04 0.105993304832863E-03 0.178106384357435E-03 -0.131652745257699E-02 -0.94800977075548E-03 -0.394325169678396E-04 -0.218220884783124E-03
+     -0.802592051672888E-04 0.46622884320684E-04 -0.199048810155286E-04 -0.176779987139799E-03 -0.103926836735278E-04 0.556992807667164E-04 -0.266568156153005E-03 0.298071287569436E-03 0.242611218387111E-02 -0.684677767703106E-04
+     0.173319162968707E-03 0.702736438374353E-05 0.56351390963462E-03 0.19895703687122E-02 0.321433233434909E-02 0.154520466517037E-03 0.20779601344211E-03 -0.443844452208783E-03 -0.867415791588882E-03 -0.15675891802383E-02
+     0.485324320073917E-02 -0.199726733509337E-03 0.472915046295731E-03 -0.221444278012083E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.688697" symmetryID="1">
+     0.104008221917748E-02 0.289681419373698E-02 0.143344608204853E-02 -0.347972458364219E-04 0.304854058591906E-03 -0.438544522003393E-03 0.751742093500542E-03 0.149802487888553E-02 -0.404442424852786E-02 0.13341697206499E-01
+     -0.732137893351552E-02 0.101518475601056E-02 -0.110983033645502E-02 -0.977993399092474E-02 0.41444174354721E-02 0.366105394678078E-02 -0.614594608922158E-02 0.149746904563355E-01 0.304616425336386E-02 -0.122624158542605E-01
+     -0.116520676042284E-03 -0.825726795214499E-04 0.420876807932561E-03 0.160866564431087E-03 0.438689626791104E-04 -0.104177605662012E-02 0.369226302403734E-03 0.134577381430427E-02 0.167975747501202E-02 0.505971627598416E-03
+     0.3204432863581E-03 -0.168468624726032E-03 0.345063280858423E-03 -0.178644902879809E-04 -0.736166597782142E-04 0.201625556561123E-03 -0.276462738045528E-04 0.258429080695644E-03 0.593692034924787E-03 -0.597400399161586E-03
+     -0.819839570812252E-02 -0.545543330394423E-02 0.994501139426908E-03 -0.178381072221634E-02 0.683242616461111E-03 0.544233491711652E-02 0.109468838545831E-02 0.223302898673564E-02 0.891672666643365E-02 0.654295148474452E-02
+     0.119707917453956E-01 -0.851892800830047E-04 0.207163205081567E-04 0.393476796196046E-03 0.549868369052313E-04 0.881795441311625E-04 0.271698471895668E-02 -0.938814758067337E-03 0.576786283977013E-03 -0.18278080053567E-02
+     0.942249619295725E-03 -0.275666509125905E-03 -0.277205265754683E-04 0.106701084380528E-03 0.167777714407526E-03 -0.258824391740563E-04 0.783306125894921E-04 0.514282300188007E-04 0.251413684408119E-02 0.480614293754995E-02
+     -0.609060826882772E-02 -0.152658314753038E-01 0.221583901524164E-01 -0.613639326248694E-02 0.342686496369011E-02 -0.133718485392507E-01 -0.487167670158863E-02 0.531973948346028E-02 -0.127294879614099E-01 -0.573285664614844E-02
+     -0.759807384893795E-02 -0.142055481762667E-01 0.116472724566581E-02 0.243056781942363E-03 0.260661836704664E-02 0.113697696412528E-02 0.353850628815859E-03 0.118459530202215E-02 -0.789618760354337E-03 0.889751833290832E-02
+     0.269748782763123E-02 0.205709378280472E-02 0.147661645963534E-02 0.660825955583186E-03 -0.83881887797693E-04 -0.532478665060019E-04 -0.59228168875149E-03 -0.818995415750435E-04 0.810715960534333E-03 -0.970809045293307E-03
+     -0.414642161519569E-02 -0.545219173206686E-02 0.397491205791757E-03 0.258909261874595E-03 -0.951124414688169E-04 -0.101690942290538E-03 0.113706501859585E-03 -0.145348649101956E-02 -0.400054090683444E-04 -0.587082695701677E-05
+     0.311989145449656E-03 -0.346267008459899E-02 -0.450085655658947E-02 -0.582751254105537E-02 -0.770669895827537E-04 0.106873336231863E-04 -0.697178977493834E-03 0.515645605519446E-02 0.987632373621103E-02 0.13216761130423E-01
+     -0.145850671177359E-03 0.52890908897087E-03 -0.147908754430063E-02 0.344593429233181E-02 0.8313213321987E-02 -0.156074726288025E-01 -0.160289589042519E-01 -0.203492363308449E-01 0.249992555310588E-01 -0.718390475849692E-02
+     -0.111669642642605E-01 0.211715180144568E-01 -0.452309889675487E-02 -0.883385961828768E-02 0.347961349527839E-01 0.154561076813389E-01 0.327272718834182E-03 -0.562965804197403E-03 0.127147156242291E-02 0.122656356279954E-03
+     0.210642925070695E-02 -0.132522877786552E-02 -0.177682330939881E-02 0.287638734314404E-02 -0.646846052969893E-03 0.617213321202777E-02 -0.314919402121965E-02 0.593109021034738E-03 -0.153652269516859E-03 -0.185427881142084E-03
+     -0.148223962086763E-02 0.603042328000761E-03 -0.708169460054839E-05 0.710944200221263E-03 -0.269927609339712E-01 -0.833904462833638E-01 0.19729545069162 0.210526448902266 -0.157279732249066E-02 -0.243305133130397
+     -0.109457979031632 -0.622565552518916E-02 -0.165329109850065 -0.79481596367587E-01 -0.238987740762304E-02 -0.884522731063082E-02 -0.104960451825703E-01 0.597000489894956E-02 -0.594862604671298E-02 0.10596337680952E-01
+     0.43380872601807E-02 0.919647838268114E-02 -0.103330783034276E-02 -0.533948480798257E-02 0.674583059365487E-02 0.255508529728188E-03 0.137818968991539E-01 -0.367350235282799E-02 0.249011925730027E-02 0.844777628949356E-03
+     -0.119316579950918E-03 -0.132987898558876E-02 -0.73969784444146E-03 -0.29157102216329E-02 -0.428307870563097E-03 -0.236752177441135E-01 -0.749110896283361E-01 0.175812769966561 0.190379996263106 0.600643808477232E-01
+     0.241620671746854 0.920623402505275E-01 0.480239960574509E-01 0.184706904494278 0.68074580370947E-01 0.393631528718028E-01 0.799756392843224E-01 0.321711344605491E-01 0.316097986251315E-01 -0.705572894078508E-02
+     0.876108317099991E-02 0.426808076464957E-02 0.989955769553174E-02 0.132923402852401E-02 -0.608307281708486E-02 0.726108127313988E-02 0.356625298686512E-02 0.116602984776603E-01 -0.253292685913561E-03 -0.293480512386317E-02
+     0.218362183906703E-03 -0.101767147815995E-02 0.125782199078421E-02 -0.298078768600539E-03 0.367587961514301E-02 0.562737878732939E-03 -0.101440660124246E-01 -0.26526888177675E-01 -0.303701376153971E-01 0.648474246127538E-02
+     0.379439600696804E-02 0.302535425492818E-02 -0.997060076325251E-02 -0.234334371398703E-01 -0.272824436944737E-01 0.743724309092066E-02 0.125958104067855E-02 0.173706390200951E-02 -0.177668626012663E-01 -0.436488122138979E-01
+     -0.646895527011541E-01 -0.592124231366869E-02 -0.162815427509609E-02 0.682888562858838E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.67029" symmetryID="1">
+     -0.176304035308668E-02 -0.469384244393063E-02 0.18722894169932E-02 -0.431238578479193E-03 0.126653733352362E-03 -0.130770215244696E-02 0.445348122591474E-03 0.966891276262459E-03 -0.263565709167371E-02 0.165444657254931E-01
+     0.332057839750789E-01 -0.101731116433956E-01 0.117181472431834E-01 -0.253726031595513E-01 0.48263389137409E-02 0.161159307772001E-01 -0.238329614193345E-01 0.446605931450447E-02 0.193162200931068E-01 -0.14483504356353E-01
+     0.159322971559975E-03 -0.151096305933454E-03 -0.127723554716362E-03 -0.678378169246503E-04 -0.489491119235374E-03 -0.274286248923658E-02 0.414340890625843E-02 0.955400436729103E-03 0.168519538434459E-02 0.369123624831955E-03
+     0.227501299447231E-04 -0.503675315156551E-03 0.158714290785624E-04 0.160915083516409E-04 -0.913118032694975E-04 0.289888806048861E-03 0.827797179995475E-06 0.379186163090398E-02 0.841281285339831E-02 -0.144479845511332E-01
+     -0.405554735635791E-01 -0.113523066599939E-01 -0.594477179495445E-02 0.166586190421937E-02 -0.487234350055707E-02 0.106513263817013E-01 0.509106911397383E-02 -0.26970327412205E-02 0.538096843030219E-02 0.66946815375737E-02
+     -0.65916259940888E-03 0.203283683260368E-02 -0.621002528406633E-03 0.214131295661787E-02 0.316816504974538E-03 -0.997343361471006E-03 0.818227992326615E-02 -0.512070780681107E-02 0.7533406204259E-02 -0.304809359352644E-02
+     -0.432663353946335E-02 0.907355246019639E-03 -0.12162492954346E-02 0.932571301178685E-03 0.458733681562165E-04 -0.669314823833655E-03 0.490819031974391E-03 -0.28809396437506E-03 0.25468624395911E-03 0.623268140856257E-03
+     -0.166740579901187E-02 0.710697115324005E-02 -0.575458784434773E-01 -0.118062686255956E-02 0.120974467500662E-03 -0.713149651244121E-03 -0.470493951757718E-03 0.279602858830814E-03 -0.144640350339932E-02 -0.120376007183563E-01
+     -0.113655187121937E-01 -0.150307083327829E-01 0.119621049945917E-02 0.357666894714899E-03 -0.170616957783425E-03 -0.131338223705102E-03 -0.28479582939478E-04 0.323460442423015E-02 0.245485730760602E-03 -0.205772302503953E-02
+     -0.145008509835186E-02 -0.27185166415938E-03 0.425723600057563E-03 -0.130710714116366E-03 0.10836586109547E-03 -0.689013157037939E-04 0.671576447280621E-04 0.180290347957451E-03 -0.208216746058589E-03 -0.687372336749757E-02
+     -0.122817044820613E-01 -0.829438443468867E-02 0.171324454659614E-03 0.856796904887147E-03 -0.182516763600268E-03 -0.793237005044167E-02 -0.150139919764074E-01 -0.113768596180727E-02 0.914194084586099E-03 -0.532450861661507E-03
+     -0.471166987341269E-03 -0.163897344268732E-02 -0.479846903762593E-03 0.110994564886246E-01 0.147424825418463E-03 0.118633037621619E-03 0.154635658479414E-03 -0.107355188839592E-02 -0.357512391955167E-04 -0.413200347154983E-02
+     0.150294084490888E-03 0.419354602866065E-04 -0.117638940131395E-03 -0.56088441733785E-01 -0.15840871341722 0.293966059893207 0.434202430386259 0.250229813360877 0.239940514837741 -0.129049559926057
+     -0.106245137330968 0.180557728177191 -0.964570872336937E-01 -0.799764108851958E-01 0.112798411114049 -0.594547365862814E-01 -0.424731418219642E-01 0.204853137096029E-02 0.320037852250981E-02 0.328852507351041E-02
+     -0.220321359133435E-02 -0.226539016019911E-02 0.488209403512673E-02 0.609384477713781E-02 0.437208543720768E-02 -0.438718015710214E-02 -0.372669155660924E-02 0.33091097122907E-03 0.198187437559257E-03 0.144134550352507E-03
+     -0.818953240761961E-04 0.553956026930259E-03 -0.150745291837353E-02 -0.806178846447163E-03 0.151935917650827E-01 0.388840770989836E-01 -0.827567673279068E-01 -0.115752812337315 0.276660185321267E-02 -0.769449027328372E-01
+     0.397340126621971E-01 0.425765460048569E-01 -0.630722417809886E-01 0.338105160738725E-01 0.365202044189929E-01 0.653276480513814E-02 -0.118277719001341E-01 -0.855193253118046E-02 -0.370093884306121E-03 0.159442677546332E-02
+     0.29228055746914E-02 -0.828693123820648E-03 -0.134797184337569E-02 -0.385653212374451E-02 -0.18435381606638E-02 0.597621659460741E-03 0.109918938042004E-03 0.125734493543297E-02 -0.22146764019502E-03 0.112293768410325E-03
+     -0.82705148413001E-03 -0.135862646683032E-03 -0.150212418451934E-02 0.188650436000843E-02 0.136218969197906E-02 -0.199922923935552E-02 -0.455848167034968E-02 0.892876675705616E-02 0.857726992220936E-02 0.557175549426694E-01
+     0.374242324081417E-02 0.108585131946808E-01 -0.390542219363034E-02 0.380859545102175E-02 0.918504628262276E-02 -0.443051887380746E-02 0.723048319720621E-02 0.318004827151865E-01 -0.143371430912852E-01 0.369053544616264E-04
+     0.924806894779991E-03 0.128691251416179E-02 -0.166462063104703E-02 0.520062373359875E-03 0.361389854530259E-03 0.233232320336677E-02 0.96377027255595E-03 -0.369499547422312E-02 0.885328212133068E-03 0.253980307568776E-03
+     -0.417078928015924E-04 -0.217322996474334E-03 -0.880466245859751E-03 0.17156905591573E-03 0.49112340871849E-03 0.474444628132717E-03 -0.301945098009117E-02 -0.111777230719707E-01 -0.220262000303289E-01 0.741915794975771E-03
+     0.796750109917484E-03 -0.677222127342834E-04 0.857634492789005E-03 0.104246036675376E-02 0.156619485802629E-01 0.736737663091857E-04 -0.302730089059924E-03 -0.279881833663982E-03 0.296351442468296E-02 0.991652264030471E-02
+     0.242084943714349E-01 -0.269859227280703E-02 0.847365133500878E-03 0.108928176929548E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-0.655471" symmetryID="1">
+     -0.13768683433974E-01 -0.356101948088593E-01 -0.343834527834929E-01 -0.672313345429098E-02 0.104518831176561E-02 0.237874109214169E-02 -0.248194158703993E-01 -0.764761131554455E-01 0.174835732267949 0.181459788177158
+     0.348492489366414E-01 -0.209269247011717 0.108464533042003 0.114405596497546 -0.1479451576724 0.75919229686157E-01 0.766782831623304E-01 -0.489841942669732E-01 0.302763359615505E-01 0.224258870623532E-01
+     0.160309157835274E-03 -0.845384375819628E-02 -0.102997541654685E-01 0.462456116931845E-02 0.51089796966974E-02 -0.138755558262646E-02 -0.538343350671748E-02 -0.101223520514574E-01 0.664557912368311E-02 0.477504540359412E-02
+     -0.196035241896398E-03 0.61301536602965E-03 -0.265536876592962E-02 -0.342946886360474E-03 -0.279031789990767E-02 0.251549367056415E-02 0.196785740012387E-02 0.543272418192101E-02 0.124842454491627E-01 -0.238289795942806E-01
+     -0.343308172145912E-01 -0.456107292296546E-02 0.25726517523544E-01 0.164055477646121E-01 0.609184335729706E-02 0.170471212891787E-01 0.10758291490004E-01 0.420164240207042E-02 0.175895845606407E-01 -0.567901649871244E-03
+     -0.677986822805039E-02 0.284663191181876E-04 -0.468155692183884E-02 -0.347722052148965E-02 0.448678376814908E-02 -0.132140366645756E-02 -0.103393186894058E-02 -0.370573136047719E-02 -0.441080116978554E-02 0.104183790469329E-01
+     -0.398188639036029E-02 0.434512278538407E-03 -0.331595177146036E-03 -0.764680619842307E-03 -0.184848406048287E-02 0.516351165669347E-03 0.950706994947909E-03 0.868153153961379E-03 -0.252444852638673E-01 -0.783255622085034E-01
+     0.182168409898882 0.206016340821206 -0.120090216172555E-01 0.195314768331103 -0.105675502431108 -0.146801997030782 0.147877506126219 -0.784606348397006E-01 -0.111896336480773 0.490953884028122E-01
+     -0.292699680156026E-01 -0.482744717186365E-01 -0.581887742501777E-04 -0.722710862449199E-02 -0.10600042672726E-01 0.488598912156019E-02 0.550833287906197E-02 0.221703962416726E-03 -0.545388558252491E-02 -0.938774361497776E-02
+     0.603137821222606E-02 0.422008551420083E-02 0.809877349955919E-03 -0.830930111842688E-03 0.247667835124963E-02 -0.814510869877224E-04 0.174942566656373E-02 -0.307779808544993E-02 -0.168492290775226E-02 -0.821126363273887E-02
+     -0.120920905707268E-01 -0.198532889436922E-01 -0.803182908872236E-04 -0.47882770158649E-03 0.73896911165483E-05 0.120181204539455E-01 0.267274117153247E-01 0.265954449601003E-01 0.690640911153821E-03 0.143222398681692E-02
+     0.450829195202607E-03 -0.109248373531908E-01 -0.255721050299389E-01 -0.191158608023217E-01 0.611456496481454E-02 -0.126747651305442E-02 -0.484426737904173E-02 -0.109835265874244E-01 -0.27314735326185E-01 -0.207806929151775E-01
+     0.411121508071789E-02 -0.439150446865574E-02 -0.547619948018437E-02 -0.587543039125375E-04 -0.193805520972968E-03 0.417499528772314E-03 0.100051339169333E-02 0.418052564721683E-02 0.938476994067421E-03 -0.487148186173679E-03
+     -0.877621258345994E-04 0.167007749554901E-03 -0.103113594134802E-03 0.481170011139267E-03 -0.106218261413457E-02 -0.468754590922858E-03 -0.196184651513903E-02 0.372762169586822E-04 -0.291917434159149E-06 -0.599914112001402E-05
+     -0.382903978048142E-04 0.454332712562635E-04 -0.389230206395265E-04 -0.143454980167588E-03 0.138526499031074E-03 0.28074909160099E-03 0.195055341881428E-03 -0.699453294552374E-05 -0.709345819262968E-05 0.546681543074527E-04
+     -0.80807465579998E-05 -0.124475042879505E-04 0.156691931331342E-04 -0.12353158585739E-03 0.106250923736529E-02 0.206796564555204E-02 -0.409080292604274E-02 0.985478381458681E-03 -0.458724479969933E-02 0.588347126647118E-02
+     0.232761493203024E-02 0.578735194908133E-02 0.924952123888533E-03 0.232950391476713E-03 0.428786693217611E-02 0.157752975168304E-02 0.142158416967867E-02 0.186577284513763E-02 0.575229889924346E-03 0.676545731062701E-04
+     -0.242103193009711E-03 -0.261729259671361E-03 0.949664995459609E-04 0.147293931249987E-02 0.135923806260441E-02 0.430934832140264E-03 0.338637046524618E-03 0.558179055417166E-04 -0.46633976085553E-03 0.556235760841045E-04
+     -0.617512101819747E-03 0.526371742478375E-04 -0.744746648805543E-04 -0.113795167678446E-03 0.117100277622005E-03 0.258711488165976E-02 0.534106719400792E-02 -0.785383493015879E-02 -0.171977542646128E-01 0.995527360636861E-02
+     -0.475446833766583E-03 -0.336135248202464E-02 0.149585125625658E-01 0.260125864739628E-03 -0.56269712560118E-02 0.132951948394027E-01 -0.242310843681959E-02 0.504005267125998E-03 0.104473407768888E-01 0.246261097433776E-02
+     -0.105916957795308E-03 -0.168388522114758E-02 0.212543300660479E-03 0.658922225875145E-03 0.609136993542387E-02 0.132690938908017E-02 -0.545820817702536E-02 -0.593814125864676E-03 0.264898354214919E-02 0.112042216543713E-02
+     -0.400063438011071E-03 -0.109999815836659E-02 -0.212776959701857E-03 -0.702758688232446E-03 -0.219324556015872E-03 -0.386204818461364E-04 0.582675690682106E-02 0.12307439547086E-01 0.140045996267257E-01 0.591719892466369E-03
+     -0.604222823122602E-03 0.112418565094438E-02 -0.339419181029594E-02 -0.504764329295705E-02 -0.634534333231353E-02 0.258869930877285E-03 -0.135716216609597E-03 0.451849982293858E-03 0.159240725525211E-02 0.312015781487262E-02
+     0.117461484971422E-02 0.833854612321784E-04 -0.289981776942298E-03 0.289583966618501E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.565882" symmetryID="1">
+     -0.746535038807374E-03 -0.366797529644158E-02 -0.561598533211747E-02 -0.820134655331932E-04 -0.469159558539981E-04 -0.197468986369796E-03 0.264836160890984E-03 0.689206284315791E-03 0.472506746288256E-03 -0.120250314972543E-01
+     0.617618730447965E-02 -0.226831739340111E-02 0.162906390878745E-02 -0.333311183175666E-02 -0.335009777152781E-02 0.675624848256435E-03 -0.623549268414266E-02 -0.154019470315187E-01 -0.453251423414837E-02 0.38506382238136E-02
+     0.111237912739128E-04 -0.339305791945824E-04 -0.197128371528123E-04 0.480207689648668E-04 -0.166856414664072E-03 -0.717229336212504E-03 0.130595943254016E-04 -0.110400364433589E-02 -0.736189590594239E-03 -0.120016841753321E-02
+     -0.834818801236221E-04 -0.376823007915E-04 -0.661393077126349E-04 -0.233615752085883E-04 -0.933534257894505E-04 -0.128357471505891E-03 -0.175655178012861E-03 0.721764062626186E-03 0.180828783546993E-02 -0.285810643342174E-02
+     -0.960110127323428E-02 0.250057454275773E-01 -0.101419599983975E-03 -0.185437790058239E-02 -0.381969760788645E-02 -0.130154475004929E-02 -0.278799477646481E-02 -0.34066069960456E-02 -0.11930120056671E-01 -0.555185800285613E-02
+     -0.350771498377799E-02 0.160715491872251E-03 -0.304938498755332E-03 0.929535290251874E-04 0.163107843719296E-04 -0.119431201713339E-03 0.23424908652396E-03 -0.437846461755556E-04 -0.364240249454354E-05 0.518410989704156E-03
+     -0.129360209811462E-02 0.750094475431044E-04 0.790235862054874E-06 -0.122877294658264E-04 -0.462046251054056E-04 -0.124078532545178E-03 0.113034079166086E-03 0.531646139241927E-04 0.696491659462024E-03 0.178728897609794E-02
+     -0.439747043620639E-02 0.141069734146522E-03 -0.264694821180356E-01 -0.189170273496755E-02 -0.395139804320572E-02 -0.168839668489113E-02 -0.450795814254622E-03 -0.41611041705079E-02 0.270851441110894E-03 -0.223993941369798E-02
+     0.21516862227928E-02 0.448648162241394E-02 -0.252116623252819E-03 0.334303330703053E-03 -0.367844051021382E-03 -0.991017680939185E-04 0.130808830036947E-03 0.862007056620422E-03 0.52039584052734E-03 -0.186936642546375E-02
+     -0.203578141958481E-02 -0.566443304703437E-03 -0.129955188099869E-03 -0.625743802619672E-04 -0.121273530327959E-03 0.483564032184696E-04 0.392346278857252E-03 0.215141620342847E-03 -0.564583774858835E-04 -0.183563493998122E-02
+     -0.143491443851308E-02 -0.203830711171476E-02 -0.367430510978676E-03 0.946089540527583E-04 0.423819714504821E-03 0.311017465818773E-03 0.220822576905033E-03 0.202499044025058E-02 -0.137409767554036E-03 -0.320737056060174E-04
+     -0.323837178447282E-04 -0.105304118257485E-02 -0.234754952775636E-02 0.625405907635222E-02 0.425027367579768E-03 0.56218769428373E-03 0.476113299801634E-03 0.500739086664988E-03 0.313748982418036E-02 -0.100368891138296E-02
+     0.492473554027313E-03 -0.147553830186335E-03 0.333363723508238E-03 0.377889407592224E-02 0.945336450626151E-02 -0.180397318815213E-01 -0.205091350657038E-01 -0.198981754644102E-01 0.21131209248764E-01 -0.143219594900397E-01
+     -0.147323068757044E-01 0.153105318344284E-01 -0.125697557776176E-01 -0.120758413498794E-01 0.125765434767472E-02 -0.371808603204885E-01 -0.153941384960904E-01 0.560562711580945E-03 -0.101466673529047E-02 0.421431291483723E-03
+     -0.261804616437495E-02 0.132214540658745E-02 0.961198503674593E-03 -0.346716257827069E-02 -0.266426449698782E-03 -0.712452104701117E-02 0.471384948326751E-02 -0.302472495220353E-03 0.233413574722773E-03 -0.202979227508633E-03
+     0.158354362516729E-02 -0.954305741719216E-03 -0.184300393759442E-03 -0.946013712179484E-03 -0.252707940492112E-01 -0.775391557907932E-01 0.182706829888244 0.201746249345408 0.125950001691974 0.269746824721576E-01
+     0.251378131373155 0.115474910320632 0.254288426570965E-01 0.182744401083914 0.816771257963404E-01 -0.337083733579739E-01 0.291698252213478E-01 0.873835967187989E-02 -0.143546480821788E-02 0.151657886814342E-02
+     0.208074939980975E-02 -0.123750550190433E-01 0.642518022930619E-02 -0.511580343870814E-03 -0.126079115296083E-02 0.216142712868146E-02 -0.143723596117077E-01 0.781917043264853E-02 0.396196405188265E-03 -0.140473804067319E-03
+     -0.127442095827271E-02 -0.448380917380173E-03 -0.178357260461689E-03 -0.122808769242892E-02 -0.177243471122522E-02 0.720616465862548E-02 0.167618930513606E-01 -0.312264651038571E-01 -0.478585397986781E-01 -0.118679289000179
+     -0.348241369812939E-01 -0.936802457690797E-02 -0.630372847509045E-02 -0.320286349470127E-01 -0.101480637564138E-01 -0.421276069337674E-02 -0.436144023624685E-01 -0.192705455815702E-01 -0.188124411502369E-01 -0.159823700422824E-04
+     0.319324143010555E-02 0.18437865473011E-02 -0.44454697183001E-02 0.123221556432857E-02 -0.288797414250205E-02 0.923631460439244E-02 0.499033689739986E-02 -0.687482617098532E-02 0.453981570427046E-02 0.728538573956043E-03
+     -0.623048257939034E-03 -0.488767229807326E-03 -0.231023583244114E-02 0.136002432639245E-02 0.526137920017935E-03 0.108849357829799E-03 -0.671104684425507E-02 -0.917381710892974E-02 0.359647729289462E-02 -0.57269372162394E-03
+     0.164497658143539E-03 -0.418934827723311E-04 0.809748318281514E-02 0.180057119909775E-01 0.426017373593646E-01 -0.178616019345746E-02 -0.945654410331897E-03 -0.634410645603693E-03 0.193096018077543 0.271385080586025
+     0.127799584046509 -0.219621885092881E-02 -0.221048787393707E-01 -0.978684305123709E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-0.550744" symmetryID="1">
+     -0.117940034993303E-03 -0.170458810164584E-02 -0.502303725232812E-02 -0.30776240037127E-03 0.150376135679739E-03 -0.181194177746174E-04 -0.202924767992333E-02 -0.429533247916297E-02 0.726280719057558E-02 0.843055657168614E-02
+     0.287027531125957E-01 -0.932727803184518E-02 0.574130464959956E-02 -0.788409471876918E-03 -0.439267061332971E-02 0.386564498114723E-02 -0.295954020826044E-03 -0.883827031318169E-02 0.455082188169671E-03 0.113518977920903E-01
+     -0.986801356378734E-03 -0.443384734307572E-03 0.693989984507231E-03 0.169241018834918E-03 0.109093770004049E-03 -0.121585000315487E-02 0.158992311757509E-02 0.123829320576452E-02 0.115928035921813E-03 0.105455251622063E-02
+     0.88573895913945E-04 0.288006748852917E-04 -0.281217985732021E-03 0.605493151178211E-05 -0.374976160661211E-04 0.190635335093662E-03 0.153996070849425E-03 -0.310160510622449E-03 -0.527501696782432E-03 0.88537706295222E-03
+     -0.279978918117715E-02 0.318533321953714E-02 0.13749239918316E-02 -0.171244408756561E-02 0.775886939047873E-02 0.315175590326238E-02 -0.138122527350485E-02 0.740341951387871E-02 0.124054007441242E-03 -0.127285379412641E-02
+     0.569912457079183E-02 -0.186271312208279E-04 -0.253145033323633E-03 0.154145000061433E-04 0.175500949209503E-03 -0.794417047669036E-04 -0.266550569811475E-03 -0.362778008992132E-03 0.310952633868671E-03 0.129670573962058E-03
+     -0.170356334911719E-03 0.150916500932321E-03 0.950198224656747E-04 0.496548406528975E-06 -0.211271194844121E-04 0.165856889029841E-04 0.116297199892435E-03 -0.707444491995924E-04 0.261470824452198E-02 0.586797370542563E-02
+     -0.11274165423992E-01 -0.112526999651243E-01 -0.187062586314129E-01 0.139471677032896E-02 0.200993228077458E-02 -0.131034632908037E-01 -0.469446137785222E-03 0.246392409538921E-02 -0.136530598436256E-01 -0.328352221764041E-02
+     0.551207992054148E-02 -0.909482119887972E-02 0.211508049289029E-02 -0.121355923490969E-04 -0.208321887599277E-02 0.297651624782821E-03 0.737684553235174E-03 0.711740567828345E-02 0.914669132836886E-03 -0.973142145479115E-02
+     0.125449383442271E-02 0.404077838667422E-02 -0.127053606280857E-02 0.535634887453135E-03 0.115048465639228E-02 0.19322525622141E-03 0.91066944588187E-03 0.220022928415606E-03 -0.543562599540436E-04 -0.500102219757465E-03
+     -0.62064527131632E-03 -0.38639211548808E-02 0.631094726400473E-04 -0.253989843463788E-03 0.24963553053441E-03 0.361556033280119E-03 0.141432453462851E-02 0.135028939465139E-02 0.102184367733933E-03 -0.649080268383785E-04
+     0.36430060089571E-03 -0.41631403679445E-02 -0.589463031932518E-02 -0.751825466336939E-02 -0.212621762752076E-03 0.234964707660111E-03 -0.366669956274824E-03 -0.453732900008849E-02 -0.620666006852681E-02 -0.500936107893859E-02
+     -0.292088609523933E-03 0.804946594051213E-04 -0.382938195905643E-03 -0.232352447364777E-02 -0.557692569249555E-02 0.100848219119466E-01 0.658551015791278E-02 0.20543007407351E-01 -0.180925446429586E-01 0.926040355183888E-02
+     0.237724886166543E-02 -0.144399454573125E-01 0.721653432803134E-02 0.157553804007782E-02 -0.230903915975187E-01 0.243147456159453E-02 -0.359742514329726E-03 0.336881619568477E-03 -0.366159681731395E-03 -0.19987881548076E-03
+     -0.479807368924231E-03 0.244604227045451E-03 0.117876474057926E-02 -0.122601880113615E-02 -0.878555031560784E-03 -0.126529606603776E-02 0.866805400102917E-03 -0.330566660041728E-03 0.125752859707554E-03 -0.688243850051435E-04
+     0.430943567558726E-03 -0.250929433373451E-03 0.425118872728309E-04 -0.106136024094963E-03 0.553379461430337E-02 0.133679827944785E-01 -0.246530549613334E-01 -0.560011486015981E-01 -0.108505330690502E-01 0.269068254099353E-01
+     0.764008214840229E-02 0.157800733653364E-01 0.274058261303234E-01 0.104440162424785E-01 0.172148943276018E-01 0.196930737052421E-02 -0.628593394840642E-02 0.294317516841003E-03 -0.557450086641557E-03 -0.440938280410429E-02
+     -0.524466688768569E-02 0.392152010174214E-02 -0.149510950704535E-02 -0.106006594748036E-05 -0.856025332389969E-02 -0.115990877998966E-01 0.686831297552907E-02 -0.902366810310068E-03 0.82051627567648E-03 -0.451462841527277E-03
+     -0.106698983607974E-02 -0.210666264045008E-02 0.161551658178755E-02 0.94048001531217E-03 0.118246792566299E-02 -0.225495007665668E-01 -0.709357059667459E-01 0.164533212200785 0.205222596908455 0.15938231245397E-01
+     -0.203982944382349 0.113305539568062 0.153101230944549 -0.141712655570839 0.850915538588967E-01 0.115432344736659 -0.657372659983432E-01 0.415134825910743E-01 0.534538183161239E-01 0.126883475745571E-02
+     -0.715550012518446E-02 -0.924937288142033E-02 0.327686987723137E-02 0.57021596497132E-02 -0.218955673014809E-02 -0.148198143770746E-02 -0.580282864052621E-02 0.367404428824464E-02 0.306229641914846E-02 -0.684443007435276E-03
+     0.927324323329591E-03 -0.207854446716615E-02 0.58851760827433E-03 -0.798007589177098E-03 0.191127747831357E-02 0.955179907104185E-03 0.196203839873485 0.272028052796831 0.97256479047177E-01 0.169665211935016E-01
+     -0.878194213514508E-02 -0.134131004996937E-01 -0.143390750140332E-01 -0.362287153176099E-01 -0.175855470363188E-01 -0.669641842711802E-02 0.605977025153075E-03 0.493449180411029E-02 -0.755009949694057E-02 -0.121814299400684E-01
+     -0.396121419459028E-02 -0.431651454559166E-03 0.422381503325123E-03 0.70805242675577E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.54619" symmetryID="1">
+     -0.836526332998221E-02 -0.133860907794583E-01 -0.128046914349951E-01 -0.173233447026463E-03 -0.171354770177062E-03 -0.173399248698713E-03 0.425522873462439E-02 0.105408591019791E-01 -0.218051003189054E-01 -0.204056006153819E-01
+     -0.795494315107258E-02 0.183383424908008E-01 -0.917290629018668E-02 -0.211000874778873E-01 0.2842209259887E-01 -0.611749624024228E-02 -0.20233283076938E-01 0.193197492639881E-01 0.403649259328046E-02 -0.168870099031908E-02
+     -0.276086076276987E-02 0.207202781439612E-02 0.882734315872411E-03 0.521556064365102E-02 -0.328807122884682E-02 -0.768910874673202E-02 0.682665938097888E-02 0.329370165659154E-02 0.134417195031181E-01 -0.576737131032257E-02
+     0.129897407317639E-02 -0.954807539822252E-03 -0.324617962198333E-03 -0.199411396778229E-02 0.150284261568607E-02 0.131273694479688E-03 0.125179779217009E-02 -0.356022023906178E-02 -0.784457370318612E-02 0.147795287725381E-01
+     0.294685953146559E-02 0.293442971178055E-01 -0.126799390110356E-01 -0.860649393443209E-02 0.450412178275421E-02 -0.674858429937114E-03 -0.170542898332329E-02 0.598021439282811E-02 -0.141007553914807E-01 0.664625523968682E-03
+     0.149773736606361E-01 0.210283080898953E-03 0.123424534109345E-02 0.155326401424313E-02 -0.114915734476396E-02 0.133771785829838E-03 0.296907621054851E-02 -0.153227865156978E-02 0.194557956058231E-02 -0.390915821689902E-02
+     0.317603705759951E-03 -0.627526168769136E-04 0.600985136166694E-04 0.472200936872912E-03 0.597931094983894E-03 -0.305463423270272E-03 -0.246129266517677E-03 -0.354836218219485E-03 -0.22304118763439E-01 -0.703565728061074E-01
+     0.16605244781624 0.199286823749378 0.192835900017286E-01 -0.259099204899153 -0.102754588308594 -0.455030737753294E-01 -0.184080933098852 -0.755326674692317E-01 -0.390253755206595E-01 -0.100019720842288
+     -0.412638961580255E-01 -0.215553425456025E-01 -0.549126349819073E-02 0.803520221890608E-02 0.484178238731123E-02 0.819070191872393E-02 0.14339324884552E-02 -0.595660556016682E-02 0.106940537900661E-02 -0.308547942888266E-03
+     0.67515364751785E-02 0.120812768542433E-03 0.201993653803809E-02 -0.516904328722794E-03 0.111180281367836E-02 -0.115362428182107E-03 0.627748127697547E-04 -0.222657841961235E-02 -0.468858459833998E-03 0.944711752126078E-03
+     0.395757061688237E-03 -0.451198352710815E-02 0.556206765676203E-03 -0.314644479137351E-03 0.811988166102253E-04 -0.471050685398338E-02 -0.951230973170741E-02 -0.113874032993888E-01 -0.528072122038085E-03 -0.630078259010877E-03
+     0.285000322233911E-03 -0.128537070580914E-01 -0.330780975682469E-01 -0.21194245310213E-01 -0.872487787181929E-02 -0.926064852293449E-03 -0.158810162247105E-02 0.196712897652066 0.273750647170111 0.885993339643318E-01
+     0.219192675696918E-01 0.767900559919507E-02 0.407195370337868E-02 0.100115285793894E-03 0.339307150058694E-03 -0.296421029768471E-03 -0.456420732966561E-02 0.309708649333825E-02 -0.286279631733384E-02 0.570164944007785E-02
+     -0.100627535993381E-01 -0.117693519949963E-02 0.490572355085191E-02 -0.923963922412833E-02 -0.417344521946869E-02 0.652652417128447E-02 -0.652102270366229E-02 0.142940791711672E-03 0.154620831798331E-03 -0.136434075025115E-03
+     0.452787887863733E-04 -0.580449078260118E-04 0.682686149325588E-03 0.23651860168596E-03 -0.456316578221838E-03 -0.213388568690435E-03 -0.162756007212353E-03 -0.107193960087245E-03 0.613255183805487E-04 -0.102202322635591E-03
+     0.38651967728985E-05 0.307086617616353E-04 -0.846486283595993E-04 0.110348268152303E-03 -0.212549863113119E-02 -0.437718254072657E-02 0.694304389279585E-02 0.142769985592019E-01 0.110205206642999E-01 -0.460736103123622E-02
+     -0.112957509803159E-01 0.183574359948841E-01 -0.381976892293782E-02 -0.104808740237846E-01 0.140244592142121E-01 -0.684738855596289E-02 0.420561156021892E-02 0.934845740389947E-02 -0.229231377436538E-03 0.589252034587744E-03
+     -0.158739236571807E-02 -0.845498885661515E-04 -0.954477213604201E-04 0.533142414479133E-03 0.229457803009855E-03 -0.265520651616507E-02 -0.346001951578699E-03 0.208854890487336E-02 0.401443160739667E-03 -0.748728001894491E-04
+     0.817634500481923E-04 -0.715303551188297E-04 0.103050115491542E-03 -0.2163568353856E-03 -0.852423388986811E-04 0.285033680572724E-02 0.600721244983655E-02 -0.106200194652793E-01 -0.12559801392615E-01 -0.318264666285362E-02
+     0.59213583815561E-02 -0.155199867182774E-02 0.12320529116418E-01 0.286622627035631E-02 -0.332971035288239E-02 0.12274877610864E-01 0.108788606479663E-01 -0.865083115422318E-02 0.110887721143944E-01 0.99111497969116E-03
+     -0.968037155716734E-04 0.322997014345244E-02 0.16520514970138E-02 0.465910140874435E-03 0.142527327551118E-02 -0.922880369827631E-03 0.123691259746881E-01 0.420578429813121E-02 0.335427924898671E-02 -0.153601958326728E-02
+     -0.691133590714729E-03 -0.177676159108897E-04 0.753213508064034E-04 0.79844358186558E-03 0.942174502932586E-05 -0.758163253656294E-03 -0.425911039131839E-02 -0.527212692836962E-02 -0.318059928750769E-02 0.813278573549773E-04
+     -0.287429540396044E-03 0.561243701613268E-03 -0.570151612241878E-02 -0.106321686727552E-01 -0.134895595524594E-01 -0.289647020341509E-05 -0.493159926632855E-03 0.380922480036421E-03 -0.735830889695713E-03 -0.283760959186586E-02
+     -0.116237154771459E-01 -0.926623711467459E-04 -0.463448512908484E-03 0.737234090548301E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.546108" symmetryID="1">
+     -0.153421366048644E-02 -0.459846361625297E-02 -0.263717847988804E-02 -0.141699848241104E-04 -0.382496841784368E-03 -0.453286187456622E-03 0.140706287156627E-02 0.292724964474116E-02 -0.409292810055939E-02 -0.143445946011286E-01
+     0.103985995782032E-01 0.306033489271822E-02 0.442346877618994E-02 -0.928125761865569E-02 -0.765332195707856E-02 0.171657072836659E-02 -0.648220147960619E-02 0.111119625886312E-02 -0.128190769111343E-02 -0.244698376995018E-02
+     -0.865185490762495E-04 -0.114975775839848E-03 0.134521771239928E-03 -0.163691968172197E-03 -0.517406449297495E-03 0.15480411555516E-02 -0.331068832510159E-02 -0.537377885309408E-03 -0.217118012734037E-02 -0.16761327791463E-02
+     0.222964277419134E-03 -0.518838260656659E-03 0.101888864718257E-03 0.618238964780873E-04 0.224318683875765E-04 -0.264447835324807E-04 -0.213524926946463E-03 0.259207648388641E-03 0.470017534211432E-03 -0.10919612784639E-02
+     0.864109636512645E-02 -0.92166781591459E-02 -0.998715718211653E-03 -0.46306182760636E-03 -0.234901589269836E-02 -0.772564566295644E-02 -0.292159229976831E-02 -0.292264613822675E-02 0.143343507552453E-02 0.275832351705242E-03
+     -0.253901153261436E-02 0.13154213204498E-03 -0.36887754051776E-04 0.411723174103496E-03 0.704576303965867E-04 -0.647998928013387E-04 -0.679129218462224E-03 0.796900141210267E-03 0.198049987520481E-02 0.192855459375506E-02
+     -0.284437973231319E-04 0.285506531911706E-03 -0.295287731466162E-04 0.164766918742279E-03 -0.750775799176928E-04 -0.126895951340904E-03 -0.269719561258312E-05 -0.11804724546356E-03 0.275983576088484E-02 0.562619431236463E-02
+     -0.846645012850534E-02 -0.214966990619554E-01 0.437758294799992E-02 -0.954323225790062E-03 0.746649973754261E-02 -0.102321933679055E-01 -0.533122230690968E-02 0.562195542419525E-02 -0.10331500583141E-01 0.386641553212386E-02
+     0.898691536541984E-02 -0.656285563340691E-02 0.518721058865526E-04 -0.28541515673426E-03 -0.135735175224959E-03 -0.189115104689444E-02 -0.28244056096239E-02 -0.341460457588006E-02 -0.366275726515488E-04 -0.194703427257392E-03
+     -0.682071831770939E-02 -0.104521340280709E-01 -0.529619500059004E-03 -0.151544684392015E-02 -0.134802640196998E-02 -0.148739557994204E-03 -0.508463295830383E-03 0.285875507860966E-03 -0.110258181458785E-02 -0.687102024412819E-03
+     -0.418449982124814E-03 -0.883207315369468E-04 -0.631320292490724E-04 0.708571651767289E-04 0.585106459564388E-04 -0.341068110930106E-03 -0.94846110796497E-04 -0.184491064457926E-04 -0.136249495925152E-03 -0.651580063834169E-04
+     0.342021297962953E-04 0.596968327336582E-02 0.10320519118189E-01 0.205783885348653E-01 -0.192513168840294E-03 0.669779854068081E-03 -0.133545350086413E-02 -0.513594666757931E-02 -0.888409937398645E-02 -0.648631966976876E-02
+     -0.348406420187338E-03 -0.239972263768899E-04 -0.377633678579777E-03 0.10808122463138E-02 0.243656885646218E-02 -0.383997327554828E-02 -0.446881708599467E-02 0.484447358462039E-02 0.655197020593714E-02 0.527293600321425E-02
+     -0.161200981980907E-01 0.383618175772624E-02 0.525111181060576E-02 -0.136026390895785E-01 -0.731376399682788E-04 0.348556001403147E-02 -0.129640995057083E-01 0.791161682737156E-05 0.25690142596544E-03 -0.170916238228393E-04
+     -0.281406511492069E-03 0.133907913548795E-03 -0.684812388932134E-03 0.115956174690002E-02 0.19763966268621E-03 -0.422972722633217E-03 0.212355794377204E-03 0.148073813917666E-03 0.668684293703703E-04 -0.105669070593794E-03
+     0.489683296239102E-05 0.402446902429452E-04 -0.227862452305202E-03 0.701391730193379E-04 0.48295266264529E-02 0.110959968742295E-01 -0.199308159007323E-01 -0.401991672613135E-01 0.138485403611986E-01 0.328088336927266E-01
+     -0.270006670470709E-02 0.170722309006704E-01 0.351748432236973E-01 -0.546229885621431E-03 0.17866486137451E-01 -0.976123850670622E-03 0.11521028903685E-01 0.195481071368388E-02 0.2542191625609E-03 0.534943859294689E-02
+     -0.294206122267494E-03 -0.552306745211715E-02 0.901478506304568E-03 -0.942802742376188E-03 0.116222520367549E-01 0.164459399495386E-05 -0.128885020541202E-01 0.100626006309997E-02 -0.290102916879664E-03 0.842806036159337E-03
+     -0.298852423606087E-04 0.347449285739832E-02 -0.660512945770921E-03 -0.474876301481278E-03 0.371019851670464E-03 -0.220215658120793E-01 -0.699912003591903E-01 0.163672563536151 0.205878830497842 -0.253785475793438E-02
+     -0.198669136174194E-01 -0.280832163793817 -0.161431235561717E-01 -0.863767966336247E-02 -0.205666225912932 -0.817732691527071E-02 -0.172308900209037E-01 -0.980555646756091E-01 0.41278765188798E-02 -0.620314771269252E-02
+     -0.236550874164268E-03 0.539758434115562E-03 -0.116516605845576E-01 0.458332840199199E-03 -0.436331673778429E-02 0.39946000104644E-02 -0.361549151708046E-03 -0.473741956152566E-02 0.500417724490658E-03 -0.856894129035627E-03
+     0.173027291231836E-02 -0.599695382365981E-03 0.731968178069816E-03 0.31095937558841E-03 0.210123354093905E-02 0.160853700589375E-02 -0.138636231949159E-01 -0.366960043222999E-01 -0.272603208640423E-01 -0.290333614325899E-02
+     -0.816043577099244E-02 0.115609283195345E-02 0.19605635520186 0.270741394713451 0.94439334360969E-01 0.103140389003712E-02 0.231683790402512E-01 0.106878184776118E-02 0.103646129672433E-01 0.214734404926402E-01
+     0.304811269194979E-01 0.209994324161435E-02 0.213162381553817E-04 0.615023920217625E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.545788" symmetryID="1">
+     -0.105397450041445E-01 -0.210466069686381E-01 -0.23679250117213E-01 -0.161497651392832E-02 0.316371986042162E-03 0.114826090609188E-02 -0.497078513256855E-02 -0.115054340503769E-01 0.184628118713367E-01 0.545560136465818E-01
+     0.262808544559067E-01 -0.184441061151754E-01 0.475630333470567E-02 0.200623367672283E-01 -0.115836748294486E-01 0.111822882265512E-01 0.23313433595732E-01 0.67966666395524E-02 0.304262624815126E-01 0.521622045334767E-02
+     0.108659822635764E-02 0.371027728407875E-02 -0.248314344975352E-02 0.473947460085434E-02 -0.282232529786571E-02 0.175319123214233E-02 0.10724267588001E-01 -0.308936923039805E-02 0.121877056423117E-01 -0.410259028967522E-02
+     -0.783297780606042E-03 0.164979329103268E-03 0.219904085835016E-04 -0.251843541695319E-02 0.100925529537343E-02 0.336320354468603E-03 0.202649093504225E-02 -0.245348986611232E-02 -0.542540928207444E-02 0.114595901415648E-01
+     -0.49078598382313E-02 -0.161277722780854E-01 -0.128636927049496E-01 0.897060023231656E-02 -0.844432563238734E-02 0.705519184775793E-03 0.136565727229738E-01 -0.868873520489455E-02 0.597285366058118E-02 0.573438804305518E-02
+     -0.121768079029775E-01 0.169747814240807E-03 0.514302095115043E-03 0.108252351317497E-03 0.217802655129245E-03 -0.343103688654254E-03 0.258996772011747E-02 -0.115606488016592E-03 0.665365311810992E-03 -0.243404817850518E-02
+     -0.153992267473686E-02 -0.2595579149332E-03 -0.119919653920935E-03 0.350653041789919E-03 0.150128489134036E-03 0.680140075088136E-04 -0.407029415992386E-03 -0.281870132694404E-03 0.219281761841674E-01 0.696643457664321E-01
+     -0.164749372768773 -0.192044126563227 -0.427069414829256E-01 -0.360836018897186E-03 -0.281895923039463 -0.179350091396048E-01 -0.188010243598722E-02 -0.2063879060621 -0.768075059439766E-02 -0.10402093070679E-01
+     -0.10414984292962 -0.111797351307346E-01 0.64717844178523E-02 -0.274154263268243E-03 -0.208852957824402E-03 0.121878785141162E-01 0.525641030325071E-05 0.699753731656655E-02 0.219450708195383E-02 -0.701313172755775E-03
+     0.538602697179211E-02 -0.38816398831606E-02 -0.871051820769067E-03 0.189794586590812E-02 -0.531499836463445E-03 0.556799281474275E-03 -0.342059910824253E-03 0.194687442517408E-02 0.145670590086648E-02 0.139015191520266E-02
+     -0.320806123948605E-05 -0.244864368328582E-02 0.771757689620082E-03 -0.336320094476267E-03 -0.848678738235356E-03 -0.322106312709245E-02 -0.340975787863092E-02 -0.448000047641167E-02 0.131166773890641E-03 0.320440153974291E-03
+     -0.727378541046736E-03 -0.196813072713695 -0.271343910239584 -0.926520460508985E-01 -0.863010881651818E-03 0.229328202527672E-01 0.620811216588749E-03 0.133843657168369E-01 0.378585629126613E-01 0.190077924800955E-01
+     0.283694775610266E-02 -0.858742822262088E-02 -0.477866281805027E-04 -0.550794919457197E-04 -0.847965666779953E-04 0.711867471174899E-03 -0.420031106555178E-02 0.225570706669814E-03 0.819444871874745E-03 -0.110612061214516E-03
+     -0.150947502304479E-02 0.233358235785121E-02 -0.132586375795516E-02 -0.140872410155867E-02 0.135361265274042E-02 -0.242562230362059E-04 -0.182721036561419E-02 -0.154721890833114E-03 -0.261069979178058E-04 0.121422861750117E-03
+     0.482031236228523E-04 -0.865156902628958E-05 -0.29163105431687E-03 0.992999680851303E-04 0.753437809894137E-03 0.133067442857736E-03 -0.874375277643645E-04 0.207858209845043E-04 -0.272800979794302E-05 0.304798363596611E-04
+     -0.527078481784827E-04 0.971480054404535E-05 -0.18856792979371E-04 -0.606266166889842E-04 -0.172953230037565E-02 -0.354048844688438E-02 0.605321100801279E-02 0.676823390000024E-02 -0.967141016605932E-03 -0.844477351186998E-02
+     0.448833592515949E-02 -0.578041329805916E-02 -0.877601195477867E-03 0.320173838761558E-02 -0.800603473164686E-02 0.225974847604577E-02 -0.501996185051497E-02 -0.567405319960304E-02 -0.280875482014593E-03 0.221223435573698E-03
+     0.11039036899241E-03 0.349022988599911E-03 0.797991132369607E-03 0.516070608374495E-03 -0.102654323060047E-02 -0.186783665660805E-02 0.174850577021309E-02 0.309440144918023E-02 0.339603276249763E-03 -0.518694469698625E-03
+     0.205127397301333E-03 -0.168159293824264E-03 -0.432500813902002E-03 -0.876176082526673E-04 -0.276973481030803E-03 -0.31199460481454E-02 -0.647015533226178E-02 0.104083276277561E-01 0.201695701460235E-01 0.217092906555602E-01
+     -0.236846879662121E-02 0.897733273797502E-02 -0.142295725170374E-01 0.536611661426756E-03 0.723440986773705E-02 -0.156918510433781E-01 -0.965338377862146E-02 0.191388141845965E-01 -0.120146221238421E-01 0.194304277685627E-03
+     0.771405687228292E-03 -0.496509069370924E-03 0.171871368110169E-02 0.267420267167239E-02 0.261686027754914E-02 0.290218011263521E-02 -0.313797638284758E-03 0.638729707213256E-02 0.931289407270313E-02 -0.264365907863066E-03
+     -0.150267708896383E-02 -0.131603163342018E-02 -0.241905391420495E-03 -0.557523573163516E-03 0.318838383852121E-03 -0.103290952022864E-02 0.386642286199644E-02 0.485222010790602E-02 -0.234757336261224E-02 -0.41019557446776E-04
+     0.164619157459555E-03 -0.660148464383687E-03 -0.567681107841899E-02 -0.101748849561138E-01 -0.183627585017608E-01 -0.389564395460056E-03 0.723189972917846E-03 -0.157113322270379E-02 0.184444958662314E-02 0.634408082166221E-02
+     0.356587499054104E-02 -0.261566157824E-03 -0.589605325169904E-03 -0.465827774169918E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.541339" symmetryID="1">
+     0.116079460422589E-01 0.238913771148697E-01 0.286382762140278E-01 -0.245312891303575E-02 -0.47078157332847E-03 0.137252140426531E-03 0.57748242528248E-02 0.140020837001647E-01 -0.270130371310645E-01 -0.558860020519099E-01
+     -0.256482322876741E-01 -0.331404586933374E-01 -0.623856070219035E-02 0.255021351267867E-02 -0.275129264711244E-01 -0.129625433620142E-01 -0.464742518847015E-02 -0.106762244472481E-01 -0.296762519105647E-01 -0.456567414305981E-02
+     0.256078983350998E-03 0.461342214682453E-02 0.255983164525488E-02 -0.610244722154396E-02 0.130158173186617E-02 -0.223004464642862E-02 0.931014109815767E-02 0.329387839463767E-02 -0.769478069956827E-02 -0.448987773348925E-03
+     0.234109508279435E-03 -0.728518536779755E-03 -0.596288353655342E-03 -0.260555245375927E-02 0.100595256808702E-02 0.382630084561396E-03 0.239309151491981E-03 -0.242458584875019E-01 -0.74822500540686E-01 0.171542894824743
+     0.209758107865999 0.545434228106684E-01 0.484375853086339E-01 0.260775157084716 0.847917081805218E-01 0.285225220448445E-01 0.185057243508572 0.629989882530189E-01 -0.646651584810819E-02 0.834775636801875E-01
+     0.30561999311868E-01 -0.407691404167219E-02 0.27880877669625E-02 0.122503679168704E-02 -0.111813645727703E-01 0.558570754847078E-02 -0.584292919779243E-02 0.41202177286633E-02 -0.237079078819618E-02 -0.272151310764241E-02
+     0.460308694595209E-02 -0.255702989482192E-03 -0.102335331418454E-02 -0.156675743302602E-02 -0.138709754903236E-02 0.498717881260403E-03 -0.186257231292576E-02 -0.204268854608145E-02 0.280814425091668E-02 0.623226645206719E-02
+     -0.120665320066738E-01 -0.121053526429357E-01 0.134845945186109E-01 -0.121076759092908E-01 -0.38814588157155E-02 0.927630891240459E-02 -0.6295418926228E-02 -0.526141600986825E-02 0.538643409231458E-02 0.638424603133296E-02
+     -0.125753170893609E-02 0.121621337652306E-01 -0.254074340444068E-03 0.585263833397608E-03 0.226282208534844E-03 -0.164838109774461E-04 0.167966982446647E-03 -0.285968688863577E-02 0.166801940354308E-02 -0.161971229385587E-02
+     0.202607506579332E-02 0.105219697809703E-02 -0.447864132965993E-03 0.446879264688708E-04 0.743464484012311E-04 0.314404730253211E-03 -0.13886929130422E-03 0.428536468361941E-03 -0.23341451362484E-03 0.196825240834924
+     0.271315978611542 0.929808413182389E-01 -0.469281644050179E-02 -0.218496915468177E-01 -0.689289837739763E-02 -0.163823558392628E-01 -0.413344692086784E-01 -0.21682982579244E-01 0.390396994442673E-02 0.670373421624174E-02
+     0.196594970614235E-02 -0.156824969849808E-02 -0.177384975525708E-02 0.391681767876515E-02 0.753560573890512E-03 0.617003784647111E-03 0.249463115903931E-03 0.300598422681751E-02 0.351864524722318E-02 0.759841921165263E-02
+     0.732045055053634E-04 -0.216228021631288E-03 0.352831291076842E-03 0.13531708050589E-02 0.264955281886112E-02 -0.354425169553485E-02 -0.758270447622734E-02 -0.165489609747232E-01 0.372942902909097E-02 -0.741835836698108E-02
+     0.544279391106699E-02 0.525027353732072E-02 -0.636379033231608E-02 0.315207067830199E-02 0.735557482610219E-03 -0.767557624300347E-02 0.813203929823931E-02 0.502028625900472E-03 0.241711385851261E-03 -0.249844273996464E-04
+     -0.131206363317115E-03 -0.459070557870153E-03 0.23804355393774E-02 0.116315863227701E-02 -0.223491591874338E-03 -0.118492738516496E-02 -0.410956387695515E-02 -0.187076530990054E-03 0.528269357288238E-03 0.322355867668159E-04
+     -0.653161711022072E-04 0.196544686811105E-03 -0.210963088211023E-03 0.341898684834589E-03 0.125689303458958E-02 0.21449949046136E-02 -0.314843586081946E-02 -0.596671031395503E-02 0.266007195503425E-01 -0.223838878278545E-02
+     -0.826325691581012E-02 0.117468385983851E-01 0.889890472127428E-02 -0.598311637604448E-02 0.817620729108533E-02 -0.624873224935298E-02 -0.159068850620818E-01 0.248315406136535E-02 0.174469437302259E-03 -0.207854198958263E-03
+     0.481173269121177E-03 -0.334196619223755E-03 -0.623529689865693E-03 0.200435266516326E-02 -0.220558922434884E-02 -0.302168892747173E-02 -0.12450176335856E-02 -0.309697843506302E-02 0.582117508755535E-04 0.69164411311713E-03
+     -0.224450985353194E-03 0.356940394110167E-04 -0.828607874485675E-04 -0.445259473514454E-05 0.334794604448913E-03 0.391109794918646E-03 0.796533102101049E-03 -0.274218677958085E-02 0.117154609190133E-01 -0.520062178604959E-01
+     -0.39960494577868E-03 0.349925537736722E-04 0.207201837474429E-02 0.409501827081996E-02 0.173865126430296E-02 0.139017641776934E-02 -0.107206497222368E-01 0.755044756207046E-03 0.590821823538545E-02 0.331217458204054E-04
+     -0.114557596610953E-03 0.342663828935733E-03 0.276134654217228E-03 0.17173946558269E-04 -0.951970125853313E-03 0.375380254838384E-03 0.240083889851893E-02 0.15844182148802E-02 0.163700323640068E-03 -0.303138075084865E-03
+     -0.493063003148242E-04 -0.880262531695213E-04 0.124805911828335E-03 0.117106366421182E-03 0.905086623882064E-04 0.992907261766847E-04 0.101692243762041E-03 0.140617961075764E-02 0.162435363368337E-02 0.85188354158815E-04
+     -0.8863380685832E-05 -0.230912895572829E-04 -0.791252326218064E-03 -0.930225072985096E-04 0.696234875049537E-02 0.97213197383846E-04 -0.132725686453577E-03 -0.100383758683518E-03 -0.187319246169825E-02 -0.324605006675914E-02
+     0.413400001260373E-02 0.108310667018575E-03 0.431878471707709E-04 0.589019406990671E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.536922" symmetryID="1">
+     0.100210631723907E-01 0.191844216758183E-01 0.184799851792969E-01 -0.314608174979923E-03 0.365063729356989E-03 0.418825148488421E-03 -0.582537551571199E-02 -0.146328348835086E-01 0.322087280179197E-01 0.389040486366455E-01
+     -0.148865068319866E-01 0.280667354036671E-01 0.189062555335375E-01 0.694194466852547E-02 0.266816219824532E-01 0.123517732241052E-01 0.36500537715738E-02 0.394026429347641E-02 -0.869810257819542E-02 -0.366948678893425E-02
+     -0.439235537937576E-03 0.535951938928779E-02 0.372116852843577E-02 -0.495080472303095E-02 0.156231741811672E-02 0.151882565807219E-02 0.853386580629809E-02 0.634191285023174E-02 -0.822662784026919E-02 0.102864745609771E-02
+     0.601535239545366E-03 -0.389962406684933E-03 -0.64714877696014E-03 -0.230315938101834E-02 0.761447528534442E-03 0.103512144204198E-02 0.669074865868667E-03 0.243448744774992E-01 0.748714887704457E-01 -0.172583926580131
+     -0.212570844760585 0.508464596957453E-02 -0.228271054347956 0.129398268065609 0.993424723810781E-01 -0.158166259039302 0.939325675139349E-01 0.727829520165918E-01 -0.779569118100607E-01 0.404515509058326E-01
+     0.470135305888791E-01 0.261283759269677E-02 0.995114101243473E-02 0.641861874708859E-02 -0.405696726153151E-02 -0.344912217899198E-02 0.436758996698938E-02 0.778526240416098E-03 0.322190512536108E-02 -0.56702392972524E-02
+     -0.136800533237317E-02 0.998717174005668E-03 -0.198830151451563E-03 -0.191118489259752E-02 0.118012006833346E-03 -0.171740384362066E-02 0.220167402896147E-02 0.977539038578079E-03 0.368566429251432E-02 0.796563834860933E-02
+     -0.140488898644288E-01 -0.178727013803552E-01 -0.299552464967964E-01 -0.121032809578453E-01 0.671404879853539E-02 0.114927255739208E-01 -0.994779710433144E-02 0.495731718750685E-02 0.766299925179393E-02 -0.171062085141109E-01
+     0.423338836676613E-02 0.115122409404938E-01 -0.913071910310646E-03 0.67650958909838E-03 -0.221008369042566E-04 0.151007672102793E-02 -0.459452463622621E-03 -0.223927714756856E-02 0.128302509126437E-02 -0.199326247923208E-02
+     0.392366151234954E-02 -0.13302593607141E-03 -0.319767980156568E-03 0.341468547238682E-03 0.81924975253054E-04 0.563038603186689E-03 -0.3910677391498E-03 0.213690675181434E-03 -0.518705413940291E-03 0.158845895296333E-01
+     0.377288471234135E-01 0.251283712245942E-01 -0.748921205459305E-02 0.177182747854876E-02 0.232835546653376E-02 -0.196464052264206 -0.271994072596064 -0.886948065864767E-01 0.197457792341823E-01 -0.114540614141781E-01
+     -0.753091753475511E-02 -0.79506824952544E-03 -0.664957213770327E-03 0.194909726696844E-02 0.885304352040146E-04 0.2183017071662E-03 0.332992614321918E-03 0.421432372193304E-02 0.80991852955538E-02 0.149201003447951E-01
+     -0.84320134108969E-03 0.348124037986881E-03 0.679364494749553E-03 -0.407928395310108E-03 -0.718838361253273E-03 0.132398245671516E-02 0.1757080018353E-03 -0.698484152052368E-02 0.133730640717753E-02 -0.145032484844109E-02
+     -0.203576538427043E-02 0.205935934056725E-02 -0.204596986069092E-02 -0.164541833170477E-02 0.475224471809129E-02 -0.375789443508664E-02 0.297817800992039E-02 -0.232921557349371E-03 -0.449378883412735E-04 0.331062286725702E-03
+     -0.31265095312053E-04 -0.188098634288494E-03 -0.234596587278918E-02 0.335773042783871E-03 0.217300985334328E-02 -0.414248200382724E-03 -0.108661650099089E-02 -0.112970864152311E-03 -0.777881595799309E-05 0.391318840731668E-03
+     -0.303251850203545E-05 0.149944983393194E-03 -0.303151774572658E-04 -0.129331422986231E-04 0.633136540254914E-03 0.129164473813356E-02 -0.318321544646192E-02 -0.169461426042596E-02 0.162759189811464E-02 -0.44192956618191E-02
+     0.202236988793487E-02 -0.423069017268344E-02 0.202472267356665E-02 0.142538366245658E-02 -0.630655935729875E-02 -0.255742620261556E-02 -0.194488320583616E-03 -0.140426130030196E-02 0.324104709882954E-03 0.486253688029901E-05
+     -0.190486135364254E-04 -0.135231641960951E-03 -0.169303026054267E-03 0.197506173621927E-02 -0.123807056875164E-02 -0.263588094024439E-02 -0.145314196008359E-03 -0.237216953626453E-03 -0.445795506361455E-05 0.12104910082596E-03
+     -0.175872064130913E-03 0.910534386958422E-04 0.501444826656854E-04 -0.144338816087274E-03 0.338397358115527E-04 0.342473125594343E-03 0.632503121987162E-03 -0.143277920639736E-02 0.281302666963772E-02 -0.637021265096831E-02
+     0.251851549429351E-03 -0.75941699535473E-03 0.136005449073948E-02 0.209669461585768E-02 0.223713322769054E-05 0.1041701674022E-02 0.247603184633481E-02 -0.312162504425166E-02 -0.132345440914467E-02 -0.256583144742779E-03
+     0.985478175399887E-04 -0.375987604454679E-05 0.112284411549802E-04 -0.568353591232163E-04 -0.111503195486442E-02 0.542400186941897E-03 0.535324919799211E-03 0.41732789141686E-03 -0.384973968263537E-03 -0.820218225900036E-04
+     0.225239431089025E-04 0.164692081211676E-03 -0.202824459592341E-04 0.434350639813047E-04 0.1408183142618E-03 -0.102373798299694E-03 -0.324462806710049E-03 -0.362060180535348E-04 0.194705615039802E-02 0.295190375117957E-04
+     -0.287742069920124E-04 -0.582929039295899E-04 0.655667463827865E-03 -0.228589914370919E-03 0.225716996503E-02 -0.69236218406535E-04 -0.193787351437929E-03 0.222052551428454E-04 -0.525531564043721E-03 -0.111139437758945E-02
+     0.811984683255476E-03 -0.228032399391115E-04 0.252665483205304E-03 -0.159101474412508E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.532392" symmetryID="1">
+     0.196229716495219 0.275401393863801 0.105046308111167 0.220458904348594E-02 0.223742781623071E-01 0.789019173535763E-02 -0.233042542025073E-01 -0.722279902407602E-01 0.165700429240777 0.19315947693721
+     0.467505893911221E-01 -0.420044108884623E-01 -0.257447784131818 -0.984621866180343E-01 -0.337098224922488E-01 -0.18052161642643 -0.669217789608502E-01 -0.24591913016053E-01 -0.719194092250062E-01 -0.22776169015637E-01
+     -0.368816632732192E-02 0.172225019098991E-02 0.169216077591609E-02 -0.110837166382478E-01 0.540458449573009E-02 -0.341967423168043E-02 0.329636758598159E-02 -0.194348113370831E-03 -0.712042721038443E-02 0.372438623226744E-02
+     -0.971138815474253E-04 0.828338065414154E-03 0.152206710344988E-02 0.118021312298973E-02 -0.285914097907119E-03 0.136419451995261E-02 0.241219057570274E-02 0.622190042670209E-02 0.150225279332895E-01 -0.318601320111277E-01
+     -0.38483597167049E-01 -0.416181118125381E-03 0.333405721448991E-01 0.424649315458124E-02 0.753589144555403E-03 0.245080917007871E-01 0.175723944221539E-02 0.665619847287347E-03 0.291081659372648E-02 0.104319008823438E-01
+     0.696960551517611E-02 0.328216982248472E-03 0.462916234817739E-02 0.275403444512174E-02 -0.624377141246765E-02 0.155855227944889E-02 -0.276714460449816E-02 0.10906252442177E-01 0.530964371977735E-02 -0.870848681023424E-02
+     0.328879502362344E-02 -0.104207724004505E-03 0.705994607334953E-03 0.706420670701741E-03 0.250711429002255E-02 -0.103427265089096E-02 -0.706660281335689E-03 -0.338938340008965E-03 0.59763374453296E-02 0.139625906162151E-01
+     -0.254424077793719E-01 -0.498231752770164E-01 -0.339622917673075E-01 -0.239364880903973E-01 0.713266272249768E-02 0.151546979486889E-01 -0.257449165869301E-01 0.100642047316148E-01 0.140874238239144E-01 -0.105253310906423E-01
+     0.161336475884834E-01 0.160274854746663E-01 0.532396212025198E-03 -0.25219642511733E-02 0.104100575942238E-02 -0.558506704634699E-02 0.272045959895313E-02 0.313605359939707E-03 -0.530995544833305E-02 0.240837942252347E-03
+     -0.116919780349163E-01 0.757730045969534E-02 0.654340767855392E-04 -0.562097467874874E-03 -0.155832005200587E-03 -0.184449678370492E-02 0.120918380482802E-02 0.489389332683212E-03 0.186574130627012E-02 0.125836633168657E-01
+     0.259326678772742E-01 0.379435216600974E-01 0.184763286132901E-02 0.353569293640017E-03 0.197446758874718E-03 -0.957331976064156E-02 -0.172660425643809E-01 -0.160389383518197E-01 0.228068214069427E-03 -0.405865462695859E-03
+     -0.427512019038313E-04 0.949085687117945E-02 0.196533312656608E-01 0.353867488559962E-01 -0.144841258856592E-02 0.110438379047187E-02 0.128874715237883E-02 -0.85175114477014E-02 -0.140310625781835E-01 -0.134347025389489E-01
+     -0.189046143640318E-03 -0.6755760150682E-04 -0.841275668046626E-04 0.111804928223157E-05 0.880459516376765E-04 -0.527461195810095E-03 0.729549885496409E-03 -0.308213883569559E-03 -0.809534706406776E-04 -0.910763656033707E-03
+     0.110279157342547E-02 -0.781111709440852E-03 -0.601703121858255E-03 0.985418462576192E-03 -0.516445983013788E-03 -0.399194482735272E-03 0.701771958706287E-03 -0.373541865154148E-04 0.727844504824887E-04 -0.558377699563712E-04
+     -0.519236468389039E-04 0.349569829257976E-04 -0.337411627851035E-03 0.346967709308858E-03 -0.27157645549109E-03 -0.146194043824095E-03 -0.138819401946517E-03 0.326791292982962E-04 -0.199061585088887E-04 0.435514008099833E-04
+     -0.516373910737624E-05 -0.718809783051157E-04 -0.501847190642478E-04 0.689471594419337E-04 0.178302752742838E-03 0.552303972397361E-03 -0.407559206369159E-03 -0.42896661036759E-02 -0.205914098344224E-02 -0.344896643164791E-03
+     -0.305850756007638E-03 -0.569838156959149E-03 -0.221224513702014E-02 -0.108416822146553E-03 0.147751277320108E-02 -0.258129110773473E-03 0.105537528835493E-02 -0.639171331875113E-03 -0.3221556633066E-03 -0.964369310753389E-04
+     -0.33190709142733E-04 -0.102803618460367E-04 -0.408791577264149E-04 -0.191692879613478E-02 0.227008584512164E-03 -0.27895052791736E-03 0.537771201665867E-03 -0.12651090066526E-02 0.168634872055226E-03 0.518676201723356E-04
+     0.270772971936871E-03 -0.286344786734255E-04 -0.580256093905481E-04 0.1092015944738E-03 0.120037055488693E-03 0.349994357123457E-03 0.94165258524276E-03 -0.209900025979777E-02 -0.478100128185873E-02 0.197671369393483E-02
+     -0.430325978093949E-03 0.410969475617183E-02 0.816404344453924E-03 -0.253331903169513E-02 0.344443297241215E-02 -0.940741236461979E-03 0.655672615127784E-02 0.155937455405422E-02 -0.73738671738322E-02 -0.47365127087264E-03
+     -0.1993937588615E-03 0.175917353686857E-03 -0.137017824247885E-03 0.101147750313923E-03 -0.750220850266275E-04 -0.155277996333697E-02 -0.589404705568996E-03 -0.117503342513689E-02 0.218218742470851E-04 -0.305073350785552E-04
+     -0.140490339710925E-03 0.104540892076268E-03 0.511652904728766E-05 0.169666643222097E-03 -0.611295435821695E-04 0.415840549814508E-04 0.44809183995737E-03 0.102896446552327E-03 0.40636378998415E-02 -0.143580375325676E-04
+     0.294017242190814E-03 -0.25906568817716E-03 -0.578129943577188E-03 -0.173138271113964E-02 0.415506662452414E-02 0.101741200398241E-03 -0.401762511979745E-03 -0.482552849686656E-03 -0.391200455987889E-03 -0.997167223038516E-03
+     -0.56847919228954E-03 -0.660548951445309E-04 0.497916051315386E-04 -0.140004041950611E-03
+   </orbital>
+   <orbital occupation="2.0" energy="-0.442418" symmetryID="1">
+     0.567819022086276E-03 0.248741469139946E-02 0.604976461562319E-02 0.850246508004944E-03 -0.42093461147424E-03 0.371065895660963E-03 0.419738321189496E-02 0.888533798135673E-02 -0.110037895714661E-01 -0.486803217818511E-01
+     0.141535977120967E-01 0.235395996768003E-01 -0.210751289656298E-01 0.194964092939822E-01 0.124385945076652E-01 -0.238322400202032E-01 0.125767302370056E-01 0.181316009140101E-02 0.794532758242975E-02 -0.871749114897325E-02
+     0.597217116380777E-02 0.318781782847646E-02 -0.451371409228613E-02 -0.138663025595269E-02 -0.818426874787822E-04 0.122610187302761E-01 0.22854316302527E-02 -0.105238629246822E-01 -0.502645336337361E-02 -0.479053873417533E-03
+     -0.270877823071512E-02 0.166052886379765E-02 0.14945112226598E-02 -0.271827545871903E-03 0.291440488895744E-04 -0.143188022999809E-02 -0.115482527469303E-03 0.105891147767021E-02 0.215792262436923E-02 -0.534710975289403E-02
+     0.190934845804906E-01 -0.389861732867985E-01 -0.324991767587539E-02 0.159384364547817E-01 -0.445768754588156E-01 -0.146988317616178E-01 0.11429617626837E-01 -0.431883257944322E-01 0.207087938607168E-03 0.682640492952467E-02
+     -0.48173378493629E-01 0.2829542762041E-04 0.649232743629024E-03 -0.791935525537518E-03 -0.40232115314924E-03 0.359949956962377E-03 -0.406353297487388E-02 0.345772614019745E-02 -0.350600791168725E-02 0.154401709587525E-02
+     -0.874138338071972E-05 -0.279658886577122E-03 -0.248911523342392E-03 -0.245189724806142E-03 -0.264695695703837E-03 0.782672848655829E-04 -0.665514734811005E-03 0.241679570865757E-03 -0.178272270457011E-01 -0.48453101037205E-01
+     0.943222908473655E-01 0.142449147290306 0.360160030539724E-02 0.462046158923782E-01 -0.734780513355084E-01 0.231021440734778 0.446738835521387E-01 -0.664815718037671E-01 0.210377291995972 0.211894506911084E-01
+     -0.351638162531389E-01 0.959881953485671E-01 0.603541092167981E-02 -0.897691010531184E-03 0.278988746975836E-02 -0.10678795596572E-03 -0.352128627523523E-02 0.146092929326533E-01 0.186963919914876E-03 0.339101216406431E-02
+     -0.152055461277453E-02 -0.569952055885221E-02 0.958125018985776E-03 -0.143327447765135E-02 0.189590461872899E-02 -0.233885343967049E-03 0.905548281679077E-04 -0.110063736928218E-02 -0.387689364563735E-03 0.210920484405762E-02
+     0.479063370710378E-02 0.181379130430693E-01 -0.25325947302765E-03 0.106330527801285E-02 -0.194102251779926E-02 0.124250543769004E-02 0.146634181479047E-03 0.114400368942919E-02 -0.436698816420459E-03 0.837761320515188E-03
+     -0.251793165582479E-02 -0.120840715119383E-01 -0.28984896220541E-01 -0.226254901207811E-01 0.214502639553593E-02 -0.978821846579689E-03 0.105517036838478E-01 -0.917646098915384E-02 -0.230390238964629E-01 -0.296550382468309E-01
+     0.711612722020433E-03 -0.353454270797436E-02 0.101424555484274E-01 -0.464081289577471E-03 -0.11409310246331E-02 0.126637226073453E-02 0.105105833138292E-01 -0.134581682920848E-01 0.138814917856681E-01 -0.22544732932333E-01
+     0.416846520079991E-01 0.102048872338315E-01 -0.19854231427598E-01 0.370438686944747E-01 0.183062298446959E-01 -0.22856974924941E-01 0.265207161566345E-01 -0.538439486560071E-03 -0.431045945324434E-03 0.50709377564778E-03
+     -0.253787745598763E-04 0.212274563239427E-03 -0.214659527244037E-02 -0.717411686926432E-03 0.179555183545381E-02 0.290015481459746E-03 0.620194909155609E-03 0.356480431091641E-03 -0.211738660214765E-03 0.380724140719008E-03
+     -0.127379769015638E-03 -0.130710441356472E-03 0.267504441607054E-03 -0.321644181206256E-03 0.47734326996538E-02 0.966719202131825E-02 -0.14150551041861E-01 -0.329101326447803E-01 0.386372178885983E-01 0.208591850731969E-02
+     0.438775551369897E-01 -0.754721725842177E-01 0.450729627448676E-02 0.395070603916006E-01 -0.684221619547937E-01 -0.812419690796091E-03 -0.137277352987926E-01 -0.317354450238784E-01 0.459975581638647E-03 -0.340494773689264E-02
+     0.887870994608614E-02 0.17720440164643E-02 0.188712195976104E-02 -0.317428078174099E-02 -0.517941188711572E-02 0.191929613791703E-01 0.393539557139923E-02 0.185974314781695E-02 -0.182740506516824E-02 -0.895214377550108E-03
+     0.223499409562807E-02 -0.932092239278577E-03 -0.197608348222968E-02 0.71936748470126E-03 -0.208259909220707E-02 -0.193043172506291E-01 -0.519955896148568E-01 0.102857129663564 0.140143081474703 0.651448682386515E-02
+     -0.57133560113915E-01 0.793175933342771E-01 -0.242879608298354 -0.528831970270162E-01 0.729384775000056E-01 -0.223185556146528 -0.511967620808536E-01 0.509241742140762E-01 -0.111856587827811 0.530167329328616E-02
+     0.379647158568855E-03 -0.632489167289031E-03 -0.12855026273156E-02 -0.392076663999752E-02 0.105704598145649E-01 0.210542536195271E-02 0.125559723005668E-02 -0.259178198708617E-02 -0.771991279193311E-02 -0.729482358233741E-03
+     0.112725564076245E-02 -0.124732259036891E-02 -0.34162851173063E-03 -0.861237951996788E-03 0.12592431713682E-02 0.152134446944431E-03 -0.894000127571161E-02 -0.203734345341283E-01 -0.351118525804825E-01 -0.378917124601103E-02
+     0.40478162174422E-02 -0.100178189703511E-01 -0.763497772554208E-02 -0.180052509566427E-01 -0.1022818743435E-01 -0.258280931368261E-02 0.208633082518889E-02 -0.110702462126768E-01 0.278046204843463E-02 0.810202829489276E-02
+     0.222748150103787E-01 0.136766283360213E-04 0.13793574320482E-02 -0.278003984712327E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-0.418966" symmetryID="1">
+     0.606473480526618E-03 0.31783514507267E-02 0.128605014282418E-02 0.643633516626743E-03 -0.286895255411013E-03 0.182418297194436E-02 -0.205453736962453E-02 -0.437455979475016E-02 0.105169493521574E-01 -0.180823894414767E-01
+     0.835527753729347E-02 0.158199910370647E-01 -0.733966237521044E-02 0.323268038008691E-01 0.487397975632434E-02 -0.136278822908769E-01 0.281403213145126E-01 0.528829898880802E-02 -0.71770253095315E-02 0.343026661635893E-01
+     -0.24769617786416E-03 0.913038205638208E-03 -0.210874023593796E-02 -0.485402016989329E-03 -0.586213340080674E-04 0.103642213544768E-02 -0.156882115369599E-02 -0.502622077801425E-02 -0.198334533548433E-02 -0.11810014320514E-02
+     -0.11888891830938E-02 0.324182946125562E-03 -0.449691001785958E-03 -0.1471866087868E-03 -0.114942807241821E-03 -0.27617580241374E-03 -0.360252842711646E-03 -0.324908736619626E-02 -0.628071685860936E-02 0.139183034775585E-01
+     0.172171148789776E-01 0.14569727525533E-01 -0.863240906870336E-02 0.178957574666879E-01 -0.244041596807228E-01 -0.138927902884149E-01 0.100452567813375E-01 -0.329397589271008E-01 0.415300830006229E-02 -0.18675332061979E-03
+     -0.388201946977488E-02 -0.429253247415221E-02 0.132419989117294E-02 -0.136356166925118E-02 -0.572548980015047E-03 0.896342644892962E-03 -0.182955890524761E-01 0.230524970105305E-02 -0.301728215666678E-02 0.342813859066239E-02
+     -0.16547074379556E-03 0.376080533715229E-03 0.263301987089158E-03 -0.251388921921589E-02 -0.122676744577941E-03 0.193933043799162E-03 -0.449457549308927E-03 0.173623289696639E-03 -0.531551528123586E-02 -0.116219594108109E-01
+     0.200543113239497E-01 0.270424623729693E-01 0.216552696780797E-01 0.156602125790361E-01 -0.102622770094941E-01 0.374858937399591E-01 0.132990528331476E-01 -0.877160968378503E-02 0.344613301095898E-01 0.157795937235367E-01
+     -0.300727390729497E-02 0.357103630517284E-01 -0.106167096495149E-02 -0.101599788978257E-02 -0.111612599487103E-02 -0.739564385162624E-03 -0.262110364242351E-03 -0.358350355057108E-02 -0.188280371535571E-02 -0.237983140746311E-02
+     -0.157695263341391E-02 0.395095552020264E-03 -0.537856469713441E-03 0.256920519578193E-03 0.334774530148339E-03 -0.174195332587914E-03 -0.101215233112476E-03 -0.592805084394131E-03 -0.440126697556785E-03 0.110902702728606E-01
+     0.235147676275841E-01 0.184223500685737E-01 -0.177193947068856E-03 -0.491141888521737E-03 -0.343102676547129E-02 0.110638989629947E-02 -0.369627909166628E-02 -0.820586739966312E-02 -0.535308395262742E-04 0.377060252826854E-03
+     -0.142057150552627E-02 0.249332337792646E-02 0.442783311935484E-03 0.11855131761854E-02 -0.947640009546989E-04 -0.111886310912926E-03 0.134189940999726E-02 -0.571179501164149E-02 -0.902800324410208E-02 -0.483675492338471E-02
+     -0.170415359256314E-03 -0.697878198359705E-03 0.216687293341699E-02 0.761760087724928E-02 0.237978378168271E-01 -0.490765470649303E-01 -0.607552935866544E-01 -0.378572711177379E-01 0.120499830301914 -0.176911253856811
+     0.304861060053789 0.1013394843739 -0.149488640933843 0.259382672759224 0.581451834972218E-01 -0.809937326065264E-01 0.146795083125228 0.553473127070605E-02 0.478966544097795E-02 -0.403925344241233E-02
+     -0.477847994514551E-03 0.126443403218916E-02 0.163268725116967E-01 0.146725318257901E-01 -0.132157584055311E-01 -0.134570563366225E-02 0.501488181450832E-02 -0.374047622885728E-02 0.983262098496852E-03 0.7895287806944E-03
+     -0.12940853961199E-02 -0.120524317846762E-02 -0.251367996950778E-02 0.110335079575658E-02 0.119783393801054E-02 0.5636956583533E-02 -0.192994021864131E-01 0.121448459615689E-01 -0.169449078799624E-01 0.213294966856177E-01
+     -0.936149430038151E-01 0.228448399268136 0.336114742169444E-01 -0.860023009731752E-01 0.190606688285971 0.357216597466373E-01 -0.56801752271335E-01 0.870342130183523E-01 -0.103497012986335E-01 -0.532917518551706E-02
+     0.129163199378775E-01 -0.140517225996498E-02 -0.466791308899619E-02 -0.182165826426425E-01 -0.137240491893214E-01 0.172657259543084E-01 -0.148773868258883E-03 -0.187982009967388E-02 -0.610178792128211E-02 0.421325805715977E-02
+     -0.119602355762954E-02 -0.118585155385934E-02 -0.134070455996172E-02 -0.180915869128769E-02 0.30514955701225E-02 0.127626919437108E-02 0.344264042632862E-02 -0.923075062287018E-02 -0.374119577835139E-03 0.76881674879657E-03
+     0.265897968367718E-03 0.740204572071519E-04 0.667587129748172E-02 0.314154435596422E-02 0.104294601847971E-02 0.360126148679963E-02 0.577482593549187E-02 0.238497872943349E-01 -0.468675323571114E-02 0.287007251998614E-02
+     -0.259250417970417E-02 0.544017508617654E-02 0.903961357173952E-03 0.586839187865808E-03 0.627112242925317E-02 -0.525164567319168E-02 0.124020835623701E-01 0.247156952659035E-02 0.115888364100318E-02 0.386137293829885E-03
+     0.69559130975797E-03 -0.216441424750058E-02 0.385005973773033E-03 0.120932588959154E-02 -0.115101017438271E-02 0.210944773552059E-02 -0.479038674407308E-02 -0.835436488222756E-02 -0.108854833224406E-01 0.30378682479803E-03
+     0.650003930885456E-03 0.26821243377902E-03 -0.786757361978251E-02 -0.145459416920011E-01 -0.222318726869819E-02 0.904155281603857E-03 -0.366781702941157E-03 0.524257090827764E-05 -0.106727417347539E-02 -0.297454433972892E-02
+     0.103027969210094E-01 0.125322252181516E-02 -0.284570689282821E-02 0.76991231435786E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-0.316933" symmetryID="1">
+     0.213918150060661E-02 0.815851474818323E-02 0.35891199389009E-03 0.44215717160473E-03 0.547799532151034E-03 0.267277261271126E-04 -0.218345141317667E-02 -0.487234468419386E-02 0.440615563902659E-02 0.639495872104272E-01
+     -0.78129122649604E-01 0.112909764895179E-01 -0.282568899502253E-02 0.447677479168296E-02 0.294304213084337E-01 0.801786213449938E-02 0.934751219042823E-02 0.386604841537692E-01 -0.796658230641611E-02 -0.328212280564927E-01
+     -0.710931422872153E-03 0.430596928857651E-03 -0.478101844648948E-03 0.731036368108882E-03 0.960697586864304E-03 -0.709112675145028E-02 0.454103865818758E-02 0.593150536372484E-03 0.543545527058492E-02 0.11546094075059E-02
+     -0.818816600478407E-03 0.937066907523892E-04 -0.697840253128729E-03 0.183514254734794E-03 0.461003913734999E-03 0.659728218968486E-03 0.244698266181153E-03 -0.621878039707253E-03 -0.119238354985527E-02 0.49868044043287E-02
+     -0.255576561114824E-01 -0.68709519738187E-02 -0.640705548751221E-02 -0.139935007024975E-01 0.524689844308829E-02 0.177029352213355E-01 0.42291677818459E-02 0.64944168589983E-02 0.198398743088966E-01 0.835535046700444E-02
+     0.291914757314896E-01 -0.945545769495739E-03 0.660172685657866E-03 0.28196778577597E-03 0.101302707774842E-02 0.889486533191463E-03 0.436301898334512E-02 -0.405432507475986E-02 0.413881501497225E-02 -0.703291809899797E-02
+     0.110867884463647E-01 0.250196605470852E-03 0.141664439879291E-02 -0.115933046440678E-03 0.186361652213871E-03 -0.673722774509374E-04 0.101054706598062E-03 0.41491860689684E-03 -0.165409970231834E-02 -0.365350729114463E-02
+     0.753585069006081E-02 -0.824954144498281E-03 0.116122631340876 0.367604219602847E-02 -0.154255507468569E-02 0.483330259888578E-02 0.531870931237047E-02 -0.49332930978359E-03 0.371889763771177E-02 0.197867680528196E-01
+     -0.187254173556523E-01 -0.503329645852678E-02 0.23504090391794E-03 0.404015442476028E-04 0.330350390833562E-03 0.588074077364325E-04 0.540962271756969E-05 -0.278500850835824E-02 -0.504554304756319E-03 0.490398291737327E-02
+     0.303532836317126E-02 0.21333175753919E-03 0.168628359377868E-03 0.322858658297115E-03 -0.246238745613416E-04 -0.767369812973515E-05 -0.229266429551812E-03 -0.150600331090157E-03 0.118121178415646E-03 -0.338851225340808E-02
+     -0.16132642781422E-01 -0.10068483206047E-01 0.107056730161984E-02 0.126646765669304E-02 0.215107352447883E-02 0.958467013049629E-03 0.366728429533822E-02 -0.367769710800475E-02 0.311957827597536E-04 0.290442821506169E-03
+     0.562127393358603E-03 -0.828404263019424E-03 -0.151068349321217E-03 -0.153019979375368E-01 -0.525639850885241E-04 -0.611549898274239E-03 -0.404860682640861E-04 0.717584997545391E-03 -0.32204001951868E-02 -0.357512301174241E-02
+     -0.181871367910762E-03 -0.104115314207263E-03 -0.215672538772874E-03 0.165738522360682E-02 0.467138673505343E-02 -0.821332470428243E-02 -0.160934379401282E-01 -0.172404669541592E-01 0.264656642676243 0.374090472208191
+     0.114374090219522 0.226318008977296 0.313497295461502 0.951642363875424E-01 0.148932218609213 0.216325659989411 0.648099336010936E-01 0.11784023776109E-02 -0.234341381999941E-02 0.21426759413699E-03
+     -0.516053849198195E-02 0.274591350674329E-02 0.323819492346763E-02 -0.679012506660286E-02 0.488688598259095E-03 -0.162019859759597E-01 0.689344610851828E-02 -0.499387258014633E-04 0.123811832669208E-02 0.88419017078961E-03
+     0.381392987430551E-02 -0.219763338402527E-02 -0.490072312346409E-03 -0.105929536615315E-02 -0.519045395258616E-03 -0.763152683347727E-03 0.226040915845863E-02 0.5520439500272E-02 -0.103674283615438 0.214266847091192E-01
+     0.374551173017854E-01 0.143702076319495E-01 0.280669395376003E-01 0.211659227322946E-01 0.867121741142328E-02 0.925049205131868E-01 0.631779314966694E-01 0.249530595786053E-01 -0.495172613879884E-02 0.115885147429539E-01
+     0.707193105068806E-04 0.218330359997089E-01 -0.119486391477495E-01 -0.433514290297333E-02 0.11690656977742E-01 -0.594914492812118E-02 0.307880632548508E-01 -0.209348705267033E-01 -0.221792331708197E-02 0.107947137801113E-02
+     0.747351038567936E-04 0.714017187669629E-02 -0.317720392235148E-02 -0.379560089612698E-04 -0.370935115176056E-02 -0.100112689805873E-01 -0.226217279280178E-01 0.384812873097132E-01 0.766994790827751E-01 0.226869871376072
+     0.480307711765549E-01 0.799228340885343E-02 0.132096572068165E-01 0.595585400908263E-01 0.120614958323127E-01 0.111839149671187E-01 0.818181951731272E-01 0.876608885484966E-02 0.364508679267361E-01 0.644451474505804E-03
+     0.219544139596187E-02 0.201553624845572E-02 -0.138753297752656E-02 -0.386328754158041E-03 0.246313837050046E-02 0.439764304465633E-02 0.484581712305133E-02 -0.220919878612816E-02 -0.404716092884509E-02 0.343089497522453E-03
+     0.614829933196283E-04 -0.920607999480015E-03 -0.150804816535357E-02 0.399085115545371E-03 0.152861740565142E-02 0.67304929274943E-03 -0.925719458905518E-02 -0.169527162517642E-01 -0.527445911209151E-01 0.246495461147462E-02
+     0.117893584981233E-03 0.824789808206055E-03 0.380725110361167E-02 0.337923286596528E-02 -0.477695335386765E-01 0.397707280176696E-03 0.154600116100872E-02 0.102904574357593E-02 -0.35964762270949E-01 -0.787452525077168E-01
+     -0.148327679956069 0.387554522818706E-02 -0.171778843980264E-02 -0.1184103444349E-02
+   </orbital>
+   <orbital occupation="2.0" energy="-0.288901" symmetryID="1">
+     0.667880611654083E-02 0.206379740360368E-01 0.144454740728844E-01 0.28595686402691E-02 -0.358629214724806E-02 0.124038382631434E-01 0.614578377303705E-02 0.155035505416342E-01 -0.273424326104135E-01 -0.661979344472205E-01
+     0.32645606819241E-01 0.578440934812398E-01 -0.128282129513311 0.26172571934457 0.407753998076893E-01 -0.113493352714189 0.235985342982768 0.487492479241244E-01 -0.479411344891576E-01 0.158798458683667
+     0.203961591342644E-02 -0.262668418955937E-02 0.799790801443851E-02 0.223700843132396E-02 0.410597325408773E-02 0.248729572809612E-02 -0.973029878524061E-02 0.826680781914272E-02 0.366828441523998E-02 0.305933376009019E-02
+     -0.152785638349559E-02 0.347837127883472E-02 -0.362894056404834E-02 0.124658570842034E-02 0.299128664325301E-02 -0.137326700286211E-02 0.246035413372894E-02 -0.423035165136879E-02 -0.942088994506607E-02 0.156057292566143E-01
+     0.40839777135368E-01 -0.173477269072517E-01 0.452822112179997E-01 -0.970583658658117E-01 0.25091515915882 0.287288830213074E-01 -0.914259224540671E-01 0.232826162097591 0.416524272929415E-01 -0.532045484955853E-01
+     0.140761904008631 -0.192811629223839E-02 0.398519198026575E-02 -0.9465439229355E-02 -0.39313662824261E-02 -0.316983004241022E-02 -0.634178426681318E-03 0.963249716709745E-02 -0.135876030571696E-01 -0.267195107807125E-02
+     -0.406560859278017E-02 -0.775236913530762E-03 0.311902153475098E-02 -0.397371421489487E-02 0.162531580805305E-02 0.248891573854546E-02 -0.981475512551904E-03 0.285769994629409E-02 -0.572905790803703E-02 -0.141444636439175E-01
+     0.317958866748638E-01 0.112463245303401E-01 0.740066377727209E-01 0.202999417742128E-01 -0.182585959789355E-01 0.457749386462254E-01 0.105302884186052E-01 -0.145840249784606E-01 0.441426290385343E-01 -0.108665709294013E-01
+     -0.714235150529158E-02 0.459856800214032E-01 -0.877038461388785E-02 -0.402757094676973E-02 0.243197048237801E-02 0.421665008255095E-03 0.5842785553763E-03 -0.217272772702296E-01 -0.788087507818296E-02 0.103319419537484E-01
+     0.362370887580585E-02 0.195093806584724E-02 -0.362904381871535E-02 0.185170682116502E-02 -0.481493747190062E-04 -0.204671407781238E-03 0.973751983855077E-04 -0.204979780363409E-02 0.794788168931715E-03 0.290970430899964E-02
+     0.99350003166845E-02 0.580872365954172E-02 0.223055572862687E-02 -0.394270548777446E-02 0.991478619094501E-02 0.748681769009349E-03 0.332651757342943E-02 -0.219067381537722E-01 0.850011446482813E-03 -0.405561670377773E-02
+     0.113052511471177E-01 0.934750800478732E-02 0.19979096576532E-01 0.147417945026642E-01 -0.646551418732405E-03 -0.831372141708723E-03 0.214125746123017E-02 0.441550152968873E-02 0.156330352001405E-02 0.109552186238463E-02
+     -0.549451517440299E-03 -0.503120166261189E-03 0.214670781507506E-02 0.360607578073625E-02 0.7192237793769E-02 -0.105182097136888E-01 -0.177775531749387E-01 -0.410791723478675E-01 0.247328275695018E-02 0.121890412395009E-01
+     -0.173079933072352E-01 0.527655074862404E-02 0.861707220244331E-02 -0.184389100840626E-01 -0.103352210761176E-01 0.215285058119369E-01 0.128124608004375E-01 0.194194766887968E-02 0.688157986579162E-03 0.904065395112088E-04
+     -0.166823030599649E-03 -0.765209409190014E-04 0.805117885116275E-02 0.176175273715251E-02 0.117208216546288E-02 -0.746206746129956E-03 -0.557157114717836E-03 -0.925895045108718E-03 0.528970218044091E-03 -0.215419283924492E-03
+     0.173846353830605E-04 0.510656293112719E-05 -0.3421904994202E-03 -0.280410955550578E-04 0.170027614406576E-02 0.246618469567848E-02 -0.304068057741563E-02 -0.670091352881372E-02 0.144536239470104E-02 0.166596957330871E-01
+     -0.275302199486576E-01 0.699481581338488E-01 0.267127476388259E-01 -0.273784515416214E-01 0.620035024866062E-01 0.989483590369523E-02 -0.712454953936401E-02 0.632400973837909E-01 0.201397435140724E-02 0.115175273879974E-02
+     -0.719348122139043E-03 -0.391568525021093E-03 -0.108391507976942E-02 0.108353626510568E-01 -0.233274000259496E-02 -0.523442850392158E-02 -0.36949582621029E-02 0.827528208634815E-03 -0.476959193345371E-03 -0.33705066362432E-04
+     -0.168288771597526E-02 0.564225331928331E-03 0.429502937261992E-03 0.274075144238145E-03 0.60198624627278E-03 0.720201737297972E-02 0.156784040800981E-01 -0.324205672827172E-01 -0.574766586185566E-02 -0.126080876438469
+     0.356176235788718E-02 -0.118851015745836E-01 0.427517986784132E-01 0.152880830957112E-01 -0.816918988766095E-02 0.408476144189146E-01 0.174627080049924E-01 -0.190405592559215E-01 0.694390297680892E-01 0.336164074516773E-02
+     -0.156429304401926E-02 0.898675611765152E-03 0.10734012171502E-02 0.422844352914511E-03 0.609977251248615E-02 -0.29905594799989E-02 0.374831986327985E-02 0.418906735476462E-02 0.598851948763926E-03 0.441184807707443E-03
+     0.357992583370594E-03 -0.131559814402474E-02 0.425681175654293E-03 0.943891660852869E-03 -0.266828694707076E-03 0.432576004798824E-03 0.461103516191319E-02 0.109582949149532E-01 0.286803127642918E-01 0.742913121391789E-03
+     -0.818653234539404E-03 0.26602453962807E-02 -0.688584148413764E-02 -0.102280449145559E-01 0.159027180075422E-02 0.110242471087591E-02 -0.123323339171665E-02 0.948104056484748E-03 -0.207091141597991E-02 -0.809360371428999E-02
+     -0.22495629391384E-01 0.147303355510895E-02 -0.154303799085832E-02 0.316421931754681E-02
+   </orbital>
+  </orbitals>
+  <stm:metadataList>
+   <stm:metadata name="dc:date" content="2014-05-20T17:32:22+02:00"/>
+   <stm:metadata name="dc:creator" content="cgk"/>
+   <stm:metadata name="cmlm:insilico" content="Molpro"/>
+  </stm:metadataList>
+  <platform>
+   <version major="2099" minor="9" SHA="5301f5a8a477259b0a107da16d4bccb7bc8a64ce"
+     integer_bits="64" parallelism="mpp">
+    2099.9
+    <date year="2014" month="5" day="20" hour="17" minute="32" second="14">
+     2014-05-20T17:32:14
+    </date>
+   </version>
+   <licence id="knizia"/>
+   <parallel processes="4" nodes="1" all_processes="4" openmp="1"/>
+   <machine hostname="" architecture="">
+     64 bit mpp version
+    <sysinfo name="cpu MHz" content="3499.980"/>
+    <sysinfo name="MemTotal" content="32562720 kB"/>
+    <sysinfo name="vendor_id" content="GenuineIntel"/>
+    <sysinfo name="cpu family" content="6"/>
+    <sysinfo name="model name" content="Intel(R) Core(TM) i7-3820QM CPU @ 2.70GHz"/>
+    <sysinfo name="flags"
+      content="fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm ida arat epb xsaveopt pln pts dtherm tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms"/>
+    <sysinfo name="MemTotal" content="32562720 kB"/>
+    <sysinfo name="cache size" content="8192 KB"/>
+    <sysinfo name="ncpu" content="8"/>
+   </machine>
+  </platform>
+ </molecule>
+</molpro>

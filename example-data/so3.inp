@@ -1,0 +1,9 @@
+memory,200,m;
+
+geometry=so3.xyz
+
+basis=tzvpp
+df-rks,pbe
+{ibba, bonds=1}
+{put,xml,so3.xml; keepspherical; nosort; skipvirt}
+

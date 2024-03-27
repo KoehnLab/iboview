@@ -1,0 +1,58 @@
+201  ICON  "d_lobe3.ico"
+
+#include <windows.h>
+
+#ifndef VERSION_H
+#define VERSION_H
+
+#define VERSION_MAJOR                           0
+#define VERSION_MINOR                           7
+#define VERSION_BUILD                           2
+
+#define VER_FILEVERSION           VERSION_MAJOR,VERSION_MINOR,VERSION_BUILD,0
+#define STR_FILEVERSION                     VERSION_MAJOR##"."##VERSION_MINOR##"."VERSION_BUILD##".0"
+
+// Keep the product version as fixed
+#define VER_PRODUCTVERSION        0.7.2.0
+#define STR_PRODUCTVERSION          "v202110190-RevA\0"
+
+#define STR_COMPANYNAME                     "Gerald Knizia"
+#define STR_FILEDESCRIPTION             "IboView executable"
+#define STR_INTERNALNAME                    "IboView"
+#define STR_LEGALCOPYRIGHT              "Copyright 2015-2022 by Gerald Knizia"
+#define STR_LEGALTRADEMARKS1            "All Rights Reserved"
+#define STR_LEGALTRADEMARKS2            STR_LEGALTRADEMARKS1
+#define STR_ORIGINALFILENAME            "IboView.exe"
+#define STR_PRODUCTNAME                     "IboView Chemical Analysis Program"
+
+#define STR_COMPANYDOMAIN                   "iboview.org"
+
+#endif // VERSION_H
+
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     VER_FILEVERSION
+PRODUCTVERSION  VER_PRODUCTVERSION
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",        STR_COMPANYNAME
+            VALUE "FileDescription",    STR_FILEDESCRIPTION
+            VALUE "FileVersion",        STR_FILEVERSION
+            VALUE "InternalName",       STR_INTERNALNAME
+            VALUE "LegalCopyright",     STR_LEGALCOPYRIGHT
+            VALUE "LegalTrademarks1",   STR_LEGALTRADEMARKS1
+            VALUE "LegalTrademarks2",   STR_LEGALTRADEMARKS2
+            VALUE "OriginalFilename",   STR_ORIGINALFILENAME
+            VALUE "ProductName",        STR_PRODUCTNAME
+            VALUE "ProductVersion",     STR_PRODUCTVERSION
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

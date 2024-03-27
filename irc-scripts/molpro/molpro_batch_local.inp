@@ -1,0 +1,32 @@
+! assign a permanent file for transfering SCF starting guesses between geometries.
+! note: File should be deleted prior to run of first frame.
+file,2,nebwf.wfu
+
+! if not already done, orient molecule along axes of inertia to get directly comparable geometries.
+!orient,mass;
+geometry={
+%(Geom)s
+}
+%(WfDecl)s
+
+! select basis and functional
+basis=tzvpp
+dfunc,tpss
+
+if (orbital.eq.0) then
+   ! if no previous wf is given (via nebwf.wfu), start SCF from scratch
+   {df-rks; save,2100.2}
+else
+   ! start SCF from last geometry.
+   {df-rks; start,2100.2; save,2100.2}
+end if
+
+! save canonical orbitals
+! export the orbitals to .xml. Skip virtual orbitals to save space.
+! note: "skipvirt;" and "keepspherical;" are supported from Molpro 2015, but not Molpro 2012.
+!       They can be simply omitted.
+{put,xml,'%(FileName)s_can.xml'; keepspherical; nosort; skipvirt; orbital,2100.2}
+
+! run the IAO basis bonding analysis program and store IBOs to record 2101.2
+{ibba,iboexp=2,bonds=1; orbital,2100.2; save,2101.2}
+{put,xml,'%(FileName)s_ibo.xml'; keepspherical; nosort; skipvirt; orbital,2101.2}

@@ -1,0 +1,13 @@
+memory,200,m;
+
+nosym
+geometry=../trans_b_SN2_openingTS.xyz
+
+gdirect
+set,charge=-1
+basis=tzvp
+
+{df-ks,b-p; shift,-1.,-.5; orbital,2100.2}
+{ibba,iboexp=2; start,2100.2}
+{put,molden,trans_b_SN2_openingTS.molden; nosort}
+{put,xml,trans_b_SN2_openingTS.xml; nosort; keepspherical}
