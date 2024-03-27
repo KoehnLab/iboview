@@ -1942,7 +1942,7 @@ int CmpArrays(FSequence const &A, FSequence const &B)
 // compare two IR gauss shell objects, in order to find equivalent ones on different atoms.
 struct FGaussFnCmp
 {
-   bool operator () (ct::FAtomShellPtr const &pA, ct::FAtomShellPtr const &pB) {
+   bool operator () (ct::FAtomShellPtr const &pA, ct::FAtomShellPtr const &pB) const {
       if (pA->AngMom < pB->AngMom) return true;
       if (pB->AngMom < pA->AngMom) return false;
       int iCmp;
