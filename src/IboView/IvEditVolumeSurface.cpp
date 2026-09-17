@@ -24,6 +24,7 @@
 #include <QProgressDialog>
 #include <QMessageBox>
 #include <QtAlgorithms>
+#include <algorithm>
 #include <QSettings>
 #include <QVariant>
 #include <fstream>
@@ -372,7 +373,7 @@ void FEditVolumeSurfaceForm::addIsoThreshold()
 //       updateThresholdListInUi();
 //    }
    L.append(FIsoSliceDecl(d, p->m_dwNextColor));
-   qSort(L);
+   std::sort(L.begin(), L.end());
    updateThresholdListInUi();
 }
 
@@ -404,7 +405,7 @@ void FEditVolumeSurfaceForm::deleteIsoThreshold()
       indices << index.row();
    }
    // sort in reverse order (for deletion -- this keeps the remaining indices constant).
-   qSort(indices.begin(), indices.end(), qGreater<int>());
+   std::sort(indices.begin(), indices.end(), std::greater<int>());
 
    // deselect all selected rows
    for (QModelIndex const &index : selected) {
