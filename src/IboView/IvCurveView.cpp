@@ -48,7 +48,7 @@ FCurveView::FCurveView(QWidget *parent)
 //    setBackgroundBrush(QBrush(QRgb(0xff404040))); // dark gray
    setViewportUpdateMode(BoundingRectViewportUpdate);
    setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing |
-                  QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
+                  QPainter::SmoothPixmapTransform);
 
 //    setTransformationAnchor(AnchorUnderMouse);
 // //     scale(qreal(0.8), qreal(0.8));

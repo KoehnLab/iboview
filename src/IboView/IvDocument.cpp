@@ -390,7 +390,7 @@ void IFrame::add_objects(QVariantList fol, QString Mode)
 {
    int Verbosity = 1;
    if (Verbosity >= 1)
-      IvEmit("IFrame::add_objects(list, '%1') { // list.size = %2", Mode, fol.size());
+      IvEmit("IFrame::add_objects(list, '%1') { // list.size = %2", Mode, int(fol.size()));
    if (!(Mode == "link" || Mode == "clone")) {
       IV_NOTIFY(NOTIFY_Warning, QString("IFrame::add_objects(list, mode): mode should be 'link' or 'clone', but was '%1'").arg(Mode));
    }
@@ -1863,7 +1863,7 @@ void FDocument::Load(QStringList FileNames)
    }
 
    EndInsertFrames();
-   IvNotify(NOTIFY_FinishWork, IvFmt("Finished loading %1 files.", FileNames.size()));
+   IvNotify(NOTIFY_FinishWork, IvFmt("Finished loading %1 files.", int(FileNames.size())));
 
    emit ActiveColChanged(m_ActiveCol); // that's for updating the file name in the title...
 }

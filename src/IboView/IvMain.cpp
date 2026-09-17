@@ -1317,7 +1317,7 @@ void FMainWindow::AddPresetScript(QMenu *pMenu, QString FileName)
    QStringList
       Lines = ScriptText.split('\n');
    if (!Lines.isEmpty() && Lines[0].startsWith("// "))
-      MenuTitle = Lines[0].midRef(3).toString();
+      MenuTitle = Lines[0].mid(3);
    QAction
       *pAction = new QAction(MenuTitle, this);
    connect(pAction, SIGNAL(triggered()), this, SLOT(ExecPresetScript()));
