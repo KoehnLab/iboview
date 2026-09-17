@@ -358,6 +358,11 @@ FView3d::FView3d(QWidget *parent, FDocument *document)
 
 FView3d::~FView3d()
 {
+   // QOpenGLWidget's context is still alive at this point (it is torn down
+   // after this destructor body runs), but is not guaranteed to still be
+   // current, so it must be made current explicitly before releasing any
+   // GL resources below (here and, via ~FViewImpl(), throughout 'v').
+   makeCurrent();
    CALL_GL( glUseProgram(0) );
    delete v;
 //    delete d; // not safe if init of d fails... should use RAII smart pointer.
@@ -480,6 +485,7 @@ void FView3d::RehashShaders()
 
 void FView3d::UpdateBondMesh()
 {
+   makeCurrent(); // also reached outside paintGL, via property changes from scripts/UI (e.g. view presets)
    if (v->pBondMesh.get()) {
       // ^- if this isn't there most likely GL is not yet initialized.
       FBaseVertex
@@ -545,6 +551,7 @@ void FViewImpl::ResetProjectionAndZoom(int w, int h)
 
 void FView3d::ResetFrameBuffers()
 {
+   makeCurrent(); // also reached outside paintGL, via property changes from scripts/UI
 
    CheckGlError("FView3d::ResetFrameBuffers (enter)");
    GLenum
