@@ -18,7 +18,8 @@ sudo apt-get install \
     qt6-base-dev \
     qt6-declarative-dev \
     libqt6svg6-dev \
-    libgl1-mesa-dev
+    libgl1-mesa-dev \
+    libglu1-mesa-dev
 ```
 
 #### OpenSuse
@@ -49,7 +50,8 @@ sudo zypper install \
 yay  -S qt6-base \
         openblas \
         intel-mkl \
-        qt6-declarative
+        qt6-declarative \
+        glu
 ```
 
 ### Compiling
