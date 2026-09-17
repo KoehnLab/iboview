@@ -387,6 +387,14 @@ void ExecScript(IApplication *app, IView3d *view, QString const &ScriptText, QSt
    // FIXME: added IApplication as both "app" and "doc" until things get sorted out.
    ScriptEngine.globalObject().setProperty("doc", ScriptEngine.newQObject(app));
    ScriptEngine.globalObject().setProperty("view", ScriptEngine.newQObject(view));
+   // 'app'/'view' are externally owned, long-lived objects (they outlive this
+   // function and this per-call ScriptEngine). QJSEngine::newQObject() defaults
+   // to taking JavaScript ownership of any wrapped QObject that has no parent,
+   // which for 'app' (the top-level main window, parent-less by design) means
+   // its garbage collector would delete the main window itself once this
+   // ScriptEngine is destroyed below. Force C++ ownership to prevent that.
+   QJSEngine::setObjectOwnership(app, QJSEngine::CppOwnership);
+   QJSEngine::setObjectOwnership(view, QJSEngine::CppOwnership);
 
    // note: the FScriptGlobals instance is owned by the engine (see setObjectOwnership
    // below), and must be constructed after the engine, so it is fine to reference it here.
