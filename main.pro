@@ -161,8 +161,9 @@ DEFINES += GLEW_STATIC
 SOURCES += $$GL/glew.c
 HEADERS += $$GL/glew.h $$GL/glxew.h $$GL/wglew.h
 
-QT += core gui widgets opengl script svg
+QT += core gui widgets opengl openglwidgets qml svg svgwidgets
 CONFIG += qt
+CONFIG += c++20
 CONFIG -= debug    # turn off debug build
 CONFIG += release  # turn on release build
 DEFINES += NDEBUG  # turn of assertions

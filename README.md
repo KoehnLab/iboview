@@ -15,9 +15,9 @@ improvements).
 sudo apt-get install \
     build-essential \
     libboost-all-dev \
-    qtbase5-dev \
-    qtscript5-dev \
-    libqt5svg5-dev \
+    qt6-base-dev \
+    qt6-declarative-dev \
+    libqt6svg6-dev \
     libgl1-mesa-dev
 ```
 
@@ -36,33 +36,33 @@ sudo zypper install \
     make \
     glu-devel \
     $BOOST_PKGS \
-    libqt5-qtbase-common-devel \
-    libqt5-qtbase-devel \
-    libqt5-qtsvg-devel \
-    libqt5-qtscript-devel \
+    qt6-base-common-devel \
+    qt6-base-devel \
+    qt6-svg-devel \
+    qt6-declarative-devel \
     Mesa-libGL-devel
 ```
 
 #### Arch-Based
 
 ```bash
-yay  -S qt-base \
+yay  -S qt6-base \
         openblas \
         intel-mkl \
-        qt5-script
+        qt6-declarative
 ```
 
 ### Compiling
 
-Before starting, verify that `qmake --version` informs you that you are using Qt in version 5.x
+Before starting, verify that `qmake --version` informs you that you are using Qt in version 6.x
 
 ```bash
 mkdir build && cd build
 
-# Select qmake or qmake-qt5 if qmake is not available on your system
+# Select qmake or qmake6 if qmake is not available on your system
 QMAKE="qmake"
 if [[ ! -x "$( command -v "$QMAKE" )" ]]; then
-    QMAKE="qmake-qt5"
+    QMAKE="qmake6"
 fi
 
 $QMAKE ../main.pro
