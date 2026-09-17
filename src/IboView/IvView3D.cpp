@@ -852,6 +852,7 @@ void FViewImpl::RenderObjects(uint RenderFlags, FShaderSet &ShaderSet)
 
 void FViewImpl::RenderPickBuffer(bool KeepPickBufferBound)
 {
+   v->makeCurrent(); // also reached outside paintGL, via mouse event handlers
    pPickFbo->Bind();
    CALL_GL( glClearDepth(1.) );
    CALL_GL( glClearColor(0., 0., 0., 0.) );
@@ -1708,6 +1709,7 @@ void FViewImpl::RenderAtomSet(FGeometry &Geometry, uint RenderFlags, FShaderSet 
 
 void FVolumeDataSet::BuildRenderCache(FView3d *pView3d)
 {
+   pView3d->makeCurrent(); // also called outside paintGL, from UI actions
    FIsoSurfaceSettings
       IsoSurfOpt = pView3d->v->MakeIsoSurfaceSettings();
       // ^- make a copy of the view's default settings and patch in
