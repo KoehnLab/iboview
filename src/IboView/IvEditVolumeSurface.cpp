@@ -28,7 +28,7 @@
 #include <QVariant>
 #include <fstream>
 #include <QColorDialog>
-#include <QRegExp>
+#include <QRegularExpression>
 #include "CxColor.h"
 
 #include "Iv.h"
@@ -226,14 +226,17 @@ FIsoSliceDecl FIsoSliceDecl::fromString(QString s, bool *ok)
    FIsoSliceDecl
       r;
    IvEmit("read: '%1'", s);
-   QRegExp
+   QRegularExpression
 //       re("^\\((@[-+]?[0-9]*.?[0-9]+([eE][-+]?[0-9]+)?@),([0123456789abcdef]{0,8})\\)$");
 //       re("\\((@[-+]?[0-9]*.?[0-9]+([eE][-+]?[0-9]+)?@)\,([0123456789abcdef]*)\\)");
-      re("\\(([0123456789+-.eE]*),([0123456789abcdef]*)\\)");
+      re("\\A\\(([0123456789+-.eE]*),([0123456789abcdef]*)\\)\\z");
       // ^- I hate regex.
-   if (re.exactMatch(s)) {
+      // \A/\z anchor the whole string, matching the old exact-match behavior.
+   QRegularExpressionMatch
+      Match = re.match(s);
+   if (Match.hasMatch()) {
       QStringList
-         L = re.capturedTexts();
+         L = Match.capturedTexts();
       if (L.size() == 3) {
          if (ok)
             *ok = true;

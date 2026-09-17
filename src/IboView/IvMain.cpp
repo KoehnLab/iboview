@@ -42,6 +42,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
+#include <QRegularExpression>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QUrl>
@@ -1820,7 +1821,7 @@ bool DoesThisLookLikeAnXyzFile(QString Text)
    QString
       Line2 = Lines[2];
    QStringList
-      ls = Line2.trimmed().split(QRegExp("\\s+")); // <- split at whitespace
+      ls = Line2.trimmed().split(QRegularExpression("\\s+")); // <- split at whitespace
    if (ls.size() >= 4) { // element x y z
 //       IvEmit("...3rd line count check check passed.'");
 //       IvEmit("...ls[1] = '%1'", ls[1]);
