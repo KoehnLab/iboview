@@ -54,15 +54,23 @@ yay  -S qt6-base \
 
 ### Compiling
 
-Before starting, verify that `qmake --version` informs you that you are using Qt in version 6.x
+Before starting, verify that `qmake6 --version` (or `qmake --version`, if
+`qmake6` isn't available under that name on your system) informs you that
+you are using Qt in version 6.x. Prefer `qmake6` when both exist: on some
+systems (e.g. Ubuntu 22.04) a generic, unversioned `qmake` exists only as a
+`qtchooser` wrapper with no Qt6 profile registered, and fails outright
+rather than falling back to Qt6.
 
 ```bash
 mkdir build && cd build
 
-# Select qmake or qmake6 if qmake is not available on your system
-QMAKE="qmake"
+# Prefer qmake6, falling back to plain qmake only if qmake6 isn't installed
+# under that name. Don't do this the other way around: an unversioned
+# "qmake" found on PATH may be a non-functional qtchooser wrapper that has
+# no Qt6 profile configured, even though it exists and is executable.
+QMAKE="qmake6"
 if [[ ! -x "$( command -v "$QMAKE" )" ]]; then
-    QMAKE="qmake6"
+    QMAKE="qmake"
 fi
 
 $QMAKE ../main.pro
