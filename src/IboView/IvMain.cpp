@@ -193,7 +193,7 @@ void FMainWindow::load_files_(QStringList const &FileNames_)
 
    QStringList
       DataFiles;
-   foreach(QString FileName, FileNames_) {
+   for (QString FileName : FileNames_) {
       if (FileName == "")
          continue;
       if (isScriptFile(FileName)) {
@@ -630,7 +630,7 @@ void IApplication::set_atom_mode(int iAt, QString const &Mode)
       AtomFlagsOrig = AtomFlags;
    QStringList
       FlagList = Mode.split("|", QString::SkipEmptyParts);
-   foreach(QString Flag, FlagList) {
+   for (QString Flag : FlagList) {
       if (Flag == "hidden")
          AtomFlags = AtomFlags | ATOM_Hidden;
       else if (Flag == "visible")
@@ -809,7 +809,7 @@ void LinkPropertyWidgets(QObject *pTarget, QWidget *pWidgetContainer, char const
    //   *every* change of *any* widget...
    viewMapper->setSubmitPolicy(QPropertyDataWidgetMapper::ManualSubmit);
    QList<QWidget*> uiWidgets = pWidgetContainer->findChildren<QWidget*>();
-   foreach(QWidget *w, uiWidgets) {
+   for (QWidget *w : uiWidgets) {
       QVariant
          vaViewOptionName = w->property(pPropertyKeyName);
       if (vaViewOptionName.isValid()) {
@@ -902,7 +902,7 @@ FMainWindow::FMainWindow(QWidget *parent, Qt::WindowFlags flags)
    // parent control... but this doesn't really seem to work for me.
    if (1) {
       QList<QWidget*> uiWidgets = this->findChildren<QWidget*>();
-      foreach(QWidget *w, uiWidgets) {
+      for (QWidget *w : uiWidgets) {
          if (qobject_cast<FStatusBar*>(w) != 0)
             continue; // handles it's own layout.
          //QLayout
@@ -1154,7 +1154,7 @@ FMainWindow::FMainWindow(QWidget *parent, Qt::WindowFlags flags)
       // note: should probably code this similarly to the generic ConnectPropertyNotify,
       // which links up the signals/lots directly.
       QList<QAction*> uiActions = this->findChildren<QAction*>();
-      foreach(QAction *pAction, uiActions) {
+      for (QAction *pAction : uiActions) {
          QVariant
             vaViewOptionName = pAction->property("view_option_name");
          if (vaViewOptionName.isValid()) {

@@ -1692,7 +1692,7 @@ void FDocument::AddAxes(QString Which, double fAxisLength_, QString Options)
       // function with three floating point arguments
       reFunc3f = FNameArgListRe("\\(", "\\,", "\\)").re(g_ReDecl_Identifier, g_ReDecl_Float, g_ReDecl_Float, g_ReDecl_Float);
 
-   foreach(QString Flag1, FlagList) {
+   for (QString Flag1 : FlagList) {
       QString Flag = Flag1.trimmed();
       if (Flag == "gray" || Flag == "grey") {
          dw_xAxis = dw_yAxis = dw_zAxis = 0xffbfbfbf;
@@ -1852,7 +1852,7 @@ void FDocument::Load(QStringList FileNames)
    {
       FFrameList
          LoadedFrames;
-      foreach(QString FileName, FileNames)
+      for (QString FileName : FileNames)
          LoadFile(LoadedFrames, FileName);
       if (LoadedFrames.size() > 1)
          IvNotify(NOTIFY_StartWork, IvFmt("Processing %1 frames...", LoadedFrames.size()));

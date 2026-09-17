@@ -331,7 +331,7 @@ void FEditVolumeSurfaceForm::updateThresholdListInUi()
    // re-apply the previous selection as far as possible
    QItemSelection
       newSelection;
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       if (index.row() < L.size())
          newSelection.select(index, index);
    }
@@ -397,21 +397,21 @@ void FEditVolumeSurfaceForm::deleteIsoThreshold()
    // get indices of selected thresholds
    QList<int>
       indices;
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       indices << index.row();
    }
    // sort in reverse order (for deletion -- this keeps the remaining indices constant).
    qSort(indices.begin(), indices.end(), qGreater<int>());
 
    // deselect all selected rows
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       ui->listWidget_IsoThresholds->selectionModel()->select(index, QItemSelectionModel::Deselect);
    }
 
 
 //    int iThresholdToDelete = ui->listWidget_IsoThresholds->currentRow();
    // remove backend version of the selected thresholds.
-   foreach(int iThresholdToDelete, indices) {
+   for (int iThresholdToDelete : indices) {
       if (iThresholdToDelete == -1) {
          QMessageBox::warning(this, "Delete Iso Threshold", "No iso-threshold selected in list.");
          return;
@@ -473,7 +473,7 @@ void FEditVolumeSurfaceForm::changeIsoThreshold(double newValue)
          FIsoThresholdList
             &L = m_IsoThresholdsForSurfaceTypes[m_SurfaceType];
 
-         foreach(QModelIndex const &index, selected) {
+         for (QModelIndex const &index : selected) {
             int iThreshold = index.row();
             if (iThreshold < L.size())
                L[iThreshold].fIsoValue = newValue;
@@ -517,7 +517,7 @@ void FEditVolumeSurfaceForm::changeSurfaceColor()
             FIsoThresholdList
                &L = m_IsoThresholdsForSurfaceTypes[m_SurfaceType];
 
-            foreach(QModelIndex const &index, selected) {
+            for (QModelIndex const &index : selected) {
                int iThreshold = index.row();
                if (iThreshold < L.size())
                   L[iThreshold].dwColor = NewColor;

@@ -76,7 +76,7 @@ QStringList QPropertyModel::propertyNames() const
     if (_names.size())
         return _names;
 
-    foreach (const QMetaProperty &p, properties().values())
+    for (const QMetaProperty &p : properties().values())
         _names << QString::fromLatin1(p.name());
     return _names;
 }
@@ -84,7 +84,7 @@ QStringList QPropertyModel::propertyNames() const
 int QPropertyModel::columnForProperty(QString name) const
 {
     QMap<int, QMetaProperty> props = properties();
-    foreach (int index, props.keys())
+    for (int index : props.keys())
         if (props[index].name() == name)
             return index;
     qDebug("No property \"%s\" found!", qPrintable(name));
@@ -115,7 +115,7 @@ void QPropertyModel::connectToPropertyNotifySignals()
 {
     QMap<int, QMetaProperty> props = properties();
     QSignalMapper *mapper = new QSignalMapper(this);
-    foreach (int index, props.keys()) {
+    for (int index : props.keys()) {
         if (!props[index].hasNotifySignal())
             continue;
         // It's difficult to map all signals from a single object to

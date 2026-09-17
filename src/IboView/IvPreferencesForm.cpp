@@ -47,7 +47,7 @@ template<class TWidget>
 TWidget *FPreferencesForm::FindToolWidget(QString Which)
 {
    QList<TWidget*> uiWidgets = this->findChildren<TWidget*>();
-   foreach(TWidget *w, uiWidgets) {
+   for (TWidget *w : uiWidgets) {
       if (IsPropertyEqual(w, "ext_tool_filename", Which))
          return w;
    }
@@ -71,7 +71,7 @@ FPreferencesForm::FPreferencesForm(FDocument *document, QWidget *parent)
 //    ui->lineEdit_Executable_tm2molden->setText(GetExecutableName("tm2molden", 0));
 //    ui->lineEdit_Executable_orca2_mkl->setText(GetExecutableName("orca2_mkl", 0));
    QList<QWidget*> uiWidgets = this->findChildren<QWidget*>();
-   foreach(QWidget *w, uiWidgets) {
+   for (QWidget *w : uiWidgets) {
       QVariant
          vaToolName = w->property("ext_tool_filename");
       if (vaToolName.isValid()) {
@@ -149,7 +149,7 @@ void FPreferencesForm::accept()
 //    SetExecutableName("tm2molden", ui->lineEdit_Executable_tm2molden->text());
 //    SetExecutableName("orca2_mkl", ui->lineEdit_Executable_orca2_mkl->text());
    QList<QLineEdit*> uiWidgets = this->findChildren<QLineEdit*>();
-   foreach(QLineEdit *w, uiWidgets) {
+   for (QLineEdit *w : uiWidgets) {
       QVariant
          vaToolName = w->property("ext_tool_filename");
       if (vaToolName.isValid()) {

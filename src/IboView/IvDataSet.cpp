@@ -153,7 +153,7 @@ void FGeometry::AddBond(int iAt, int jAt, QString const &sFlags)
    QStringList FlagList = sFlags.split("|", QString::SkipEmptyParts);
    double
       BondOrder = 1.;
-   foreach(QString const &Flag, FlagList) {
+   for (QString const &Flag : FlagList) {
       if (Flag == "gray" || Flag == "grey")
          Flags |= BOND_Grey;
       else if (Flag == "dotted")
