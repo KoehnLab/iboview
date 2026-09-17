@@ -150,7 +150,7 @@ void FGeometry::DeleteBond(int iAt, int jAt, bool ComplainIfNotThere)
 void FGeometry::AddBond(int iAt, int jAt, QString const &sFlags)
 {
    uint Flags = 0;
-   QStringList FlagList = sFlags.split("|", QString::SkipEmptyParts);
+   QStringList FlagList = sFlags.split("|", Qt::SkipEmptyParts);
    double
       BondOrder = 1.;
    for (QString const &Flag : FlagList) {

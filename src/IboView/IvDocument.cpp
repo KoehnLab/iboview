@@ -1684,7 +1684,7 @@ void FDocument::AddAxes(QString Which, double fAxisLength_, QString Options)
 //       dw_xLabel = 0xffff0000, dw_yLabel = 0xff00ff00, dw_zLabel = 0xff0000ff,
 //    fBrightnessMod = -.3;
    QStringList
-      FlagList = Options.split("|", QString::SkipEmptyParts);
+      FlagList = Options.split("|", Qt::SkipEmptyParts);
 
    QRegularExpression
       // function with one floating point argument

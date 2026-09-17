@@ -630,7 +630,7 @@ void IApplication::set_atom_mode(int iAt, QString const &Mode)
       &AtomFlags = document->AtomFlags(iAt-1),
       AtomFlagsOrig = AtomFlags;
    QStringList
-      FlagList = Mode.split("|", QString::SkipEmptyParts);
+      FlagList = Mode.split("|", Qt::SkipEmptyParts);
    for (QString Flag : FlagList) {
       if (Flag == "hidden")
          AtomFlags = AtomFlags | ATOM_Hidden;
