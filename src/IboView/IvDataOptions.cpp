@@ -343,7 +343,13 @@ double FElementOptions::GetDefaultVdwRadius() const
 // // static float AtomicRadii[103] = {0.76,0.64,2.68,1.80,1.64,1.54,1.50,1.46,1.42,1.38,3.08,2.60,2.36,2.22,2.12,2.04,1.98,1.94,3.92,3.48,2.88,2.72,2.50,2.54,2.78,2.50,2.52,2.42,2.76,2.62,2.52,2.44,2.38,2.32,2.28,2.20,4.22,3.84,3.24,2.96,2.74,2.90,3.12,2.52,2.70,2.62,3.06,2.96,2.88,2.82,2.76,2.70,2.66,2.60,4.50,3.96,3.38,3.48,3.44,3.43,3.40,3.36,3.35,3.28,3.27,3.23,3.20,3.16,3.14,3.09,3.20,3.00,2.76,2.92,3.18,2.56,2.74,2.56,2.88,2.98,2.96,2.94,2.92,2.83,2.92,2.90,5.44,4.75,3.75,3.25,3.23,3.18,3.15,3.13,3.14,3.40,3.33,3.31,3.26,3.24,3.19,3.17,3.21}; // see make_atomic_radii.py
 static float AtomicRadii[104] = {0, 0.87,1.60,2.52,2.03,1.58,1.43,1.32,1.29,1.26,1.74,2.91,2.69,2.35,2.11,2.08,2.04,1.97,1.95,3.69,3.33,2.86,2.67,2.65,2.54,2.61,2.52,2.35,2.20,2.46,2.25,2.38,2.26,2.29,2.25,2.25,2.17,4.27,3.88,3.21,2.96,2.78,2.80,2.50,2.79,2.52,2.53,2.62,2.65,2.76,2.64,2.66,2.62,2.61,2.39,4.86,4.30,3.67,3.48,3.44,3.43,3.40,3.36,3.35,3.28,3.27,3.23,3.20,3.16,3.14,3.09,3.16,3.04,2.86,2.88,2.59,2.59,2.59,2.58,2.38,2.53,2.87,2.76,2.86,2.83,2.92,2.68,5.44,4.75,3.75,3.25,3.23,3.18,3.15,3.13,3.14,3.40,3.33,3.31,3.26,3.24,3.19,3.17,3.21};
 
-inline float GetAtomDrawRadius(int iElement) { return AtomicRadii[iElement]; } // hmmm... looks rather non-similar to the covalent radius.
+inline float GetAtomDrawRadius(int iElement) {
+   if (iElement < 0 || size_t(iElement) >= sizeof(AtomicRadii)/sizeof(AtomicRadii[0])) {
+      assert(0); // no entry for this number...
+      return 2.0f; // generic guess radius for elements without tabulated data.
+   }
+   return AtomicRadii[iElement];
+} // hmmm... looks rather non-similar to the covalent radius.
 // float GetAtomDrawRadius(int iElement) { return GetCovalentRadius[iElement]; }
 
 double FElementOptions::GetDefaultDrawRadius() const
