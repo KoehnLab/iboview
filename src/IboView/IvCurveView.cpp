@@ -391,14 +391,14 @@ void FCurveView::keyPressEvent(QKeyEvent */*event*/)
 
 void FCurveView::wheelEvent(QWheelEvent *event)
 {
-   scaleView(pow((double)2, event->delta() / 240.0));
+   scaleView(pow((double)2, event->angleDelta().y() / 240.0));
 }
 
 
 void FCurveView::mousePressEvent(QMouseEvent *event)
 {
-   LastX = event->x();
-   LastY = event->y();
+   LastX = event->position().x();
+   LastY = event->position().y();
    FBase::mousePressEvent(event);
 }
 
@@ -422,8 +422,8 @@ void FCurveView::mouseMoveEvent(QMouseEvent *event)
 //          update();
 // //       }
 //    }
-   LastX = event->x();
-   LastY = event->y();
+   LastX = event->position().x();
+   LastY = event->position().y();
 }
 
 

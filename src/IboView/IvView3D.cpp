@@ -1911,16 +1911,16 @@ void FView3d::wheelEvent(QWheelEvent *event) {
 //    std::cout << fmt::format("zoom: {:8.5f}   wheel: {}   delta = {}", v->fZoomFactor, (int)event->buttons(), event->delta()) << std::endl;
 //    if ( (event->buttons() == (Qt::RightButton)) || (event->buttons()==0 && event->modifiers() == ControlModifier) ) {
    if ( event->buttons() == (Qt::RightButton) ) {
-      v->fZoomFactor *= std::pow(1.05f, float(event->delta())/120.f);
+      v->fZoomFactor *= std::pow(1.05f, float(event->angleDelta().y())/120.f);
       update();
    } else if ( event->buttons() == (Qt::RightButton | Qt::LeftButton) ) {
       float fRate = 5.0;
       if (event->modifiers() & Qt::ControlModifier)
          fRate *= .1f;
-      v->RollCamera(fRate * event->delta()/120.f, event->x(), event->y());
+      v->RollCamera(fRate * event->angleDelta().y()/120.f, int(event->position().x()), int(event->position().y()));
       update();
    } else if (event->modifiers() & Qt::ShiftModifier) {
-      d->MoveActiveCol(GetFrameMoveDeltaAmount(double(event->delta())/120., event->modifiers()));
+      d->MoveActiveCol(GetFrameMoveDeltaAmount(double(event->angleDelta().y())/120., event->modifiers()));
    } else {
       event->ignore();
    }
@@ -1933,8 +1933,8 @@ void FView3d::mousePressEvent(QMouseEvent *event) {
    v->SimpleClick = (event->buttons() == event->button());
 //    std::cout << fmt::format("press: btn = {}  btns = {}   simple? {}", (int)event->button(), (int)event->buttons(), (int)v->SimpleClick) << std::endl;
 
-   v->LastX = event->x();
-   v->LastY = event->y();
+   v->LastX = int(event->position().x());
+   v->LastY = int(event->position().y());
 
    if (v->SimpleClick) {
       v->FirstX = v->LastX;
@@ -1948,17 +1948,18 @@ void FView3d::mouseReleaseEvent(QMouseEvent *event) {
 //    releaseMouse();
 //    QApplication::restoreOverrideCursor();
 
-   int delta = std::max(std::abs(v->FirstX - event->x()), std::abs(v->FirstY - event->y()));
+   int eventX = int(event->position().x()), eventY = int(event->position().y());
+   int delta = std::max(std::abs(v->FirstX - eventX), std::abs(v->FirstY - eventY));
 //    if (delta > 4)
 //       v->SimpleClick = false;
 
 //    if (event->button() == Qt::LeftButton && v->SimpleClick) {
    if (v->SimpleClick) {
       if (delta <= 4)
-         v->ClickPosition(event->x(), event->y(), event->button(), event->modifiers(), event->globalPos());
+         v->ClickPosition(eventX, eventY, event->button(), event->modifiers(), event->globalPosition().toPoint());
       else if (event->button() == Qt::LeftButton)
          // is that right? will this not get triggered if left+right moving the mouse?
-         v->SelectRect(v->FirstX, v->FirstY, event->x(), event->y(), event->button(), event->modifiers(), event->globalPos());
+         v->SelectRect(v->FirstX, v->FirstY, eventX, eventY, event->button(), event->modifiers(), event->globalPosition().toPoint());
    }
 }
 
@@ -2047,8 +2048,8 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
    if ( event->buttons() != 0 ) {
       float fScale = 20./this->width();
       float fPosScale = v->fZoomFactor * fCameraDist/30.;
-      float fDeltaX = fScale * (event->x() - v->LastX);
-      float fDeltaY = fScale * (event->y() - v->LastY);
+      float fDeltaX = fScale * (event->position().x() - v->LastX);
+      float fDeltaY = fScale * (event->position().y() - v->LastY);
       FVec3f
          vRight = Cross(v->vCameraDir, v->vCameraUp);
 
@@ -2058,7 +2059,7 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
             v->vCameraPos += (fPosScale * fDeltaX) * vRight;
          } else {
             FVec3f
-               v0 = v->ScreenToWorld(FVec3f(event->x(),event->y(),1.0)),
+               v0 = v->ScreenToWorld(FVec3f(event->position().x(),event->position().y(),1.0)),
                v1 = v->ScreenToWorld(FVec3f(v->LastX,v->LastY,1.0)),
                dv = v1 - v0;
 //             dv -= Dot(dv,v->vCameraDir) * v->vCameraDir;
@@ -2111,8 +2112,8 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
          update();
       }
    }
-   v->LastX = event->x();
-   v->LastY = event->y();
+   v->LastX = int(event->position().x());
+   v->LastY = int(event->position().y());
 }
 
 
