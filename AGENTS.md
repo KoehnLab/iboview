@@ -102,6 +102,76 @@ from what the generator would produce.
   argument like `Qt::WindowFlags flags = 0` won't compile under Qt6; use the
   flag type's own default constructor (`Qt::WindowFlags()`).
 
+## Debugging segfaults and memory corruption
+
+- **A crash's backtrace shows where corruption was *detected*, not
+  necessarily where it happened.** Heap corruption (double-free,
+  use-after-free, buffer overflow) can crash much later than the code that
+  caused it — an unrelated-looking destructor, allocator call, or even a
+  perfectly ordinary `delete` can be where a previously-corrupted object
+  finally gets touched. Treat the function named in a plain debugger
+  backtrace as the symptom site, not necessarily the cause, especially if a
+  fix there doesn't change the crash at all.
+- **If a fix doesn't change the crash (same address, same instruction, same
+  backtrace), it didn't fix the actual bug** — even if it was a real and
+  worthwhile fix for something else. Re-run the exact same reproduction
+  after every fix rather than assuming a plausible-looking change worked;
+  don't declare a crash fixed on code-review confidence alone.
+- **Reach for a memory sanitizer (AddressSanitizer / `-fsanitize=address`, or
+  Valgrind) as soon as a plain backtrace looks like a symptom rather than a
+  cause** (a crash inside a destructor, in unrelated-looking code, or at a
+  different spot each run). It reports the exact instruction and
+  allocation/free site of the actual fault, which a post-hoc backtrace
+  cannot reconstruct. An ASan build is usually just a separate build
+  directory with `-fsanitize=address -fno-omit-frame-pointer` added to
+  compile and link flags. For a qmake-based project, a build config that
+  sets its defaults via unconditional `+=`/`-=` lines in the `.pro` file may
+  silently re-override qmake command-line flag overrides (later assignments
+  in the file, or file assignments processed after command-line ones, win);
+  verify a debug/sanitizer build's *actual* effective flags in the generated
+  Makefile before trusting it, rather than assuming the invocation worked.
+- **Narrow the reproduction before diving into code.** Change one variable
+  at a time between test runs ("does it still crash if I skip this one
+  step?") to establish what's actually necessary to trigger the bug, rather
+  than assuming every step in a reported sequence is essential.
+- **Watch for self-referential container operations — but only on containers
+  that can reallocate their elements.** `container.push_back(container
+  .back())` (or any call passing a reference/pointer into a container as an
+  argument to a method on that same container) is only a hazard for
+  containers whose growth may move already-stored elements to a new backing
+  buffer (e.g. `std::vector`/similar contiguous-storage containers). It is
+  *not* an issue for containers that never relocate existing elements on
+  insertion (e.g. `std::list`, `std::deque`'s existing elements, node-based
+  maps/sets) — know which kind of container is involved before assuming a
+  bug. Where it does apply, there are two valid fixes:
+  - Copy the referenced value to a local before the call, so the argument no
+    longer aliases storage the call might move. Simple and safe, but adds a
+    copy on every call — avoid it in a hot path if the element type is large
+    or expensive to copy.
+  - Ensure the call cannot reallocate in the first place (e.g. `reserve()`
+    enough capacity up front). This avoids the copy, but means every
+    reference/pointer/iterator into the container — not just the one in this
+    call — stays valid only as long as that reserved capacity isn't
+    exceeded; a later change that adds one more element than planned for
+    silently reintroduces the exact same class of bug. Prefer this only when
+    the container's maximum size is genuinely known and enforced, and say so
+    at the point capacity is reserved.
+- **Object-ownership boundaries between manually-managed and
+  garbage-collected/reference-counted systems are a common source of
+  premature frees.** When a native object is exposed to a scripting engine,
+  plugin system, or other embedded runtime, check that runtime's default
+  ownership rule for a wrapped object (e.g. "no parent/owner set means the
+  runtime takes ownership"). An externally-owned, long-lived object with no
+  obvious owner marker can be silently deleted once the embedding runtime's
+  GC (or refcounting) considers it unreachable — long after the code that
+  exposed it has returned.
+- **A single reported symptom can have multiple independent causes.** Don't
+  stop at the first bug a sanitizer finds if the reproduction still crashes
+  afterward — fix it, rebuild, and reproduce again, repeating until the
+  actual reported symptom is gone. Keep unrelated fixes found along the way
+  in their own commits rather than bundling them with the one that actually
+  explains the report.
+
 ## General rules for development on this project
 
 These were established while migrating the codebase from Qt5 to Qt6 and
