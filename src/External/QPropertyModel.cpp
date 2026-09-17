@@ -124,15 +124,11 @@ void QPropertyModel::connectToPropertyNotifySignals()
         //   - http://stackoverflow.com/questions/10805174/qobject-generic-signal-handler
         //   - a dummy SignalForwarder class instance for each signal for QSignalMapper.
         SignalForwarder *sf = new SignalForwarder(this);
-#if QT_VERSION <= 0x050000
-        connect(_source, QByteArray("2") + props[index].notifySignal().signature(), sf, SIGNAL(forward()));
-#else
         connect(_source, QByteArray("2") + props[index].notifySignal().methodSignature(), sf, SIGNAL(forward()));
-#endif
         connect(sf, SIGNAL(forward()), mapper, SLOT(map()));
         mapper->setMapping(sf, index);
     }
-    connect(mapper, SIGNAL(mapped(int)), this, SLOT(columnChanged(int)));
+    connect(mapper, SIGNAL(mappedInt(int)), this, SLOT(columnChanged(int)));
 }
 
 void QPropertyModel::columnChanged(int column)

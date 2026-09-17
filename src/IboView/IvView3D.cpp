@@ -242,10 +242,8 @@ FViewImpl::FViewImpl(FDocument *pDocument_, FView3d *pView_)
    NormalizeCameraPos();
    m_UpdateLocked = 0;
    m_DevicePixelRatio = 1;
-#if QT_VERSION >= 0x050000
    // for Mac retina scaling. Doesn't appear to be needed on either windows or linux.
    m_DevicePixelRatio = int(v->devicePixelRatio());
-#endif
 }
 
 FIsoSurfaceSettings FViewImpl::MakeIsoSurfaceSettings() const

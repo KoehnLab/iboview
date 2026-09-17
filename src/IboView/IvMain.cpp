@@ -2493,14 +2493,12 @@ public:
 
       g_papp = this;
 //       MainWindow.show();
-#if QT_VERSION >= 0x050000
       // must be done after QApplication object is constructed. Otherwise undeployable
       // on windows ('could not load or find the Qt platform plugin "windows"')
       if (s_UseStyleFiles) {
          QApplication::setDesktopSettingsAware(false);
          QApplication::setStyle(QStyleFactory::create("Fusion"));
       }
-#endif
       if (s_UseStyleFiles) {
          // load and apply our super cool style sheet 8).
          // (I could not resist)
