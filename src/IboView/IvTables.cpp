@@ -453,15 +453,8 @@ FTablesForm::FTablesForm(FDocument *pDocument_, QWidget *pParent_)
    ui->setupUi(this);
    ui->tableView_Values->setModel(m_pDocument->GetMeasures());
 
-#if QT_VERSION >= 0x050000
 //    ui->tableView_Values->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
    ui->tableView_Values->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-#else
-   // qt5 doc's say there is a compatibiltiy layer for this.. but it doesn't seem to exist
-   // in my windows qt 5.3.2 version.
-//    ui->tableView_Values->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-   ui->tableView_Values->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-#endif
    ui->tableView_Values->resizeColumnsToContents();
 
 //    FTransposeProxyModel

@@ -40,7 +40,7 @@
 #include <QClipboard>
 #include <QApplication>
 // #include <QRegularExpression>
-#include <QRegExp>
+#include <QRegularExpression>
 
 #include "IvDocument.h"
 #include "IvFindOrbitalsForm.h"
@@ -390,7 +390,7 @@ void IFrame::add_objects(QVariantList fol, QString Mode)
 {
    int Verbosity = 1;
    if (Verbosity >= 1)
-      IvEmit("IFrame::add_objects(list, '%1') { // list.size = %2", Mode, fol.size());
+      IvEmit("IFrame::add_objects(list, '%1') { // list.size = %2", Mode, int(fol.size()));
    if (!(Mode == "link" || Mode == "clone")) {
       IV_NOTIFY(NOTIFY_Warning, QString("IFrame::add_objects(list, mode): mode should be 'link' or 'clone', but was '%1'").arg(Mode));
    }
@@ -1620,7 +1620,7 @@ struct FNameArgListRe
    }
 
    template<class... Args>
-   QRegExp re(QString reName, Args... args)
+   QRegularExpression re(QString reName, Args... args)
    {
       QStringList sArgs{args...};
       QString sFn;
@@ -1647,7 +1647,7 @@ struct FNameArgListRe
       }
       sArgJoin = QString("%1%2%3").arg(sArgRight, this->reDelim, sArgLeft);
       QString sRegExp = QString("%1%2%3%4%5%6%7%8").arg(sBegin, sFn, this->reOpen, sArgLeft, sArgs.join(sArgJoin), sArgRight, this->reClose, sEnd);
-      return QRegExp(sRegExp);
+      return QRegularExpression(sRegExp);
    }
 };
 
@@ -1684,25 +1684,27 @@ void FDocument::AddAxes(QString Which, double fAxisLength_, QString Options)
 //       dw_xLabel = 0xffff0000, dw_yLabel = 0xff00ff00, dw_zLabel = 0xff0000ff,
 //    fBrightnessMod = -.3;
    QStringList
-      FlagList = Options.split("|", QString::SkipEmptyParts);
+      FlagList = Options.split("|", Qt::SkipEmptyParts);
 
-   QRegExp
+   QRegularExpression
       // function with one floating point argument
       reFunc1f = FNameArgListRe("\\(", "\\,", "\\)").re(g_ReDecl_Identifier, g_ReDecl_Float),
       // function with three floating point arguments
       reFunc3f = FNameArgListRe("\\(", "\\,", "\\)").re(g_ReDecl_Identifier, g_ReDecl_Float, g_ReDecl_Float, g_ReDecl_Float);
 
-   foreach(QString Flag1, FlagList) {
+   for (QString Flag1 : FlagList) {
       QString Flag = Flag1.trimmed();
       if (Flag == "gray" || Flag == "grey") {
          dw_xAxis = dw_yAxis = dw_zAxis = 0xffbfbfbf;
          fBrightnessMod = -.4;
          continue;
       }
-      if (reFunc1f.exactMatch(Flag)) {
-         QString FnName = reFunc1f.cap(1);
-         double fValue = reFunc1f.cap(2).toDouble();
-//          IvEmit("  '%2' matches reFunc1f ('%1')\n  (cap(1): '%3', cap(2): '%4')--> w = %5", reFunc1f.pattern(), Flag, reFunc1f.cap(1), reFunc1f.cap(2), fValue);
+      QRegularExpressionMatch Match1f = reFunc1f.match(Flag);
+      QRegularExpressionMatch Match3f = reFunc3f.match(Flag);
+      if (Match1f.hasMatch()) {
+         QString FnName = Match1f.captured(1);
+         double fValue = Match1f.captured(2).toDouble();
+//          IvEmit("  '%2' matches reFunc1f ('%1')\n  (cap(1): '%3', cap(2): '%4')--> w = %5", reFunc1f.pattern(), Flag, Match1f.captured(1), Match1f.captured(2), fValue);
          if (FnName == "width") {
             AxisWidth = fValue; continue;
          } else if (FnName == "dotted" || FnName == "weight") {
@@ -1714,13 +1716,13 @@ void FDocument::AddAxes(QString Which, double fAxisLength_, QString Options)
          } else if (FnName == "label-offs") {
             fAxisLabelOffs = fValue; continue;
          }
-      } else if (reFunc3f.exactMatch(Flag)) {
+      } else if (Match3f.hasMatch()) {
          QString
-            FnName = reFunc3f.cap(1);
+            FnName = Match3f.captured(1);
          double
-            fValue0 = reFunc3f.cap(2).toDouble(),
-            fValue1 = reFunc3f.cap(3).toDouble(),
-            fValue2 = reFunc3f.cap(4).toDouble();
+            fValue0 = Match3f.captured(2).toDouble(),
+            fValue1 = Match3f.captured(3).toDouble(),
+            fValue2 = Match3f.captured(4).toDouble();
          FVec3d
             vValue012 = FVec3d(fValue0, fValue1, fValue2);
 //          IvEmit("  '%2' matches reFunc3f ('%1')\n  (caps: '%3')--> w = %4", reFunc3f.pattern(), Flag, QString("['%1', '%2', '%3', '%4']").arg(reFunc3f.cap(1)).arg(reFunc3f.cap(2)).arg(reFunc3f.cap(3)).arg(reFunc3f.cap(4)), QString("(%1,%2,%3,%4)").arg(FnName).arg(vValue012[0]).arg(vValue012[1]).arg(vValue012[2]));
@@ -1852,7 +1854,7 @@ void FDocument::Load(QStringList FileNames)
    {
       FFrameList
          LoadedFrames;
-      foreach(QString FileName, FileNames)
+      for (QString FileName : FileNames)
          LoadFile(LoadedFrames, FileName);
       if (LoadedFrames.size() > 1)
          IvNotify(NOTIFY_StartWork, IvFmt("Processing %1 frames...", LoadedFrames.size()));
@@ -1861,7 +1863,7 @@ void FDocument::Load(QStringList FileNames)
    }
 
    EndInsertFrames();
-   IvNotify(NOTIFY_FinishWork, IvFmt("Finished loading %1 files.", FileNames.size()));
+   IvNotify(NOTIFY_FinishWork, IvFmt("Finished loading %1 files.", int(FileNames.size())));
 
    emit ActiveColChanged(m_ActiveCol); // that's for updating the file name in the title...
 }

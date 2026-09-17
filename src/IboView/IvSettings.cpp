@@ -232,7 +232,7 @@ QString ReplaceEnvironmentVariables(QString in) {
       &env = QProcessEnvironment::systemEnvironment();
    QStringList
       keys = env.keys();
-   foreach(QString const &key, keys) {
+   for (QString const &key : keys) {
 //       IvEmit("REV: %1 -> %2", QString("$(%1)").arg(key), env.value(key));
       out = out.replace(QString("$(%1)").arg(key), env.value(key));
    }

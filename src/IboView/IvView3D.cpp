@@ -31,6 +31,8 @@
 #include <iostream>
 #include <cmath> // for std::trunc and erfc
 #include <QtGlobal> // for QT_VERSION
+#include <QSurfaceFormat>
+#include <QOpenGLContext>
 #include <QRect>
 #include <QImage>
 #include <QApplication>
@@ -242,10 +244,8 @@ FViewImpl::FViewImpl(FDocument *pDocument_, FView3d *pView_)
    NormalizeCameraPos();
    m_UpdateLocked = 0;
    m_DevicePixelRatio = 1;
-#if QT_VERSION >= 0x050000
    // for Mac retina scaling. Doesn't appear to be needed on either windows or linux.
    m_DevicePixelRatio = int(v->devicePixelRatio());
-#endif
 }
 
 FIsoSurfaceSettings FViewImpl::MakeIsoSurfaceSettings() const
@@ -287,49 +287,40 @@ static void InitGlew1()
 //    std::cout << "GLEW Init passed." << std::endl;
 }
 
-static QGLFormat MakeGlFormat()
+static QSurfaceFormat MakeGlFormat()
 {
-   QGLFormat
-      GlFormat(QGL::AlphaChannel | QGL::DepthBuffer | QGL::DoubleBuffer);
+   QSurfaceFormat
+      GlFormat;
+   GlFormat.setAlphaBufferSize(8);
+   GlFormat.setDepthBufferSize(24);
+   GlFormat.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
    if (TransparencyStyle != TRANSSTYLE_DepthPeeling)
-      GlFormat.setSampleBuffers(true);
+      GlFormat.setSamples(4);
    else {
       // In the default depth peeling mode we technically need neither a depth buffer
       // nor double buffering on the main FBO, as all we ever do with it is use it as
       // target for blitting from the higher resolution accumulation FBs.
-      GlFormat.setDepth(false);
-      GlFormat.setDoubleBuffer(false);
+      GlFormat.setDepthBufferSize(0);
+      GlFormat.setSwapBehavior(QSurfaceFormat::SingleBuffer);
    }
 
-   QGLFormat::OpenGLVersionFlags
-      GlVersionFlags = QGLFormat::openGLVersionFlags();
-   if (GlVersionFlags & QGLFormat::OpenGL_Version_4_0) {
-      g_GlVersion = 40;
-      GlFormat.setVersion(4,0);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   } else if (GlVersionFlags & QGLFormat::OpenGL_Version_3_2) {
-      g_GlVersion = 32;
-      GlFormat.setVersion(3,2);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   } else {
-//       throw std::runtime_error("OpenGL Version 3.0 not supported.");
-      IvNotify(NOTIFY_Warning, "This program requires OpenGL version >=3.2. This is not supported by the current hardware/software setup."
-        " The program will switch into partial compatibility mode and try to go on, but there is a chance that it will not work and visual quality will be impacted.");
-      g_GlVersion = 30;
-      GlFormat.setVersion(3,0);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   }
-//    GlFormat.setProfile(QGLFormat::CompatibilityProfile);
+   // Request the version/profile we want. The actual supported version/profile can
+   // only be queried once the context exists; see FView3d::initializeGL(), which
+   // sets g_GlVersion from it.
+   GlFormat.setVersion(4,0);
+   GlFormat.setProfile(QSurfaceFormat::CoreProfile);
+//    GlFormat.setProfile(QSurfaceFormat::CompatibilityProfile);
    // ^- core profile works on my card, but apparently not everywhere...
    //    update: on other machines, the compatibility profile does not work...
    return GlFormat;
 }
 
 FView3d::FView3d(QWidget *parent, FDocument *document)
-   : FBase(MakeGlFormat(), parent)
+   : FBase(parent)
 //    QGL::StencilBuffer
 //    : QGLWidget(QGLFormat(QGL::AlphaChannel), parent)
 {
+   setFormat(MakeGlFormat());
 //    setMouseTracking(true);
 #ifdef OPENGL_DEBUG
    glEnable(GL_DEBUG_OUTPUT);
@@ -367,6 +358,11 @@ FView3d::FView3d(QWidget *parent, FDocument *document)
 
 FView3d::~FView3d()
 {
+   // QOpenGLWidget's context is still alive at this point (it is torn down
+   // after this destructor body runs), but is not guaranteed to still be
+   // current, so it must be made current explicitly before releasing any
+   // GL resources below (here and, via ~FViewImpl(), throughout 'v').
+   makeCurrent();
    CALL_GL( glUseProgram(0) );
    delete v;
 //    delete d; // not safe if init of d fails... should use RAII smart pointer.
@@ -385,6 +381,21 @@ void FView3d::initializeGL() {
 //    glDisable(GL_TEXTURE_2D); // not allowed in core profile. See if this works.
 #endif
 
+   {
+      // determine the GL version we actually got (see comment in MakeGlFormat()).
+      QPair<int,int>
+         GlVersionObtained = this->format().version();
+      if (GlVersionObtained >= qMakePair(4,0)) {
+         g_GlVersion = 40;
+      } else if (GlVersionObtained >= qMakePair(3,2)) {
+         g_GlVersion = 32;
+      } else {
+//          throw std::runtime_error("OpenGL Version 3.0 not supported.");
+         IvNotify(NOTIFY_Warning, "This program requires OpenGL version >=3.2. This is not supported by the current hardware/software setup."
+           " The program will switch into partial compatibility mode and try to go on, but there is a chance that it will not work and visual quality will be impacted.");
+         g_GlVersion = 30;
+      }
+   }
 
    IvEmit(QString("Context initialized to GL %1.%2.").arg(format().majorVersion()).arg(format().minorVersion()));
    IvEmit(QString("GL says its context is version: %1").arg((char*)glGetString(GL_VERSION)));
@@ -406,13 +417,13 @@ void FView3d::initializeGL() {
 //    nMainFboSamples = (uint) bla;
 //    std::cout << fmt::format("OpenGL says my main FB has {} multi-sample samples.", nMainFboSamples) << std::endl;
    // ^- says 48. surely not!!
-   // this->format() returns a QGLFormat object.
+   // this->format() returns a QSurfaceFormat object.
 //    if (nMainFboSamples != 0)
-   if (this->format().sampleBuffers())
+   if (this->format().samples() > 0)
       v->nMainFboSamples = (uint)this->format().samples();
    else
       v->nMainFboSamples = 0;
-//    std::cout << fmt::format("QGLWidget says my main FB has {} multi-sample samples.", v->nMainFboSamples) << std::endl;
+//    std::cout << fmt::format("QOpenGLWidget says my main FB has {} multi-sample samples.", v->nMainFboSamples) << std::endl;
 
    RehashShaders();
 
@@ -474,6 +485,7 @@ void FView3d::RehashShaders()
 
 void FView3d::UpdateBondMesh()
 {
+   makeCurrent(); // also reached outside paintGL, via property changes from scripts/UI (e.g. view presets)
    if (v->pBondMesh.get()) {
       // ^- if this isn't there most likely GL is not yet initialized.
       FBaseVertex
@@ -539,6 +551,7 @@ void FViewImpl::ResetProjectionAndZoom(int w, int h)
 
 void FView3d::ResetFrameBuffers()
 {
+   makeCurrent(); // also reached outside paintGL, via property changes from scripts/UI
 
    CheckGlError("FView3d::ResetFrameBuffers (enter)");
    GLenum
@@ -846,6 +859,7 @@ void FViewImpl::RenderObjects(uint RenderFlags, FShaderSet &ShaderSet)
 
 void FViewImpl::RenderPickBuffer(bool KeepPickBufferBound)
 {
+   v->makeCurrent(); // also reached outside paintGL, via mouse event handlers
    pPickFbo->Bind();
    CALL_GL( glClearDepth(1.) );
    CALL_GL( glClearColor(0., 0., 0., 0.) );
@@ -900,7 +914,7 @@ void FViewImpl::RenderScene()
    if (!BindSucceeded) {
       // this one is for MacOS... where apparently one cannot actually
       // initialize any frame buffers before the window is first physically shown
-      const_cast<QGLContext*>(this->v->context())->makeCurrent();
+      this->v->context()->makeCurrent(this->v->context()->surface());
       v->ResetFrameBuffers();
       if (!pMainFbo->Bind(GL_DRAW_FRAMEBUFFER))
          // still doesn't work? Probably can't fix it now.
@@ -1099,6 +1113,10 @@ void FView3d::paintGL() {
    //    std::cout.flush();
    //    m_UpdateTimer.stop();
       v->m_MutexPainting.unlock();
+   } else {
+      // re-entrant call while a previous paintGL() is still in progress; don't
+      // drop this frame, ask for another repaint once it's done.
+      update();
    }
 }
 
@@ -1913,16 +1931,16 @@ void FView3d::wheelEvent(QWheelEvent *event) {
 //    std::cout << fmt::format("zoom: {:8.5f}   wheel: {}   delta = {}", v->fZoomFactor, (int)event->buttons(), event->delta()) << std::endl;
 //    if ( (event->buttons() == (Qt::RightButton)) || (event->buttons()==0 && event->modifiers() == ControlModifier) ) {
    if ( event->buttons() == (Qt::RightButton) ) {
-      v->fZoomFactor *= std::pow(1.05f, float(event->delta())/120.f);
+      v->fZoomFactor *= std::pow(1.05f, float(event->angleDelta().y())/120.f);
       update();
    } else if ( event->buttons() == (Qt::RightButton | Qt::LeftButton) ) {
       float fRate = 5.0;
       if (event->modifiers() & Qt::ControlModifier)
          fRate *= .1f;
-      v->RollCamera(fRate * event->delta()/120.f, event->x(), event->y());
+      v->RollCamera(fRate * event->angleDelta().y()/120.f, int(event->position().x()), int(event->position().y()));
       update();
    } else if (event->modifiers() & Qt::ShiftModifier) {
-      d->MoveActiveCol(GetFrameMoveDeltaAmount(double(event->delta())/120., event->modifiers()));
+      d->MoveActiveCol(GetFrameMoveDeltaAmount(double(event->angleDelta().y())/120., event->modifiers()));
    } else {
       event->ignore();
    }
@@ -1935,8 +1953,8 @@ void FView3d::mousePressEvent(QMouseEvent *event) {
    v->SimpleClick = (event->buttons() == event->button());
 //    std::cout << fmt::format("press: btn = {}  btns = {}   simple? {}", (int)event->button(), (int)event->buttons(), (int)v->SimpleClick) << std::endl;
 
-   v->LastX = event->x();
-   v->LastY = event->y();
+   v->LastX = int(event->position().x());
+   v->LastY = int(event->position().y());
 
    if (v->SimpleClick) {
       v->FirstX = v->LastX;
@@ -1950,17 +1968,18 @@ void FView3d::mouseReleaseEvent(QMouseEvent *event) {
 //    releaseMouse();
 //    QApplication::restoreOverrideCursor();
 
-   int delta = std::max(std::abs(v->FirstX - event->x()), std::abs(v->FirstY - event->y()));
+   int eventX = int(event->position().x()), eventY = int(event->position().y());
+   int delta = std::max(std::abs(v->FirstX - eventX), std::abs(v->FirstY - eventY));
 //    if (delta > 4)
 //       v->SimpleClick = false;
 
 //    if (event->button() == Qt::LeftButton && v->SimpleClick) {
    if (v->SimpleClick) {
       if (delta <= 4)
-         v->ClickPosition(event->x(), event->y(), event->button(), event->modifiers(), event->globalPos());
+         v->ClickPosition(eventX, eventY, event->button(), event->modifiers(), event->globalPosition().toPoint());
       else if (event->button() == Qt::LeftButton)
          // is that right? will this not get triggered if left+right moving the mouse?
-         v->SelectRect(v->FirstX, v->FirstY, event->x(), event->y(), event->button(), event->modifiers(), event->globalPos());
+         v->SelectRect(v->FirstX, v->FirstY, eventX, eventY, event->button(), event->modifiers(), event->globalPosition().toPoint());
    }
 }
 
@@ -2049,8 +2068,8 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
    if ( event->buttons() != 0 ) {
       float fScale = 20./this->width();
       float fPosScale = v->fZoomFactor * fCameraDist/30.;
-      float fDeltaX = fScale * (event->x() - v->LastX);
-      float fDeltaY = fScale * (event->y() - v->LastY);
+      float fDeltaX = fScale * (event->position().x() - v->LastX);
+      float fDeltaY = fScale * (event->position().y() - v->LastY);
       FVec3f
          vRight = Cross(v->vCameraDir, v->vCameraUp);
 
@@ -2060,7 +2079,7 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
             v->vCameraPos += (fPosScale * fDeltaX) * vRight;
          } else {
             FVec3f
-               v0 = v->ScreenToWorld(FVec3f(event->x(),event->y(),1.0)),
+               v0 = v->ScreenToWorld(FVec3f(event->position().x(),event->position().y(),1.0)),
                v1 = v->ScreenToWorld(FVec3f(v->LastX,v->LastY,1.0)),
                dv = v1 - v0;
 //             dv -= Dot(dv,v->vCameraDir) * v->vCameraDir;
@@ -2113,8 +2132,8 @@ void FView3d::mouseMoveEvent(QMouseEvent *event) {
          update();
       }
    }
-   v->LastX = event->x();
-   v->LastY = event->y();
+   v->LastX = int(event->position().x());
+   v->LastY = int(event->position().y());
 }
 
 
@@ -2646,7 +2665,11 @@ void IView3d::save_png(QString const &FileName){
       WriteAlpha = m_SaveAlpha,
       Crop = m_CropImages;
    QImage
-      img = this->grabFrameBuffer(WriteAlpha);
+      img = this->grabFramebuffer();
+   if (!WriteAlpha)
+      // grabFramebuffer() always includes alpha from this surface format; force the
+      // image opaque here when WriteAlpha is false.
+      img = img.convertToFormat(QImage::Format_RGB32);
 //       img = this->renderPixmap(200,200,false).toImage();
       // ^- doesn't work... calls initializeGL again, but does NOT make a new
       //    view3d object! That means that all the resident objects (off-screen FBOs)

@@ -135,15 +135,8 @@ FFindOrbitalsForm::FFindOrbitalsForm(FFoundOrbitalModel *pModel_, QString Title_
    ui->setupUi(this);
    ui->orbitalTable->setWordWrap(false);
    ui->orbitalTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-#if QT_VERSION >= 0x050000
    ui->orbitalTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
    ui->orbitalTable->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-#else
-   // qt5 doc's say there is a compatibiltiy layer for this.. but it doesn't seem to exist
-   // in my windows qt 5.3.2 version.
-   ui->orbitalTable->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-   ui->orbitalTable->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-#endif
    ui->orbitalTable->setModel(m_pModel);
    setWindowTitle(Title_);
    // todo: connect actions etc (toggle data row, sort).

@@ -28,7 +28,7 @@
 #include <QMainWindow>
 #include <QAction>
 #include <QSortFilterProxyModel>
-#include <QScriptEngine>
+#include <QJSEngine>
 #include <QResizeEvent>
 #include <QShowEvent>
 #include <QDragEnterEvent>
@@ -75,7 +75,7 @@ class FMainWindow : public QMainWindow
 public:
    typedef QMainWindow
       FBase;
-   FMainWindow(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+   FMainWindow(QWidget *parent = 0, Qt::WindowFlags flags = Qt::WindowFlags());
    ~FMainWindow();
 public:
    Ui::MainWindow *ui;
@@ -188,7 +188,7 @@ public slots:
 
    virtual void load_file(QString const &FileName); // = 0;
 //    virtual void load_files(QString const &FileNames); // = 0;
-   virtual void load_files(QScriptValue const &FileList);
+   virtual void load_files(QJSValue const &FileList);
    virtual void close_files();
    virtual void set_frame(int iFrame); // = 0;
    virtual int get_frame();
@@ -233,14 +233,14 @@ public slots:
 
    virtual void update_views();
 
-   virtual void define_atom_group(int iAtomGroup, QScriptValue const &AtomList);
+   virtual void define_atom_group(int iAtomGroup, QJSValue const &AtomList);
 
    virtual int get_orbital_color_scheme();
    virtual void set_orbital_color_scheme(int);
 //    virtual void set_iso_surface_type(QString const &IsoType, float fIsoValue); // = 0;
 
 public: // here for technical reasons. Not part of script interface.
-   IApplication( QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+   IApplication( QWidget * parent = 0, Qt::WindowFlags flags = Qt::WindowFlags() )
       : FMainWindow(parent, flags)
    {}
    ~IApplication(); // does nothing---just to fix the vtable.

@@ -15,10 +15,11 @@ improvements).
 sudo apt-get install \
     build-essential \
     libboost-all-dev \
-    qtbase5-dev \
-    qtscript5-dev \
-    libqt5svg5-dev \
-    libgl1-mesa-dev
+    qt6-base-dev \
+    qt6-declarative-dev \
+    libqt6svg6-dev \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev
 ```
 
 #### OpenSuse
@@ -36,33 +37,42 @@ sudo zypper install \
     make \
     glu-devel \
     $BOOST_PKGS \
-    libqt5-qtbase-common-devel \
-    libqt5-qtbase-devel \
-    libqt5-qtsvg-devel \
-    libqt5-qtscript-devel \
+    qt6-base-common-devel \
+    qt6-base-devel \
+    qt6-svg-devel \
+    qt6-declarative-devel \
     Mesa-libGL-devel
 ```
 
 #### Arch-Based
 
 ```bash
-yay  -S qt-base \
+yay  -S qt6-base \
         openblas \
         intel-mkl \
-        qt5-script
+        qt6-declarative \
+        glu
 ```
 
 ### Compiling
 
-Before starting, verify that `qmake --version` informs you that you are using Qt in version 5.x
+Before starting, verify that `qmake6 --version` (or `qmake --version`, if
+`qmake6` isn't available under that name on your system) informs you that
+you are using Qt in version 6.x. Prefer `qmake6` when both exist: on some
+systems (e.g. Ubuntu 22.04) a generic, unversioned `qmake` exists only as a
+`qtchooser` wrapper with no Qt6 profile registered, and fails outright
+rather than falling back to Qt6.
 
 ```bash
 mkdir build && cd build
 
-# Select qmake or qmake-qt5 if qmake is not available on your system
-QMAKE="qmake"
+# Prefer qmake6, falling back to plain qmake only if qmake6 isn't installed
+# under that name. Don't do this the other way around: an unversioned
+# "qmake" found on PATH may be a non-functional qtchooser wrapper that has
+# no Qt6 profile configured, even though it exists and is executable.
+QMAKE="qmake6"
 if [[ ! -x "$( command -v "$QMAKE" )" ]]; then
-    QMAKE="qmake-qt5"
+    QMAKE="qmake"
 fi
 
 $QMAKE ../main.pro

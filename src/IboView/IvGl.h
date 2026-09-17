@@ -115,7 +115,7 @@ struct FGlMatrixStack : protected ct::TArray<FMat4f>
    FMat4f &Top() { return FBase::back(); };
    FMat4f const &Top() const { return FBase::back(); };
 
-   void Push() { FBase::push_back(Top()); }
+   void Push() { FMat4f m(Top()); FBase::push_back(m); } // NOTE: must copy Top() to a local first: push_back() may reallocate the underlying array, which would invalidate a reference straight into it before the value is read.
    void Pop() { FBase::pop_back(); }
 
    void Translate(FVec3f const &v);

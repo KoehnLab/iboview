@@ -45,6 +45,7 @@
 // #include "IvFileConvert.h"
 #include "IvVolumeDataSet.h"
 #include "IvOrbital.h"
+#include "IvView3D.h"
 
 // #include "CtInt1e.h"
 // #include "IrAmrr.h"
@@ -168,6 +169,8 @@ void FVolumeVisualConfig::Unlink(FVolumeDataSet *pVolume)
 
 void FVolumeVisualConfig::UpdateLinkedRepresentations(uint32_t Flags, FView3d *pView3d)
 {
+   if (pView3d != 0)
+      pView3d->makeCurrent(); // also called outside paintGL, from UI slots
    FVolumeChain::iterator
       it;
    for (it = LinkedVolumes.begin(); it != LinkedVolumes.end(); ++ it) {

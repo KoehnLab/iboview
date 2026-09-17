@@ -24,11 +24,12 @@
 #include <QProgressDialog>
 #include <QMessageBox>
 #include <QtAlgorithms>
+#include <algorithm>
 #include <QSettings>
 #include <QVariant>
 #include <fstream>
 #include <QColorDialog>
-#include <QRegExp>
+#include <QRegularExpression>
 #include "CxColor.h"
 
 #include "Iv.h"
@@ -226,14 +227,17 @@ FIsoSliceDecl FIsoSliceDecl::fromString(QString s, bool *ok)
    FIsoSliceDecl
       r;
    IvEmit("read: '%1'", s);
-   QRegExp
+   QRegularExpression
 //       re("^\\((@[-+]?[0-9]*.?[0-9]+([eE][-+]?[0-9]+)?@),([0123456789abcdef]{0,8})\\)$");
 //       re("\\((@[-+]?[0-9]*.?[0-9]+([eE][-+]?[0-9]+)?@)\,([0123456789abcdef]*)\\)");
-      re("\\(([0123456789+-.eE]*),([0123456789abcdef]*)\\)");
+      re("\\A\\(([0123456789+-.eE]*),([0123456789abcdef]*)\\)\\z");
       // ^- I hate regex.
-   if (re.exactMatch(s)) {
+      // \A/\z anchor the whole string, matching the old exact-match behavior.
+   QRegularExpressionMatch
+      Match = re.match(s);
+   if (Match.hasMatch()) {
       QStringList
-         L = re.capturedTexts();
+         L = Match.capturedTexts();
       if (L.size() == 3) {
          if (ok)
             *ok = true;
@@ -331,7 +335,7 @@ void FEditVolumeSurfaceForm::updateThresholdListInUi()
    // re-apply the previous selection as far as possible
    QItemSelection
       newSelection;
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       if (index.row() < L.size())
          newSelection.select(index, index);
    }
@@ -369,7 +373,7 @@ void FEditVolumeSurfaceForm::addIsoThreshold()
 //       updateThresholdListInUi();
 //    }
    L.append(FIsoSliceDecl(d, p->m_dwNextColor));
-   qSort(L);
+   std::sort(L.begin(), L.end());
    updateThresholdListInUi();
 }
 
@@ -397,21 +401,21 @@ void FEditVolumeSurfaceForm::deleteIsoThreshold()
    // get indices of selected thresholds
    QList<int>
       indices;
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       indices << index.row();
    }
    // sort in reverse order (for deletion -- this keeps the remaining indices constant).
-   qSort(indices.begin(), indices.end(), qGreater<int>());
+   std::sort(indices.begin(), indices.end(), std::greater<int>());
 
    // deselect all selected rows
-   foreach(QModelIndex const &index, selected) {
+   for (QModelIndex const &index : selected) {
       ui->listWidget_IsoThresholds->selectionModel()->select(index, QItemSelectionModel::Deselect);
    }
 
 
 //    int iThresholdToDelete = ui->listWidget_IsoThresholds->currentRow();
    // remove backend version of the selected thresholds.
-   foreach(int iThresholdToDelete, indices) {
+   for (int iThresholdToDelete : indices) {
       if (iThresholdToDelete == -1) {
          QMessageBox::warning(this, "Delete Iso Threshold", "No iso-threshold selected in list.");
          return;
@@ -473,7 +477,7 @@ void FEditVolumeSurfaceForm::changeIsoThreshold(double newValue)
          FIsoThresholdList
             &L = m_IsoThresholdsForSurfaceTypes[m_SurfaceType];
 
-         foreach(QModelIndex const &index, selected) {
+         for (QModelIndex const &index : selected) {
             int iThreshold = index.row();
             if (iThreshold < L.size())
                L[iThreshold].fIsoValue = newValue;
@@ -517,7 +521,7 @@ void FEditVolumeSurfaceForm::changeSurfaceColor()
             FIsoThresholdList
                &L = m_IsoThresholdsForSurfaceTypes[m_SurfaceType];
 
-            foreach(QModelIndex const &index, selected) {
+            for (QModelIndex const &index : selected) {
                int iThreshold = index.row();
                if (iThreshold < L.size())
                   L[iThreshold].dwColor = NewColor;

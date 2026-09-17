@@ -42,6 +42,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QStringList>
+#include <QRegularExpression>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QUrl>
@@ -193,7 +194,7 @@ void FMainWindow::load_files_(QStringList const &FileNames_)
 
    QStringList
       DataFiles;
-   foreach(QString FileName, FileNames_) {
+   for (QString FileName : FileNames_) {
       if (FileName == "")
          continue;
       if (isScriptFile(FileName)) {
@@ -223,27 +224,27 @@ void FMainWindow::close_files_()
 
 
 
-QStringList toStringList(QScriptValue const &ScriptList)
+QStringList toStringList(QJSValue const &ScriptList)
 {
    QStringList
       r;
-   int Length = ScriptList.property("length").toInteger();
+   int Length = ScriptList.property("length").toInt();
    for (int i = 0; i < Length; ++ i)
       r.append(ScriptList.property(i).toString());
    return r;
 }
 
-FAtomIdList toIntList(QScriptValue const &ScriptList, int iOffset=0)
+FAtomIdList toIntList(QJSValue const &ScriptList, int iOffset=0)
 {
    FAtomIdList
       r;
-   int Length = ScriptList.property("length").toInteger();
+   int Length = ScriptList.property("length").toInt();
    r.reserve(size_t(Length));
    for (int i = 0; i < Length; ++ i) {
-      QScriptValue
+      QJSValue
          v = ScriptList.property(i);
       if (v.isNumber()) {
-         r.push_back(v.toInt32() + iOffset); // <- note: in JS all numbers are FLOATSs...
+         r.push_back(v.toInt() + iOffset); // <- note: in JS all numbers are FLOATSs...
       } else {
          IvNotify(NOTIFY_Warning, QString("toAtomIdList: value %1 cannot be interpreted as atom id.").arg(v.toString()));
       }
@@ -251,18 +252,18 @@ FAtomIdList toIntList(QScriptValue const &ScriptList, int iOffset=0)
    return r;
 }
 
-FAtomIdList toAtomIdList(QScriptValue const &ScriptList) {
+FAtomIdList toAtomIdList(QJSValue const &ScriptList) {
    return toIntList(ScriptList, -1);
 }
 
 
-void IApplication::define_atom_group(int iAtomGroup, QScriptValue const &AtomList)
+void IApplication::define_atom_group(int iAtomGroup, QJSValue const &AtomList)
 {
    document->DefineAtomGroup(iAtomGroup, toAtomIdList(AtomList));
 }
 
 
-void IApplication::load_files(QScriptValue const &FileList)
+void IApplication::load_files(QJSValue const &FileList)
 {
    FMainWindow::load_files_(toStringList(FileList));
 //    document->Load(toStringList(FileList));
@@ -629,8 +630,8 @@ void IApplication::set_atom_mode(int iAt, QString const &Mode)
       &AtomFlags = document->AtomFlags(iAt-1),
       AtomFlagsOrig = AtomFlags;
    QStringList
-      FlagList = Mode.split("|", QString::SkipEmptyParts);
-   foreach(QString Flag, FlagList) {
+      FlagList = Mode.split("|", Qt::SkipEmptyParts);
+   for (QString Flag : FlagList) {
       if (Flag == "hidden")
          AtomFlags = AtomFlags | ATOM_Hidden;
       else if (Flag == "visible")
@@ -809,7 +810,7 @@ void LinkPropertyWidgets(QObject *pTarget, QWidget *pWidgetContainer, char const
    //   *every* change of *any* widget...
    viewMapper->setSubmitPolicy(QPropertyDataWidgetMapper::ManualSubmit);
    QList<QWidget*> uiWidgets = pWidgetContainer->findChildren<QWidget*>();
-   foreach(QWidget *w, uiWidgets) {
+   for (QWidget *w : uiWidgets) {
       QVariant
          vaViewOptionName = w->property(pPropertyKeyName);
       if (vaViewOptionName.isValid()) {
@@ -902,7 +903,7 @@ FMainWindow::FMainWindow(QWidget *parent, Qt::WindowFlags flags)
    // parent control... but this doesn't really seem to work for me.
    if (1) {
       QList<QWidget*> uiWidgets = this->findChildren<QWidget*>();
-      foreach(QWidget *w, uiWidgets) {
+      for (QWidget *w : uiWidgets) {
          if (qobject_cast<FStatusBar*>(w) != 0)
             continue; // handles it's own layout.
          //QLayout
@@ -1154,7 +1155,7 @@ FMainWindow::FMainWindow(QWidget *parent, Qt::WindowFlags flags)
       // note: should probably code this similarly to the generic ConnectPropertyNotify,
       // which links up the signals/lots directly.
       QList<QAction*> uiActions = this->findChildren<QAction*>();
-      foreach(QAction *pAction, uiActions) {
+      for (QAction *pAction : uiActions) {
          QVariant
             vaViewOptionName = pAction->property("view_option_name");
          if (vaViewOptionName.isValid()) {
@@ -1316,7 +1317,7 @@ void FMainWindow::AddPresetScript(QMenu *pMenu, QString FileName)
    QStringList
       Lines = ScriptText.split('\n');
    if (!Lines.isEmpty() && Lines[0].startsWith("// "))
-      MenuTitle = Lines[0].midRef(3).toString();
+      MenuTitle = Lines[0].mid(3);
    QAction
       *pAction = new QAction(MenuTitle, this);
    connect(pAction, SIGNAL(triggered()), this, SLOT(ExecPresetScript()));
@@ -1461,7 +1462,7 @@ void FMainWindow::onActiveDatasetChanged()
       FVolumeVisualConfig
          *pVis = pOrb->pVisConfig.get();
       if (!pVis->DetailsAssigned())
-         view3d->updateGL(); // <- to force rendering the orbital such that we have a color set in the curve view...
+         view3d->update(); // <- to force rendering the orbital such that we have a color set in the curve view...
       FTwoPhaseIsoSurfaceConfig const
          *pVisDet = dynamic_cast<FTwoPhaseIsoSurfaceConfig const*>(pOrb->pVisConfig->pDetails.get());
       if (pVisDet) {
@@ -1666,6 +1667,7 @@ void FMainWindow::onTraceIsoSurfacesClicked()
                Cancelled = Cancelled || bool(progress.wasCanceled());
                if (Cancelled)
                   break;
+               view3d->makeCurrent(); // called outside paintGL here
                (*pData)[iRow]->BuildRenderCache(view3d);
                nDoneSets += 1;
                progress.setValue(nDoneSets);
@@ -1820,7 +1822,7 @@ bool DoesThisLookLikeAnXyzFile(QString Text)
    QString
       Line2 = Lines[2];
    QStringList
-      ls = Line2.trimmed().split(QRegExp("\\s+")); // <- split at whitespace
+      ls = Line2.trimmed().split(QRegularExpression("\\s+")); // <- split at whitespace
    if (ls.size() >= 4) { // element x y z
 //       IvEmit("...3rd line count check check passed.'");
 //       IvEmit("...ls[1] = '%1'", ls[1]);
@@ -2339,7 +2341,7 @@ void FMainWindow::onToggleTrackedOrbitalClicked()
       FDataSetPtr
          pActiveData = (*pDataList)[iRow];
       document->ToggleDataRow(iRow);
-      view3d->updateGL(); // <- to force rendering the orbital such that we have a color set in the curve view...
+      view3d->update(); // <- to force rendering the orbital such that we have a color set in the curve view...
       ui->pushButton_ToggleTrackedOrbital->setChecked(pActiveData->Active);
    }
 //    document->GetCurrentFrame()->document->GetFrame(0)
@@ -2492,14 +2494,12 @@ public:
 
       g_papp = this;
 //       MainWindow.show();
-#if QT_VERSION >= 0x050000
       // must be done after QApplication object is constructed. Otherwise undeployable
       // on windows ('could not load or find the Qt platform plugin "windows"')
       if (s_UseStyleFiles) {
          QApplication::setDesktopSettingsAware(false);
          QApplication::setStyle(QStyleFactory::create("Fusion"));
       }
-#endif
       if (s_UseStyleFiles) {
          // load and apply our super cool style sheet 8).
          // (I could not resist)

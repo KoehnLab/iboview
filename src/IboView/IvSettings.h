@@ -37,8 +37,8 @@ bool IvRestoreSplitterState(QString Key, QSplitter *pSplitter);
 
 void IvGuessSubDialogSize(QWidget *pWindow, double fDefaultVerticalScale = -1.);
 
-QString IvGetSaveFileName(QString HistoryName, QWidget *parent = 0, const QString &caption = QString(), const QString &dir = QString(), const QString &filter = QString(), QString *selectedFilter = 0, QFileDialog::Options options = 0);
-QStringList IvGetOpenFileNames(QString HistoryName, QWidget *parent = 0, const QString &caption = QString(), const QString &dir = QString(), const QString &filter = QString(), QString *selectedFilter = 0, QFileDialog::Options options = 0);
+QString IvGetSaveFileName(QString HistoryName, QWidget *parent = 0, const QString &caption = QString(), const QString &dir = QString(), const QString &filter = QString(), QString *selectedFilter = 0, QFileDialog::Options options = QFileDialog::Options());
+QStringList IvGetOpenFileNames(QString HistoryName, QWidget *parent = 0, const QString &caption = QString(), const QString &dir = QString(), const QString &filter = QString(), QString *selectedFilter = 0, QFileDialog::Options options = QFileDialog::Options());
 
 enum FExecOptions {
    GETEXEC_ShellReplace = 0x01,  // if set, automatically replace environment variables.

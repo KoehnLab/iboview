@@ -48,7 +48,7 @@ FCurveView::FCurveView(QWidget *parent)
 //    setBackgroundBrush(QBrush(QRgb(0xff404040))); // dark gray
    setViewportUpdateMode(BoundingRectViewportUpdate);
    setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing |
-                  QPainter::HighQualityAntialiasing | QPainter::SmoothPixmapTransform);
+                  QPainter::SmoothPixmapTransform);
 
 //    setTransformationAnchor(AnchorUnderMouse);
 // //     scale(qreal(0.8), qreal(0.8));
@@ -391,14 +391,14 @@ void FCurveView::keyPressEvent(QKeyEvent */*event*/)
 
 void FCurveView::wheelEvent(QWheelEvent *event)
 {
-   scaleView(pow((double)2, event->delta() / 240.0));
+   scaleView(pow((double)2, event->angleDelta().y() / 240.0));
 }
 
 
 void FCurveView::mousePressEvent(QMouseEvent *event)
 {
-   LastX = event->x();
-   LastY = event->y();
+   LastX = event->position().x();
+   LastY = event->position().y();
    FBase::mousePressEvent(event);
 }
 
@@ -422,8 +422,8 @@ void FCurveView::mouseMoveEvent(QMouseEvent *event)
 //          update();
 // //       }
 //    }
-   LastX = event->x();
-   LastY = event->y();
+   LastX = event->position().x();
+   LastY = event->position().y();
 }
 
 

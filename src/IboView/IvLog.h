@@ -24,6 +24,7 @@
 #ifndef IV_LOG_H
 #define IV_LOG_H
 
+#include <QObject>
 #include <QString>
 #include <QTextStream>
 #include "CxIo.h"
