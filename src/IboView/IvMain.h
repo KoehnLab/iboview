@@ -75,7 +75,7 @@ class FMainWindow : public QMainWindow
 public:
    typedef QMainWindow
       FBase;
-   FMainWindow(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+   FMainWindow(QWidget *parent = 0, Qt::WindowFlags flags = Qt::WindowFlags());
    ~FMainWindow();
 public:
    Ui::MainWindow *ui;
@@ -240,7 +240,7 @@ public slots:
 //    virtual void set_iso_surface_type(QString const &IsoType, float fIsoValue); // = 0;
 
 public: // here for technical reasons. Not part of script interface.
-   IApplication( QWidget * parent = 0, Qt::WindowFlags flags = 0 )
+   IApplication( QWidget * parent = 0, Qt::WindowFlags flags = Qt::WindowFlags() )
       : FMainWindow(parent, flags)
    {}
    ~IApplication(); // does nothing---just to fix the vtable.
