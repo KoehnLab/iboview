@@ -1667,6 +1667,7 @@ void FMainWindow::onTraceIsoSurfacesClicked()
                Cancelled = Cancelled || bool(progress.wasCanceled());
                if (Cancelled)
                   break;
+               view3d->makeCurrent(); // called outside paintGL here
                (*pData)[iRow]->BuildRenderCache(view3d);
                nDoneSets += 1;
                progress.setValue(nDoneSets);

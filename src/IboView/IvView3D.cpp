@@ -1709,7 +1709,6 @@ void FViewImpl::RenderAtomSet(FGeometry &Geometry, uint RenderFlags, FShaderSet 
 
 void FVolumeDataSet::BuildRenderCache(FView3d *pView3d)
 {
-   pView3d->makeCurrent(); // also called outside paintGL, from UI actions
    FIsoSurfaceSettings
       IsoSurfOpt = pView3d->v->MakeIsoSurfaceSettings();
       // ^- make a copy of the view's default settings and patch in
