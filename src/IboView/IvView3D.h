@@ -26,7 +26,7 @@
 
 #include "Iv.h"
 #include <QAbstractTableModel>
-#include <QGLWidget>
+#include <QOpenGLWidget>
 #include <QTimer>
 #include <IvDataOptions.h>
 // #include "IvScript.h"
@@ -35,9 +35,9 @@ class FDocument;
 class FViewImpl;
 
 
-// class FView3d : public QGLWidget, public IView3d {
+// class FView3d : public QOpenGLWidget, public IView3d {
 // class FView3d : public IView3d {
-class FView3d : public QGLWidget {
+class FView3d : public QOpenGLWidget {
 
    Q_OBJECT // must include this if you use Qt signals/slots
 
@@ -45,7 +45,7 @@ public:
 #include "prop_FView3d.h.inl"
 
 public:
-   typedef QGLWidget
+   typedef QOpenGLWidget
       FBase;
    FView3d(QWidget *parent, FDocument *document);
    ~FView3d();

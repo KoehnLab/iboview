@@ -1462,7 +1462,7 @@ void FMainWindow::onActiveDatasetChanged()
       FVolumeVisualConfig
          *pVis = pOrb->pVisConfig.get();
       if (!pVis->DetailsAssigned())
-         view3d->updateGL(); // <- to force rendering the orbital such that we have a color set in the curve view...
+         view3d->update(); // <- to force rendering the orbital such that we have a color set in the curve view...
       FTwoPhaseIsoSurfaceConfig const
          *pVisDet = dynamic_cast<FTwoPhaseIsoSurfaceConfig const*>(pOrb->pVisConfig->pDetails.get());
       if (pVisDet) {
@@ -2340,7 +2340,7 @@ void FMainWindow::onToggleTrackedOrbitalClicked()
       FDataSetPtr
          pActiveData = (*pDataList)[iRow];
       document->ToggleDataRow(iRow);
-      view3d->updateGL(); // <- to force rendering the orbital such that we have a color set in the curve view...
+      view3d->update(); // <- to force rendering the orbital such that we have a color set in the curve view...
       ui->pushButton_ToggleTrackedOrbital->setChecked(pActiveData->Active);
    }
 //    document->GetCurrentFrame()->document->GetFrame(0)

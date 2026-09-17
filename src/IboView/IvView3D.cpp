@@ -31,6 +31,8 @@
 #include <iostream>
 #include <cmath> // for std::trunc and erfc
 #include <QtGlobal> // for QT_VERSION
+#include <QSurfaceFormat>
+#include <QOpenGLContext>
 #include <QRect>
 #include <QImage>
 #include <QApplication>
@@ -285,49 +287,40 @@ static void InitGlew1()
 //    std::cout << "GLEW Init passed." << std::endl;
 }
 
-static QGLFormat MakeGlFormat()
+static QSurfaceFormat MakeGlFormat()
 {
-   QGLFormat
-      GlFormat(QGL::AlphaChannel | QGL::DepthBuffer | QGL::DoubleBuffer);
+   QSurfaceFormat
+      GlFormat;
+   GlFormat.setAlphaBufferSize(8);
+   GlFormat.setDepthBufferSize(24);
+   GlFormat.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
    if (TransparencyStyle != TRANSSTYLE_DepthPeeling)
-      GlFormat.setSampleBuffers(true);
+      GlFormat.setSamples(4);
    else {
       // In the default depth peeling mode we technically need neither a depth buffer
       // nor double buffering on the main FBO, as all we ever do with it is use it as
       // target for blitting from the higher resolution accumulation FBs.
-      GlFormat.setDepth(false);
-      GlFormat.setDoubleBuffer(false);
+      GlFormat.setDepthBufferSize(0);
+      GlFormat.setSwapBehavior(QSurfaceFormat::SingleBuffer);
    }
 
-   QGLFormat::OpenGLVersionFlags
-      GlVersionFlags = QGLFormat::openGLVersionFlags();
-   if (GlVersionFlags & QGLFormat::OpenGL_Version_4_0) {
-      g_GlVersion = 40;
-      GlFormat.setVersion(4,0);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   } else if (GlVersionFlags & QGLFormat::OpenGL_Version_3_2) {
-      g_GlVersion = 32;
-      GlFormat.setVersion(3,2);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   } else {
-//       throw std::runtime_error("OpenGL Version 3.0 not supported.");
-      IvNotify(NOTIFY_Warning, "This program requires OpenGL version >=3.2. This is not supported by the current hardware/software setup."
-        " The program will switch into partial compatibility mode and try to go on, but there is a chance that it will not work and visual quality will be impacted.");
-      g_GlVersion = 30;
-      GlFormat.setVersion(3,0);
-      GlFormat.setProfile(QGLFormat::CoreProfile);
-   }
-//    GlFormat.setProfile(QGLFormat::CompatibilityProfile);
+   // Request the version/profile we want. The actual supported version/profile can
+   // only be queried once the context exists; see FView3d::initializeGL(), which
+   // sets g_GlVersion from it.
+   GlFormat.setVersion(4,0);
+   GlFormat.setProfile(QSurfaceFormat::CoreProfile);
+//    GlFormat.setProfile(QSurfaceFormat::CompatibilityProfile);
    // ^- core profile works on my card, but apparently not everywhere...
    //    update: on other machines, the compatibility profile does not work...
    return GlFormat;
 }
 
 FView3d::FView3d(QWidget *parent, FDocument *document)
-   : FBase(MakeGlFormat(), parent)
+   : FBase(parent)
 //    QGL::StencilBuffer
 //    : QGLWidget(QGLFormat(QGL::AlphaChannel), parent)
 {
+   setFormat(MakeGlFormat());
 //    setMouseTracking(true);
 #ifdef OPENGL_DEBUG
    glEnable(GL_DEBUG_OUTPUT);
@@ -383,6 +376,21 @@ void FView3d::initializeGL() {
 //    glDisable(GL_TEXTURE_2D); // not allowed in core profile. See if this works.
 #endif
 
+   {
+      // determine the GL version we actually got (see comment in MakeGlFormat()).
+      QPair<int,int>
+         GlVersionObtained = this->format().version();
+      if (GlVersionObtained >= qMakePair(4,0)) {
+         g_GlVersion = 40;
+      } else if (GlVersionObtained >= qMakePair(3,2)) {
+         g_GlVersion = 32;
+      } else {
+//          throw std::runtime_error("OpenGL Version 3.0 not supported.");
+         IvNotify(NOTIFY_Warning, "This program requires OpenGL version >=3.2. This is not supported by the current hardware/software setup."
+           " The program will switch into partial compatibility mode and try to go on, but there is a chance that it will not work and visual quality will be impacted.");
+         g_GlVersion = 30;
+      }
+   }
 
    IvEmit(QString("Context initialized to GL %1.%2.").arg(format().majorVersion()).arg(format().minorVersion()));
    IvEmit(QString("GL says its context is version: %1").arg((char*)glGetString(GL_VERSION)));
@@ -404,13 +412,13 @@ void FView3d::initializeGL() {
 //    nMainFboSamples = (uint) bla;
 //    std::cout << fmt::format("OpenGL says my main FB has {} multi-sample samples.", nMainFboSamples) << std::endl;
    // ^- says 48. surely not!!
-   // this->format() returns a QGLFormat object.
+   // this->format() returns a QSurfaceFormat object.
 //    if (nMainFboSamples != 0)
-   if (this->format().sampleBuffers())
+   if (this->format().samples() > 0)
       v->nMainFboSamples = (uint)this->format().samples();
    else
       v->nMainFboSamples = 0;
-//    std::cout << fmt::format("QGLWidget says my main FB has {} multi-sample samples.", v->nMainFboSamples) << std::endl;
+//    std::cout << fmt::format("QOpenGLWidget says my main FB has {} multi-sample samples.", v->nMainFboSamples) << std::endl;
 
    RehashShaders();
 
@@ -898,7 +906,7 @@ void FViewImpl::RenderScene()
    if (!BindSucceeded) {
       // this one is for MacOS... where apparently one cannot actually
       // initialize any frame buffers before the window is first physically shown
-      const_cast<QGLContext*>(this->v->context())->makeCurrent();
+      this->v->context()->makeCurrent(this->v->context()->surface());
       v->ResetFrameBuffers();
       if (!pMainFbo->Bind(GL_DRAW_FRAMEBUFFER))
          // still doesn't work? Probably can't fix it now.
@@ -2645,7 +2653,11 @@ void IView3d::save_png(QString const &FileName){
       WriteAlpha = m_SaveAlpha,
       Crop = m_CropImages;
    QImage
-      img = this->grabFrameBuffer(WriteAlpha);
+      img = this->grabFramebuffer();
+   if (!WriteAlpha)
+      // grabFramebuffer() always includes alpha from this surface format; force the
+      // image opaque here when WriteAlpha is false.
+      img = img.convertToFormat(QImage::Format_RGB32);
 //       img = this->renderPixmap(200,200,false).toImage();
       // ^- doesn't work... calls initializeGL again, but does NOT make a new
       //    view3d object! That means that all the resident objects (off-screen FBOs)
