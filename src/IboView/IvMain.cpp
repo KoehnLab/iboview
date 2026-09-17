@@ -224,27 +224,27 @@ void FMainWindow::close_files_()
 
 
 
-QStringList toStringList(QScriptValue const &ScriptList)
+QStringList toStringList(QJSValue const &ScriptList)
 {
    QStringList
       r;
-   int Length = ScriptList.property("length").toInteger();
+   int Length = ScriptList.property("length").toInt();
    for (int i = 0; i < Length; ++ i)
       r.append(ScriptList.property(i).toString());
    return r;
 }
 
-FAtomIdList toIntList(QScriptValue const &ScriptList, int iOffset=0)
+FAtomIdList toIntList(QJSValue const &ScriptList, int iOffset=0)
 {
    FAtomIdList
       r;
-   int Length = ScriptList.property("length").toInteger();
+   int Length = ScriptList.property("length").toInt();
    r.reserve(size_t(Length));
    for (int i = 0; i < Length; ++ i) {
-      QScriptValue
+      QJSValue
          v = ScriptList.property(i);
       if (v.isNumber()) {
-         r.push_back(v.toInt32() + iOffset); // <- note: in JS all numbers are FLOATSs...
+         r.push_back(v.toInt() + iOffset); // <- note: in JS all numbers are FLOATSs...
       } else {
          IvNotify(NOTIFY_Warning, QString("toAtomIdList: value %1 cannot be interpreted as atom id.").arg(v.toString()));
       }
@@ -252,18 +252,18 @@ FAtomIdList toIntList(QScriptValue const &ScriptList, int iOffset=0)
    return r;
 }
 
-FAtomIdList toAtomIdList(QScriptValue const &ScriptList) {
+FAtomIdList toAtomIdList(QJSValue const &ScriptList) {
    return toIntList(ScriptList, -1);
 }
 
 
-void IApplication::define_atom_group(int iAtomGroup, QScriptValue const &AtomList)
+void IApplication::define_atom_group(int iAtomGroup, QJSValue const &AtomList)
 {
    document->DefineAtomGroup(iAtomGroup, toAtomIdList(AtomList));
 }
 
 
-void IApplication::load_files(QScriptValue const &FileList)
+void IApplication::load_files(QJSValue const &FileList)
 {
    FMainWindow::load_files_(toStringList(FileList));
 //    document->Load(toStringList(FileList));

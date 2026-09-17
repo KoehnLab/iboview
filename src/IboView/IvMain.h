@@ -28,7 +28,7 @@
 #include <QMainWindow>
 #include <QAction>
 #include <QSortFilterProxyModel>
-#include <QScriptEngine>
+#include <QJSEngine>
 #include <QResizeEvent>
 #include <QShowEvent>
 #include <QDragEnterEvent>
@@ -188,7 +188,7 @@ public slots:
 
    virtual void load_file(QString const &FileName); // = 0;
 //    virtual void load_files(QString const &FileNames); // = 0;
-   virtual void load_files(QScriptValue const &FileList);
+   virtual void load_files(QJSValue const &FileList);
    virtual void close_files();
    virtual void set_frame(int iFrame); // = 0;
    virtual int get_frame();
@@ -233,7 +233,7 @@ public slots:
 
    virtual void update_views();
 
-   virtual void define_atom_group(int iAtomGroup, QScriptValue const &AtomList);
+   virtual void define_atom_group(int iAtomGroup, QJSValue const &AtomList);
 
    virtual int get_orbital_color_scheme();
    virtual void set_orbital_color_scheme(int);
