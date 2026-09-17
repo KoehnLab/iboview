@@ -1106,6 +1106,10 @@ void FView3d::paintGL() {
    //    std::cout.flush();
    //    m_UpdateTimer.stop();
       v->m_MutexPainting.unlock();
+   } else {
+      // re-entrant call while a previous paintGL() is still in progress; don't
+      // drop this frame, ask for another repaint once it's done.
+      update();
    }
 }
 
