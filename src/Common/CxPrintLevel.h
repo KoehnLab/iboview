@@ -28,9 +28,7 @@
 #include <array>
 // #include <functional>
 
-namespace ct {
-   struct string_slice; // CxParse1.h/.cpp
-}
+#include "CxParse1.h" // for string_slice
 
 namespace ct {
 
