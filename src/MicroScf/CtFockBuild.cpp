@@ -762,7 +762,7 @@ void FormIntMNF_ContractF(FMatrixView Out, ir::FIntegralKernel *pIntKernel, FRaw
 
    FMemoryStackArray MemStacks(Mem_);
    #pragma omp parallel for schedule(dynamic)
-   for (int iShB__ = 0; size_t(iShB__) < pOrbBasis->Shells.size(); ++ iShB__ ){
+   for (int iShB__ = 0; iShB__ < int(pOrbBasis->Shells.size()); ++ iShB__ ){
       size_t iShB = size_t(iShB__);
       FMemoryStack &Mem = MemStacks.GetStackOfThread();
 
