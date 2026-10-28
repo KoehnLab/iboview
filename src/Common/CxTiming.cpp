@@ -67,10 +67,16 @@ double Second()
 // Use only for debugging, if at all!
 unsigned long long dbgGetTimeStampCounter()
 {
+#if defined(__aarch64__)
+	unsigned long long t;
+	asm volatile("mrs %0, cntvct_el0" : "=r" (t));
+	return t;
+#else
 	unsigned a, d;
 	asm volatile("rdtsc" : "=a" (a), "=d" (d));
 
 	return (((unsigned long long)a) | (((unsigned long long)d) << 32));
+#endif
 }
 
 } // namespace ct
