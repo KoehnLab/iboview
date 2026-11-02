@@ -54,6 +54,18 @@ yay  -S qt6-base \
         glu
 ```
 
+#### macOS (Homebrew, Apple Silicon)
+
+```bash
+brew install qt boost libomp
+```
+
+OpenMP is taken from Homebrew's `libomp` (override its location with the
+`LIBOMP_ROOT` environment variable). An `MKLROOT` environment variable is
+ignored on macOS; set `BLASLIB` explicitly to use an external BLAS/LAPACK.
+The build produces `iboview.app`; run it via `open iboview.app` or
+`./iboview.app/Contents/MacOS/iboview <file>`.
+
 ### Compiling
 
 Before starting, verify that `qmake6 --version` (or `qmake --version`, if

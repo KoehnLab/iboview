@@ -35,6 +35,10 @@ isEmpty(BLASLIB) {
    # If the MKLROOT environment variable is not set, you can also override
    # the path manually (e.g., setting MKLDIR = /opt/intel/composerxe/mkl)
    MKLDIR = $$(MKLROOT)
+   macx {
+      # MKL's linker line below is Linux-specific, and MKL has no arm64 build.
+      MKLDIR =
+   }
    !isEmpty(MKLDIR) {
       exists($$MKLDIR) {
          message(Using MKL from MKLROOT: $$MKLDIR)
@@ -75,6 +79,9 @@ isEmpty(BLASLIB) {
 
 isEmpty(BOOST_ROOT) {          # <-- boost directory not manually set in .pro file?
    BOOST_ROOT=$$(BOOST_ROOT)   # <-- check if we got it from an environment variable
+}
+macx : isEmpty(BOOST_ROOT) : exists(/opt/homebrew/include/boost/math/special_functions/beta.hpp) {
+   BOOST_ROOT = /opt/homebrew/include   # <-- Homebrew default on Apple Silicon
 }
 !isEmpty(BOOST_ROOT) : exists($$BOOST_ROOT/boost/math/special_functions/beta.hpp) {
    CONFIG += config_boost_special  # found it. Don't do further tests.
@@ -173,9 +180,24 @@ win32 {
    QMAKE_CXXFLAGS += /openmp
    QMAKE_LFLAGS += /openmp
 }
-!win32 {
+!win32:!macx {
    QMAKE_CXXFLAGS += -fopenmp
    QMAKE_LFLAGS += -fopenmp
+}
+macx {
+   # Apple clang has no bundled OpenMP runtime; use Homebrew's libomp.
+   LIBOMP_ROOT = $$(LIBOMP_ROOT)
+   isEmpty(LIBOMP_ROOT) {
+      LIBOMP_ROOT = /opt/homebrew/opt/libomp
+   }
+   exists($$LIBOMP_ROOT/include/omp.h) {
+      QMAKE_CXXFLAGS += -Xpreprocessor -fopenmp
+      QMAKE_CFLAGS += -Xpreprocessor -fopenmp
+      INCLUDEPATH += $$LIBOMP_ROOT/include
+      LIBS += -L$$LIBOMP_ROOT/lib -lomp -Wl,-rpath,$$LIBOMP_ROOT/lib
+   } else {
+      message(libomp not found at $$LIBOMP_ROOT; building without OpenMP.)
+   }
 }
 # ^- warning: need to replace all OpenMP loop variables by "int". Otherwise won't work
 #    in vc or gcc <= 4.4 (unsigned integral types only allowed since OpenMP 3.0... wtf

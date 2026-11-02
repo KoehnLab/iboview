@@ -8,10 +8,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu:24.04", "ubuntu:22.04", "opensuse/leap:15"]
+        os: ["ubuntu:26.04", "ubuntu:24.04", "opensuse/leap:16"]
+        runner: ["ubuntu-latest"]
+        include:
+          - os: "macos"
+            runner: "macos-latest"
 
-    runs-on: ubuntu-latest
-    container: ${{ matrix.os }}
+    runs-on: ${{ matrix.runner }}
+    container: ${{ matrix.runner == 'ubuntu-latest' && matrix.os || null }}
 
     steps:
     - name: Install bare essentials (Ubuntu)
@@ -22,7 +26,7 @@ jobs:
       if: ${{ contains(matrix.os, 'opensuse') }}
       run: zypper --non-interactive install python3 git sudo
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Install dependencies
       run: python3 ./.github/workflows/build.py --only-install-dependencies --os "${{ matrix.os }}"

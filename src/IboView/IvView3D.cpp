@@ -560,6 +560,8 @@ void FView3d::ResetFrameBuffers()
    // ^- doesn't work without full format... needs to be accurate enough
    //    to fully represent gl_FragCoord.z.
 
+   v->m_DevicePixelRatio = int(devicePixelRatio()); // may change when moved to another screen
+
    // make new frame buffers. in theory this should delete the old ones automagically.
    // (unless I did something wrong)
    if (1) {
@@ -1102,6 +1104,11 @@ void FView3d::paintGL() {
    //    v->Timers.Resume(1, "Render");
 
 
+
+      // QOpenGLWidget recreates its own FBO without calling resizeGL() when the
+      // widget moves to a screen with a different device pixel ratio.
+      if (!v->pMainFbo || v->pMainFbo->hFbo != defaultFramebufferObject() || v->m_DevicePixelRatio != int(devicePixelRatio()))
+         ResetFrameBuffers();
 
       v->RenderScene();
       CALL_GL( glFinish() );

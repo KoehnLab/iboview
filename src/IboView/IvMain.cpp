@@ -27,6 +27,7 @@
 // see: http://stackoverflow.com/questions/25661295/why-does-qcoreapplication-call-setlocalelc-all-by-default-on-unix-linux
 #include <iostream>
 #include <QApplication>
+#include <QSurfaceFormat>
 #include <QDialog>
 #include <QTableView>
 #include <QTreeView>
@@ -3015,6 +3016,17 @@ int wrapped_main(int &argc, char *argv[])
    // meant to allow message boxes (in particular, as created by IvNotify(NOTIFY_Error, ...) from other threads.
    // ...but it just crashes somewhere else.
    QCoreApplication::setAttribute(Qt::AA_X11InitThreads, true);
+#endif
+#ifdef Q_OS_MACOS
+   {
+      // macOS can only share GL contexts of the same profile; QOpenGLWidget
+      // needs the window compositor's context to share with the view's 4.x core one.
+      QSurfaceFormat
+         GlFormat = QSurfaceFormat::defaultFormat();
+      GlFormat.setVersion(4,0);
+      GlFormat.setProfile(QSurfaceFormat::CoreProfile);
+      QSurfaceFormat::setDefaultFormat(GlFormat);
+   }
 #endif
    FMyApplication
       app(argc, argv); // <- that's the main QApplication object.
