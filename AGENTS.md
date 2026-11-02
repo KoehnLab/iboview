@@ -217,3 +217,8 @@ fixing the regressions that surfaced, but apply broadly, not just to Qt work:
 - **When splitting work into commits, split by hunk/line when a single file's
   diff mixes unrelated concerns** — don't let commit granularity be
   constrained by which files happen to contain which changes.
+- **Attribute AI assistance generically.** In commit messages, PR
+  descriptions and similar, credit AI use only as "AI-assisted" (as the
+  final line of a commit message). Don't name the specific tool, model, or
+  vendor, and omit any default trailer such as `Co-Authored-By` that would.
+  Advertising has no place in the development process.
