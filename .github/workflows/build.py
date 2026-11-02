@@ -54,8 +54,10 @@ def main():
         install_command = contents[install_command_start : install_command_end].strip()
 
         # Prevent any interactive yes/no prompts
-        install_command = re.sub(r"\binstall\b", "install -y", install_command)
-        install_command = re.sub(r"\bremove\b", "remove -y", install_command)
+        # (Homebrew is non-interactive already and rejects -y)
+        if os_name != "macos":
+            install_command = re.sub(r"\binstall\b", "install -y", install_command)
+            install_command = re.sub(r"\bremove\b", "remove -y", install_command)
 
         execute_bash(install_command)
 
@@ -70,6 +72,10 @@ def main():
         compile_command_end = contents.find("```", compile_command_start)
 
         compile_commands = contents[compile_command_start : compile_command_end].strip()
+
+        if os_name == "macos":
+            # macOS has no nproc
+            compile_commands = "nproc() { sysctl -n hw.ncpu; }\n" + compile_commands
 
         execute_bash(compile_commands)
 

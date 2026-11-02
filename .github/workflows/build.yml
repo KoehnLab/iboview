@@ -9,9 +9,13 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu:26.04", "ubuntu:24.04", "opensuse/leap:16"]
+        runner: ["ubuntu-latest"]
+        include:
+          - os: "macos"
+            runner: "macos-latest"
 
-    runs-on: ubuntu-latest
-    container: ${{ matrix.os }}
+    runs-on: ${{ matrix.runner }}
+    container: ${{ matrix.runner == 'ubuntu-latest' && matrix.os || null }}
 
     steps:
     - name: Install bare essentials (Ubuntu)
